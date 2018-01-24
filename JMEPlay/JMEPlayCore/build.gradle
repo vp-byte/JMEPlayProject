@@ -1,0 +1,7 @@
+/*
+ * JMEPlayCore
+ */
+apply plugin: 'java'
+
+dependencies {}
+

@@ -1,0 +1,10 @@
+/*
+ * JMEPlayConsole
+ */
+apply plugin: 'java'
+def richtextfx = [v: '0.7-M5']
+
+dependencies {
+    compile "org.fxmisc.richtext:richtextfx:${richtextfx.v}"
+    compile project(':JMEPlayCore')
+}

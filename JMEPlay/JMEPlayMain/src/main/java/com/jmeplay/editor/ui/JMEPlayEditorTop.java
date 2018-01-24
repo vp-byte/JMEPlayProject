@@ -1,0 +1,39 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
+ * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+package com.jmeplay.editor.ui;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javafx.beans.InvalidationListener;
+import javafx.scene.layout.VBox;
+
+/**
+ * Top of JMEPlayEditor
+ *
+ * @author vp-byte (Vladimir Petrenko)
+ */
+@Component
+public class JMEPlayEditorTop {
+
+	private InvalidationListener il = null;
+
+	@Autowired
+	private JMEPlayEditor jmePlayEditor;
+
+	@PostConstruct
+	private void init() {
+		il = (in) -> {
+			VBox top = new VBox();
+			jmePlayEditor.getContainer().setTop(top);
+			jmePlayEditor.setTop(top);
+			jmePlayEditor.getContainerChange().removeListener(il);
+		};
+		jmePlayEditor.getContainerChange().addListener(il);
+	}
+
+}
