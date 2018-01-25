@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
- * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
 package com.jmeplay.editor.ui;
 
@@ -32,8 +31,8 @@ public class JMEPlayEditorStage {
     @Value("${jme.version}")
     private String jmeVersion;
 
-    private JMEPlayEditorSettings jmePlayEditorSettings;
-    private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditorSettings jmePlayEditorSettings;
+    private final JMEPlayEditor jmePlayEditor;
 
     @Autowired
     public JMEPlayEditorStage(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {

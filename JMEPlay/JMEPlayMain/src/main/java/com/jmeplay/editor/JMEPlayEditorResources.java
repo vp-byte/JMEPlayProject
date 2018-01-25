@@ -37,10 +37,6 @@ public class JMEPlayEditorResources {
 
     public final static String BORDER_BARS_VISIBLE = "BorderBarsVisible";
     public final static Boolean BORDER_BARS_VISIBLE_DEFAULT = true;
-    public final static String LEFT_BAR_VISIBLE = "LeftVisible";
-    public final static Boolean LEFT_BAR_VISIBLE_DEFAULT = true;
-    public final static String BOTTOM_BAR_VISIBLE = "BottomVisible";
-    public final static Boolean BOTTOM_BAR_VISIBLE_DEFAULT = true;
     public final static String LEFT_DIVIDER_POSITION = "LeftDividerPosition";
     public final static String LEFT_SELECTED_COMPONENT = "LeftSelectedComponent";
     public final static Double LEFT_DIVIDER_POSITION_DEFAULT = 0.2;
