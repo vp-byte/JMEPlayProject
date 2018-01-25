@@ -43,7 +43,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
     @PostConstruct
     private void init() throws Exception {
         watcher = FileSystems.getDefault().newWatchService();
-        jmePlayGlobal.getAssetfolderChange().addListener((in) -> {
+        jmePlayGlobal.assetFolderChange().addListener((in) -> {
             reloadAssetFolder();
         });
         reloadAssetFolder();
@@ -67,7 +67,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         thread.setDaemon(true);
         thread.start();
 
-        jmePlayGlobal.getAssetfolderChange().get();
+        jmePlayGlobal.assetFolderChange().get();
     }
 
     private void createTree(TreeItem<Path> treeItem) throws IOException {

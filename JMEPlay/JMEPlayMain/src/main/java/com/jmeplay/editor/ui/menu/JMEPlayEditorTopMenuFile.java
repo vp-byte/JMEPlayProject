@@ -41,9 +41,7 @@ public class JMEPlayEditorTopMenuFile {
 
         MenuItem menuFileOpen = new MenuItem(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_OPEN_ASSETS));
         menuFile.getItems().add(menuFileOpen);
-        menuFileOpen.setOnAction((event) -> {
-            openDirectoryChooser();
-        });
+        menuFileOpen.setOnAction((event) -> openDirectoryChooser());
     }
 
     private void openDirectoryChooser() {
@@ -51,7 +49,7 @@ public class JMEPlayEditorTopMenuFile {
         chooser.setTitle(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_OPEN_ASSETS_DIALOG_TITLE));
         File defaultDirectory = new File(jmePlayGlobalSettings.rootFolder());
         chooser.setInitialDirectory(defaultDirectory);
-        File selectedDirectory = chooser.showDialog(jmePlayEditor.getStage());
+        File selectedDirectory = chooser.showDialog(jmePlayEditor.stage());
         if (selectedDirectory != null) {
             String rootfolder = selectedDirectory.getAbsolutePath();
             jmePlayGlobalSettings.setValue(JMEPlayGlobalResources.ROOTFOLDER, rootfolder);

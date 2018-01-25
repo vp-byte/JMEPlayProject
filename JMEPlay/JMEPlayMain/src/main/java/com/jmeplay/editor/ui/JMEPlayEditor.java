@@ -4,11 +4,10 @@
  */
 package com.jmeplay.editor.ui;
 
-import org.springframework.stereotype.Component;
-
+import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
@@ -18,14 +17,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * JMEPlayEditor component to handle all parts and nodes of the editor
  *
  * @author vp-byte (Vladimir Petrenko)
  */
-@Data
 @Component
 public class JMEPlayEditor implements JMEPlayGlobal {
 
@@ -35,7 +33,16 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setAssetFolder(String assetfolder) {
         this.assetfolder = assetfolder;
-        this.assetfolderChange.set(this.assetfolder);
+        assetfolderChange.set(this.assetfolder);
+    }
+
+    public String assetFolder() {
+        return assetfolder;
+    }
+
+    @Override
+    public ReadOnlyObjectProperty<String> assetFolderChange() {
+        return assetfolderChange.getReadOnlyProperty();
     }
 
     // Stage
@@ -44,7 +51,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        this.stageChange.set(this.stage);
+        stageChange.set(this.stage);
+    }
+
+    public Stage stage() {
+        return stage;
+    }
+
+    public ReadOnlyObjectProperty<Stage> stageChange() {
+        return stageChange.getReadOnlyProperty();
     }
 
     // Root
@@ -53,7 +68,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setRoot(Parent root) {
         this.root = root;
-        this.rootChange.set(this.root);
+        rootChange.set(this.root);
+    }
+
+    public Parent root() {
+        return root;
+    }
+
+    public ReadOnlyObjectProperty<Parent> rootChange() {
+        return rootChange.getReadOnlyProperty();
     }
 
     // Scene
@@ -62,7 +85,16 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-        this.sceneChange.set(this.scene);
+        sceneChange.set(this.scene);
+    }
+
+    public Scene scene() {
+        return scene;
+    }
+
+    @Override
+    public ReadOnlyObjectProperty<Scene> sceneChange() {
+        return sceneChange.getReadOnlyProperty();
     }
 
     // Container
@@ -74,6 +106,14 @@ public class JMEPlayEditor implements JMEPlayGlobal {
         this.containerChange.set(this.container);
     }
 
+    public BorderPane container() {
+        return container;
+    }
+
+    public ReadOnlyObjectProperty<BorderPane> containerChange() {
+        return containerChange.getReadOnlyProperty();
+    }
+
     // Top
     private VBox top;
     private final ReadOnlyObjectWrapper<VBox> topChange = new ReadOnlyObjectWrapper<>();
@@ -83,13 +123,29 @@ public class JMEPlayEditor implements JMEPlayGlobal {
         this.topChange.set(top);
     }
 
+    public VBox top() {
+        return top;
+    }
+
+    public ReadOnlyObjectProperty<VBox> topChange() {
+        return topChange.getReadOnlyProperty();
+    }
+
     // MenuBar
     private MenuBar menuBar;
     private final ReadOnlyObjectWrapper<MenuBar> menuBarChange = new ReadOnlyObjectWrapper<>();
 
     public void setMenuBar(MenuBar menuBar) {
         this.menuBar = menuBar;
-        this.menuBarChange.set(menuBar);
+        menuBarChange.set(menuBar);
+    }
+
+    public MenuBar menuBar() {
+        return menuBar;
+    }
+
+    public ReadOnlyObjectProperty<MenuBar> menuBarChange() {
+        return menuBarChange.getReadOnlyProperty();
     }
 
     // ToolBar
@@ -98,7 +154,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setToolBar(ToolBar toolBar) {
         this.toolBar = toolBar;
-        this.toolBarChange.set(toolBar);
+        toolBarChange.set(toolBar);
+    }
+
+    public ToolBar toolBar() {
+        return toolBar;
+    }
+
+    public ReadOnlyObjectProperty<ToolBar> toolBarChange() {
+        return toolBarChange.getReadOnlyProperty();
     }
 
     // Center
@@ -107,7 +171,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setCenter(BorderPane center) {
         this.center = center;
-        this.centerChange.set(this.center);
+        centerChange.set(this.center);
+    }
+
+    public BorderPane center() {
+        return center;
+    }
+
+    public ReadOnlyObjectProperty<BorderPane> centerChange() {
+        return centerChange.getReadOnlyProperty();
     }
 
     // Bottom InfoBar
@@ -116,7 +188,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setBottomInfoBar(HBox bottomInfoBar) {
         this.bottomInfoBar = bottomInfoBar;
-        this.bottomInfoBarChange.set(bottomInfoBar);
+        bottomInfoBarChange.set(bottomInfoBar);
+    }
+
+    public HBox bottomInfoBar() {
+        return borderBarBottom;
+    }
+
+    public ReadOnlyObjectProperty<HBox> bottomInfoBarChange() {
+        return bottomInfoBarChange.getReadOnlyProperty();
     }
 
     private Boolean borderBarsVisibility;
@@ -124,7 +204,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setBorderBarsVisibility(boolean borderBarsVisibility) {
         this.borderBarsVisibility = borderBarsVisibility;
-        this.borderBarsVisibilityChange.set(borderBarsVisibility);
+        borderBarsVisibilityChange.set(borderBarsVisibility);
+    }
+
+    public Boolean borderBarsVisibility() {
+        return borderBarsVisibility;
+    }
+
+    public ReadOnlyBooleanProperty borderBarsVisibilityChange() {
+        return borderBarsVisibilityChange.getReadOnlyProperty();
     }
 
     // Left BorderBar
@@ -133,7 +221,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setBorderBarLeft(VBox borderBarLeft) {
         this.borderBarLeft = borderBarLeft;
-        this.borderBarLeftChange.set(borderBarLeft);
+        borderBarLeftChange.set(borderBarLeft);
+    }
+
+    public VBox borderBarLeft() {
+        return borderBarLeft;
+    }
+
+    public ReadOnlyObjectProperty<VBox> borderBarLeftChange() {
+        return borderBarLeftChange.getReadOnlyProperty();
     }
 
     // Bottom BorderBar
@@ -142,7 +238,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setBorderBarBottom(HBox borderBarBottom) {
         this.borderBarBottom = borderBarBottom;
-        this.borderBarBottomChange.set(borderBarBottom);
+        borderBarBottomChange.set(borderBarBottom);
+    }
+
+    public HBox borderBarBottom() {
+        return borderBarBottom;
+    }
+
+    public ReadOnlyObjectProperty<HBox> borderBarBottomChange() {
+        return borderBarBottomChange.getReadOnlyProperty();
     }
 
     // Left JMEPlayComponent
@@ -151,7 +255,15 @@ public class JMEPlayEditor implements JMEPlayGlobal {
 
     public void setLeftPlayComponent(JMEPlayComponent leftPlayComponent) {
         this.leftPlayComponent = leftPlayComponent;
-        this.leftPlayComponentChange.set(leftPlayComponent);
+        leftPlayComponentChange.set(leftPlayComponent);
+    }
+
+    public JMEPlayComponent leftPlayComponent() {
+        return leftPlayComponent;
+    }
+
+    public ReadOnlyObjectProperty<JMEPlayComponent> leftPlayComponentChange() {
+        return leftPlayComponentChange.getReadOnlyProperty();
     }
 
     // Bottom JMEPlayComponent
@@ -163,13 +275,29 @@ public class JMEPlayEditor implements JMEPlayGlobal {
         this.bottomPlayComponentChange.set(bottomPlayComponent);
     }
 
+    public JMEPlayComponent bottomPlayComponent() {
+        return bottomPlayComponent;
+    }
+
+    public ReadOnlyObjectProperty<JMEPlayComponent> bottomPlayComponentChange() {
+        return bottomPlayComponentChange.getReadOnlyProperty();
+    }
+
     // TabPane
     private TabPane tabPane;
-    private final ReadOnlyObjectWrapper<Node> tabPaneChange = new ReadOnlyObjectWrapper<>();
+    private final ReadOnlyObjectWrapper<TabPane> tabPaneChange = new ReadOnlyObjectWrapper<>();
 
     public void setTabPane(TabPane center) {
         this.tabPane = center;
         this.tabPaneChange.set(center);
     }
 
+    @Override
+    public TabPane tabPane() {
+        return tabPane;
+    }
+
+    public ReadOnlyObjectProperty<TabPane> tabPaneChange() {
+        return tabPaneChange.getReadOnlyProperty();
+    }
 }

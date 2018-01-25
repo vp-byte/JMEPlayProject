@@ -32,11 +32,11 @@ public class JMEPlayEditorTop {
     private void init() {
         il = (in) -> {
             VBox top = new VBox();
-            jmePlayEditor.getContainer().setTop(top);
+            jmePlayEditor.container().setTop(top);
             jmePlayEditor.setTop(top);
-            jmePlayEditor.getContainerChange().removeListener(il);
+            jmePlayEditor.containerChange().removeListener(il);
         };
-        jmePlayEditor.getContainerChange().addListener(il);
+        jmePlayEditor.containerChange().addListener(il);
     }
 
 }

@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
- * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
 package com.jmeplay.editor.ui;
 
@@ -21,23 +20,23 @@ import javafx.stage.Stage;
 public interface JMEPlayGlobal {
 
     // Asset folder
-    ReadOnlyObjectWrapper<String> getAssetfolderChange();
+    ReadOnlyObjectProperty<String> assetFolderChange();
 
     // ToolBar
-    ToolBar getToolBar();
+    ToolBar toolBar();
 
     // TabPane
-    TabPane getTabPane();
+    TabPane tabPane();
 
     // Root
-    Parent getRoot();
+    Parent root();
 
     // Stage
-    Stage getStage();
+    Stage stage();
 
     // Scene
-    Scene getScene();
+    Scene scene();
 
-    ReadOnlyObjectProperty<Scene> getSceneChange();
+    ReadOnlyObjectProperty<Scene> sceneChange();
 
 }

@@ -44,8 +44,8 @@ public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
     private void init() {
         size = jmePlayEditorSettings.iconSizeBar();
         jmePlayEditor.setBorderBarsVisibility(jmePlayEditorSettings.value(JMEPlayEditorResources.BORDER_BARS_VISIBLE, JMEPlayEditorResources.BORDER_BARS_VISIBLE_DEFAULT));
-        jmePlayEditor.getContainerChange().addListener((in) -> {
-            jmePlayEditor.getBorderBarsVisibilityChange().addListener((observable, oldValue, newValue) -> {
+        jmePlayEditor.containerChange().addListener((in) -> {
+            jmePlayEditor.borderBarsVisibilityChange().addListener((observable, oldValue, newValue) -> {
                 jmePlayEditorSettings.setValue(JMEPlayEditorResources.BORDER_BARS_VISIBLE, newValue);
                 modeSwitcher.setGraphic(modeSwitcherImage(newValue));
             });
@@ -53,7 +53,7 @@ public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
             initModeSwitcher();
             initInfoLabel();
             initBottomInfoBar();
-            jmePlayEditor.getContainer().setBottom(bottomInfoBar);
+            jmePlayEditor.container().setBottom(bottomInfoBar);
             jmePlayEditor.setBottomInfoBar(bottomInfoBar);
         });
     }
@@ -61,7 +61,7 @@ public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
     private void initModeSwitcher() {
         modeSwitcher = new Label();
         modeSwitcher.setGraphic(modeSwitcherImage(true));
-        modeSwitcher.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> jmePlayEditor.setBorderBarsVisibility(!jmePlayEditor.getBorderBarsVisibility()));
+        modeSwitcher.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> jmePlayEditor.setBorderBarsVisibility(!jmePlayEditor.borderBarsVisibility()));
     }
 
     private ImageView modeSwitcherImage(boolean visibility) {

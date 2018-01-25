@@ -35,11 +35,11 @@ public class JMEPlayEditorTopToolBar {
     public void init() {
         il = (in) -> {
             ToolBar toolBar = new ToolBar(new Button("New"), new Button("Open"), new Button("Save"), new Separator(Orientation.VERTICAL), new Button("Run"));
-            jmePlayEditor.getTop().getChildren().add(1, toolBar);
+            jmePlayEditor.top().getChildren().add(1, toolBar);
             jmePlayEditor.setToolBar(toolBar);
-            jmePlayEditor.getTopChange().removeListener(il);
+            jmePlayEditor.topChange().removeListener(il);
         };
-        jmePlayEditor.getTopChange().addListener(il);
+        jmePlayEditor.topChange().addListener(il);
     }
 
 }

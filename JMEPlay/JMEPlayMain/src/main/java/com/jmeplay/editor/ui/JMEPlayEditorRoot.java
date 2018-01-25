@@ -32,9 +32,9 @@ public class JMEPlayEditorRoot {
     public void init() {
         il = (in) -> {
             jmePlayEditor.setRoot(new Group());
-            jmePlayEditor.getStageChange().removeListener(il);
+            jmePlayEditor.stageChange().removeListener(il);
         };
-        jmePlayEditor.getStageChange().addListener(il);
+        jmePlayEditor.stageChange().addListener(il);
     }
 
 }

@@ -49,29 +49,29 @@ public class JMEPlayEditorSplits {
             initSplitVertical();
             initSplitHorizontal();
             initLeftChangeListener();
-            jmePlayEditor.getCenter().setCenter(splitHorizontal);
-            if (jmePlayEditor.getLeftPlayComponent() != null) {
+            jmePlayEditor.center().setCenter(splitHorizontal);
+            if (jmePlayEditor.leftPlayComponent() != null) {
                 clLeft = (ob, o, n) -> {
                     if (n) {
-                        handleLeftComponentChange(jmePlayEditor.getLeftPlayComponent());
-                        jmePlayEditor.getStage().showingProperty().removeListener(clLeft);
+                        handleLeftComponentChange(jmePlayEditor.leftPlayComponent());
+                        jmePlayEditor.stage().showingProperty().removeListener(clLeft);
                     }
                 };
-                jmePlayEditor.getStage().showingProperty().addListener(clLeft);
+                jmePlayEditor.stage().showingProperty().addListener(clLeft);
             }
             initBottomChangeListener();
-            if (jmePlayEditor.getBottomPlayComponent() != null) {
+            if (jmePlayEditor.bottomPlayComponent() != null) {
                 clBottom = (ob, o, n) -> {
                     if (n) {
-                        handleBottomComponentChange(jmePlayEditor.getBottomPlayComponent());
-                        jmePlayEditor.getStage().showingProperty().removeListener(clBottom);
+                        handleBottomComponentChange(jmePlayEditor.bottomPlayComponent());
+                        jmePlayEditor.stage().showingProperty().removeListener(clBottom);
                     }
                 };
-                jmePlayEditor.getStage().showingProperty().addListener(clBottom);
+                jmePlayEditor.stage().showingProperty().addListener(clBottom);
             }
-            jmePlayEditor.getCenterChange().removeListener(il);
+            jmePlayEditor.centerChange().removeListener(il);
         };
-        jmePlayEditor.getCenterChange().addListener(il);
+        jmePlayEditor.centerChange().addListener(il);
     }
 
     private void initSplitVertical() {
@@ -89,7 +89,7 @@ public class JMEPlayEditorSplits {
     }
 
     private void initLeftChangeListener() {
-        jmePlayEditor.getLeftPlayComponentChange().addListener((ov, o, n) -> handleLeftComponentChange(n));
+        jmePlayEditor.leftPlayComponentChange().addListener((ov, o, n) -> handleLeftComponentChange(n));
     }
 
     private void handleLeftComponentChange(JMEPlayComponent comp) {
@@ -118,7 +118,7 @@ public class JMEPlayEditorSplits {
     }
 
     private void initBottomChangeListener() {
-        jmePlayEditor.getBottomPlayComponentChange().addListener((ov, o, n) -> handleBottomComponentChange(n));
+        jmePlayEditor.bottomPlayComponentChange().addListener((ov, o, n) -> handleBottomComponentChange(n));
     }
 
     private void handleBottomComponentChange(JMEPlayComponent comp) {

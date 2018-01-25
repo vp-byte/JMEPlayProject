@@ -48,11 +48,11 @@ public class JMEPlayEditorTopMenuBar {
             menuBar.getMenus().add(jmePlayEditorTopMenuFile.menu());
             menuBar.getMenus().add(jmePlayEditorTopMenuSettings.menu());
             menuBar.getMenus().add(jmePlayEditorTopMenuHelp.menu());
-            jmePlayEditor.getTop().getChildren().add(0, menuBar);
+            jmePlayEditor.top().getChildren().add(0, menuBar);
             jmePlayEditor.setMenuBar(menuBar);
-            jmePlayEditor.getTopChange().removeListener(il);
+            jmePlayEditor.topChange().removeListener(il);
         };
-        jmePlayEditor.getTopChange().addListener(il);
+        jmePlayEditor.topChange().addListener(il);
     }
 
 }

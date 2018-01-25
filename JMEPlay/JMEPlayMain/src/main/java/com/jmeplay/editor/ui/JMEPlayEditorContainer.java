@@ -34,13 +34,13 @@ public class JMEPlayEditorContainer {
     private void init() {
         il = (in) -> {
             BorderPane container = new BorderPane();
-            container.prefHeightProperty().bind(jmePlayEditor.getStage().getScene().heightProperty());
-            container.prefWidthProperty().bind(jmePlayEditor.getStage().getScene().widthProperty());
-            ((Group) jmePlayEditor.getRoot()).getChildren().add(container);
+            container.prefHeightProperty().bind(jmePlayEditor.stage().getScene().heightProperty());
+            container.prefWidthProperty().bind(jmePlayEditor.stage().getScene().widthProperty());
+            ((Group) jmePlayEditor.root()).getChildren().add(container);
             jmePlayEditor.setContainer(container);
-            jmePlayEditor.getSceneChange().removeListener(il);
+            jmePlayEditor.sceneChange().removeListener(il);
         };
-        jmePlayEditor.getSceneChange().addListener(il);
+        jmePlayEditor.sceneChange().addListener(il);
     }
 
 }

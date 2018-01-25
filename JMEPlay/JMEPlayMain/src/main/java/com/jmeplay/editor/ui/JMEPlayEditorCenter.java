@@ -32,11 +32,11 @@ public class JMEPlayEditorCenter {
     private void init() {
         il = (in) -> {
             BorderPane center = new BorderPane();
-            jmePlayEditor.getContainer().setCenter(center);
+            jmePlayEditor.container().setCenter(center);
             jmePlayEditor.setCenter(center);
-            jmePlayEditor.getContainerChange().removeListener(il);
+            jmePlayEditor.containerChange().removeListener(il);
         };
-        jmePlayEditor.getContainerChange().addListener(il);
+        jmePlayEditor.containerChange().addListener(il);
     }
 
 }

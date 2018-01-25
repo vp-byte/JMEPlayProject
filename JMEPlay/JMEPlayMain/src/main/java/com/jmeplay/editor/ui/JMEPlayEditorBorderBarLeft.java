@@ -56,12 +56,12 @@ public class JMEPlayEditorBorderBarLeft {
         il = (in) -> {
             initComponentsLeft();
             initBorderBarLeft();
-            jmePlayEditor.getBorderBarsVisibilityChange().addListener((ch) -> handleBarVisibility());
+            jmePlayEditor.borderBarsVisibilityChange().addListener((ch) -> handleBarVisibility());
             handleBarVisibility();
             jmePlayEditor.setBorderBarLeft(borderBarLeft);
-            jmePlayEditor.getCenterChange().removeListener(il);
+            jmePlayEditor.centerChange().removeListener(il);
         };
-        jmePlayEditor.getCenterChange().addListener(il);
+        jmePlayEditor.centerChange().addListener(il);
     }
 
     private void initComponentsLeft() {
@@ -87,10 +87,10 @@ public class JMEPlayEditorBorderBarLeft {
     }
 
     private void handleBarVisibility() {
-        if (jmePlayEditor.getBorderBarsVisibility()) {
-            jmePlayEditor.getCenter().setLeft(borderBarLeft);
+        if (jmePlayEditor.borderBarsVisibility()) {
+            jmePlayEditor.center().setLeft(borderBarLeft);
         } else {
-            jmePlayEditor.getCenter().setLeft(null);
+            jmePlayEditor.center().setLeft(null);
         }
     }
 

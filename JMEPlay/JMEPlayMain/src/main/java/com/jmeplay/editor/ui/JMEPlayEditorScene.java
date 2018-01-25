@@ -34,13 +34,13 @@ public class JMEPlayEditorScene {
     @PostConstruct
     public void init() {
         il = (in) -> {
-            Scene scene = new Scene(jmePlayEditor.getRoot());
+            Scene scene = new Scene(jmePlayEditor.root());
             scene.getStylesheets().add(getClass().getResource(JMEPlayEditorResources.CSS).toExternalForm());
-            jmePlayEditor.getStage().setScene(scene);
+            jmePlayEditor.stage().setScene(scene);
             jmePlayEditor.setScene(scene);
-            jmePlayEditor.getRootChange().removeListener(il);
+            jmePlayEditor.rootChange().removeListener(il);
         };
-        jmePlayEditor.getRootChange().addListener(il);
+        jmePlayEditor.rootChange().addListener(il);
     }
 
 }

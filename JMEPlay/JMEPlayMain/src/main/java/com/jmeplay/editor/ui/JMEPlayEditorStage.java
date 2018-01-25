@@ -44,11 +44,11 @@ public class JMEPlayEditorStage {
     @PostConstruct
     public void init() {
         il = (in) -> {
-            this.stage = jmePlayEditor.getStage();
+            this.stage = jmePlayEditor.stage();
             stage();
-            jmePlayEditor.getStageChange().removeListener(il);
+            jmePlayEditor.stageChange().removeListener(il);
         };
-        jmePlayEditor.getStageChange().addListener(il);
+        jmePlayEditor.stageChange().addListener(il);
     }
 
     private void stage() {

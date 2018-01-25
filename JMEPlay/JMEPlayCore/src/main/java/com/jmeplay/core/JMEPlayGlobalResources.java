@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
- * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
 package com.jmeplay.core;
 
