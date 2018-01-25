@@ -21,22 +21,26 @@ import javafx.scene.layout.BorderPane;
 @Component
 public class JMEPlayEditorContainer {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditor jmePlayEditor;
 
-	@PostConstruct
-	private void init() {
-		il = (in) -> {
-			BorderPane container = new BorderPane();
-			container.prefHeightProperty().bind(jmePlayEditor.getStage().getScene().heightProperty());
-			container.prefWidthProperty().bind(jmePlayEditor.getStage().getScene().widthProperty());
-			((Group) jmePlayEditor.getRoot()).getChildren().add(container);
-			jmePlayEditor.setContainer(container);
-			jmePlayEditor.getSceneChange().removeListener(il);
-		};
-		jmePlayEditor.getSceneChange().addListener(il);
-	}
-	
+    @Autowired
+    public JMEPlayEditorContainer(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
+
+    @PostConstruct
+    private void init() {
+        il = (in) -> {
+            BorderPane container = new BorderPane();
+            container.prefHeightProperty().bind(jmePlayEditor.getStage().getScene().heightProperty());
+            container.prefWidthProperty().bind(jmePlayEditor.getStage().getScene().widthProperty());
+            ((Group) jmePlayEditor.getRoot()).getChildren().add(container);
+            jmePlayEditor.setContainer(container);
+            jmePlayEditor.getSceneChange().removeListener(il);
+        };
+        jmePlayEditor.getSceneChange().addListener(il);
+    }
+
 }

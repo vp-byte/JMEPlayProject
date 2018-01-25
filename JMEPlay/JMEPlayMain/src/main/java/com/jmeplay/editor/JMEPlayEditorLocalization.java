@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
+ * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
 package com.jmeplay.editor;
 
 import java.util.ResourceBundle;

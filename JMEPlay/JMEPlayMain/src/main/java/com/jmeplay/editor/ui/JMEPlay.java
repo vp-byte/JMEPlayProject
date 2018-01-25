@@ -21,34 +21,38 @@ import javafx.stage.Stage;
  * @author vp-byte (Vladimir Petrenko)
  */
 @SpringBootApplication
-@ComponentScan({ "com.jmeplay.core", "com.jmeplay.editor", "com.jmeplay.plugin" })
+@ComponentScan({"com.jmeplay.core", "com.jmeplay.editor", "com.jmeplay.plugin"})
 public class JMEPlay extends Application {
 
-	// Spring context
-	private ConfigurableApplicationContext appContext;
+    // Spring context
+    private ConfigurableApplicationContext appContext;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private JMEPlayEditor jmePlayEditor;
 
-	public static void main(String[] args) {
-		SvgImageLoaderFactory.install();
-		Platform.setImplicitExit(true);
-		Application.launch(args);
-	}
+    @Autowired
+    public void setJmePlayEditor(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
 
-	@Override
-	public void init() throws Exception {
-		appContext = SpringApplication.run(this.getClass());
-		appContext.getAutowireCapableBeanFactory().autowireBean(this);
-	}
+    public static void main(String[] args) {
+        SvgImageLoaderFactory.install();
+        Platform.setImplicitExit(true);
+        Application.launch(args);
+    }
 
-	@Override
-	public void start(Stage stage) throws Exception {
-		jmePlayEditor.setStage(stage);
-	}
+    @Override
+    public void init() {
+        appContext = SpringApplication.run(this.getClass());
+        appContext.getAutowireCapableBeanFactory().autowireBean(this);
+    }
 
-	@Override
-	public void stop() throws Exception {
-		appContext.stop();
-	}
+    @Override
+    public void start(Stage stage) {
+        jmePlayEditor.setStage(stage);
+    }
+
+    @Override
+    public void stop() {
+        appContext.stop();
+    }
 }

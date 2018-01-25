@@ -4,13 +4,12 @@
  */
 package com.jmeplay.editor.ui;
 
-import javax.annotation.PostConstruct;
-
+import javafx.beans.InvalidationListener;
+import javafx.scene.layout.BorderPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javafx.beans.InvalidationListener;
-import javafx.scene.layout.BorderPane;
+import javax.annotation.PostConstruct;
 
 /**
  * Center of JMEPlayEditor
@@ -20,20 +19,24 @@ import javafx.scene.layout.BorderPane;
 @Component
 public class JMEPlayEditorCenter {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditor jmePlayEditor;
 
-	@PostConstruct
-	private void init() {
-		il = (in) -> {
-			BorderPane center = new BorderPane();
-			jmePlayEditor.getContainer().setCenter(center);
-			jmePlayEditor.setCenter(center);
-			jmePlayEditor.getContainerChange().removeListener(il);
-		};
-		jmePlayEditor.getContainerChange().addListener(il);
-	}
+    @Autowired
+    public JMEPlayEditorCenter(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
+
+    @PostConstruct
+    private void init() {
+        il = (in) -> {
+            BorderPane center = new BorderPane();
+            jmePlayEditor.getContainer().setCenter(center);
+            jmePlayEditor.setCenter(center);
+            jmePlayEditor.getContainerChange().removeListener(il);
+        };
+        jmePlayEditor.getContainerChange().addListener(il);
+    }
 
 }

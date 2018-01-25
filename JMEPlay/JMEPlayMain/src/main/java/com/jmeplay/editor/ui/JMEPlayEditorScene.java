@@ -22,21 +22,25 @@ import javafx.scene.Scene;
 @Component
 public class JMEPlayEditorScene {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditor jmePlayEditor;
 
-	@PostConstruct
-	public void init() {
-		il = (in) -> {
-			Scene scene = new Scene(jmePlayEditor.getRoot());
-			scene.getStylesheets().add(getClass().getResource(JMEPlayEditorResources.CSS).toExternalForm());
-			jmePlayEditor.getStage().setScene(scene);
-			jmePlayEditor.setScene(scene);
-			jmePlayEditor.getRootChange().removeListener(il);
-		};
-		jmePlayEditor.getRootChange().addListener(il);
-	}
+    @Autowired
+    public JMEPlayEditorScene(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
+
+    @PostConstruct
+    public void init() {
+        il = (in) -> {
+            Scene scene = new Scene(jmePlayEditor.getRoot());
+            scene.getStylesheets().add(getClass().getResource(JMEPlayEditorResources.CSS).toExternalForm());
+            jmePlayEditor.getStage().setScene(scene);
+            jmePlayEditor.setScene(scene);
+            jmePlayEditor.getRootChange().removeListener(il);
+        };
+        jmePlayEditor.getRootChange().addListener(il);
+    }
 
 }

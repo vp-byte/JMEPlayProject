@@ -4,17 +4,15 @@
  */
 package com.jmeplay.editor.ui;
 
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuFile;
 import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuHelp;
 import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuSettings;
-
 import javafx.beans.InvalidationListener;
 import javafx.scene.control.MenuBar;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * MenuBar of JMEPlayEditor
@@ -24,33 +22,37 @@ import javafx.scene.control.MenuBar;
 @Component
 public class JMEPlayEditorTopMenuBar {
 
-	private InvalidationListener il = null;
-	private MenuBar menuBar;
+    private InvalidationListener il = null;
+    private MenuBar menuBar;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditorTopMenuFile jmePlayEditorTopMenuFile;
+    private final JMEPlayEditorTopMenuSettings jmePlayEditorTopMenuSettings;
+    private final JMEPlayEditorTopMenuHelp jmePlayEditorTopMenuHelp;
 
-	@Autowired
-	private JMEPlayEditorTopMenuFile jmePlayEditorTopMenuFile;
+    @Autowired
+    public JMEPlayEditorTopMenuBar(JMEPlayEditor jmePlayEditor,
+                                   JMEPlayEditorTopMenuFile jmePlayEditorTopMenuFile,
+                                   JMEPlayEditorTopMenuSettings jmePlayEditorTopMenuSettings,
+                                   JMEPlayEditorTopMenuHelp jmePlayEditorTopMenuHelp) {
+        this.jmePlayEditor = jmePlayEditor;
+        this.jmePlayEditorTopMenuFile = jmePlayEditorTopMenuFile;
+        this.jmePlayEditorTopMenuSettings = jmePlayEditorTopMenuSettings;
+        this.jmePlayEditorTopMenuHelp = jmePlayEditorTopMenuHelp;
+    }
 
-	@Autowired
-	private JMEPlayEditorTopMenuSettings jmePlayEditorTopMenuSettings;
-
-	@Autowired
-	private JMEPlayEditorTopMenuHelp jmePlayEditorTopMenuHelp;
-
-	@PostConstruct
-	public void init() {
-		il = (in) -> {
-			menuBar = new MenuBar();
-			menuBar.getMenus().add(jmePlayEditorTopMenuFile.menu());
-			menuBar.getMenus().add(jmePlayEditorTopMenuSettings.menu());
-			menuBar.getMenus().add(jmePlayEditorTopMenuHelp.menu());
-			jmePlayEditor.getTop().getChildren().add(0, menuBar);
-			jmePlayEditor.setMenuBar(menuBar);
-			jmePlayEditor.getTopChange().removeListener(il);
-		};
-		jmePlayEditor.getTopChange().addListener(il);
-	}
+    @PostConstruct
+    public void init() {
+        il = (in) -> {
+            menuBar = new MenuBar();
+            menuBar.getMenus().add(jmePlayEditorTopMenuFile.menu());
+            menuBar.getMenus().add(jmePlayEditorTopMenuSettings.menu());
+            menuBar.getMenus().add(jmePlayEditorTopMenuHelp.menu());
+            jmePlayEditor.getTop().getChildren().add(0, menuBar);
+            jmePlayEditor.setMenuBar(menuBar);
+            jmePlayEditor.getTopChange().removeListener(il);
+        };
+        jmePlayEditor.getTopChange().addListener(il);
+    }
 
 }

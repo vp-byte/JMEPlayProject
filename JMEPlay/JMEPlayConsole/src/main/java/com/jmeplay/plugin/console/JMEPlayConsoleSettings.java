@@ -1,17 +1,15 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE and/or its affiliates. All rights reserved.
- * VP-BYTE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
 package com.jmeplay.plugin.console;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
+import com.jmeplay.core.JMEPlayGlobalSettings;
+import com.jmeplay.core.utils.SettingsLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jmeplay.core.JMEPlayGlobalSettings;
-import com.jmeplay.core.utils.SettingsLoader;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * All console settings
@@ -21,47 +19,44 @@ import com.jmeplay.core.utils.SettingsLoader;
 @Component
 public class JMEPlayConsoleSettings extends SettingsLoader {
 
-	@Autowired
-	private JMEPlayGlobalSettings jmePlayGlobalSettings;
+    private final JMEPlayGlobalSettings jmePlayGlobalSettings;
 
-	public JMEPlayConsoleSettings() {
-		super();
-	}
+    @Autowired
+    public JMEPlayConsoleSettings(JMEPlayGlobalSettings jmePlayGlobalSettings) {
+        super();
+        this.jmePlayGlobalSettings = jmePlayGlobalSettings;
+    }
 
-	/**
-	 * Load settings
-	 */
-	@PostConstruct
-	private void init() {
-		loadSettings(JMEPlayConsoleResources.SETTINGSFILE);
-	}
+    /**
+     * Load settings
+     */
+    @PostConstruct
+    private void init() {
+        loadSettings(JMEPlayConsoleResources.SETTINGSFILE);
+    }
 
-	/**
-	 * Write settings
-	 */
-	@PreDestroy
-	private void destroy() {
-		writeSettings();
-	}
+    /**
+     * Write settings
+     */
+    @PreDestroy
+    private void destroy() {
+        writeSettings();
+    }
 
-	public boolean writeExceptions() {
-		return value(JMEPlayConsoleResources.CONSOLE_WRITE_EXCEPTIONS, JMEPlayConsoleResources.CONSOLE_WRITE_EXCEPTIONS_DEFAULT);
-	}
+    public boolean writeExceptions() {
+        return value(JMEPlayConsoleResources.CONSOLE_WRITE_EXCEPTIONS, JMEPlayConsoleResources.CONSOLE_WRITE_EXCEPTIONS_DEFAULT);
+    }
 
-	public String rootFolder() {
-		return jmePlayGlobalSettings.rootFolder();
-	}
+    public int iconSize() {
+        return jmePlayGlobalSettings.iconSize();
+    }
 
-	public int iconSize() {
-		return jmePlayGlobalSettings.iconSize();
-	}
+    public int iconSizeBar() {
+        return jmePlayGlobalSettings.iconSizeBar();
+    }
 
-	public int iconSizeBar() {
-		return jmePlayGlobalSettings.iconSizeBar();
-	}
-
-	public int iconSpacing() {
-		return jmePlayGlobalSettings.iconSpacing();
-	}
+    public int iconSpacing() {
+        return jmePlayGlobalSettings.iconSpacing();
+    }
 
 }

@@ -3,14 +3,12 @@
  */
 package com.jmeplay.editor.ui.menu;
 
-import javax.annotation.PostConstruct;
-
+import com.jmeplay.editor.JMEPlayEditorLocalization;
+import javafx.scene.control.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jmeplay.editor.JMEPlayEditorLocalization;
-
-import javafx.scene.control.Menu;
+import javax.annotation.PostConstruct;
 
 /**
  * Settings menu of JMEPlayEditor
@@ -20,18 +18,22 @@ import javafx.scene.control.Menu;
 @Component
 public class JMEPlayEditorTopMenuSettings {
 
-	private Menu menuSettings;
+    private Menu menuSettings;
 
-	@Autowired
-	private JMEPlayEditorLocalization jmePlayEditorLocalization;
+    private final JMEPlayEditorLocalization jmePlayEditorLocalization;
 
-	@PostConstruct
-	private void init() {
-		menuSettings = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_SETTINGS));
-	}
+    @Autowired
+    public JMEPlayEditorTopMenuSettings(JMEPlayEditorLocalization jmePlayEditorLocalization) {
+        this.jmePlayEditorLocalization = jmePlayEditorLocalization;
+    }
 
-	public Menu menu() {
-		return menuSettings;
-	}
+    @PostConstruct
+    private void init() {
+        menuSettings = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_SETTINGS));
+    }
+
+    public Menu menu() {
+        return menuSettings;
+    }
 
 }

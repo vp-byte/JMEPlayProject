@@ -20,26 +20,24 @@ import javafx.stage.Stage;
  */
 public interface JMEPlayGlobal {
 
-	// Asset folder
-	public ReadOnlyObjectWrapper<String> getAssetfolderChange();
+    // Asset folder
+    ReadOnlyObjectWrapper<String> getAssetfolderChange();
 
-	public String getAssetfolder();
+    // ToolBar
+    ToolBar getToolBar();
 
-	// ToolBar
-	public ToolBar getToolBar();
+    // TabPane
+    TabPane getTabPane();
 
-	// TabPane
-	public TabPane getTabPane();
+    // Root
+    Parent getRoot();
 
-	// Root
-	public Parent getRoot();
+    // Stage
+    Stage getStage();
 
-	// Stage
-	public Stage getStage();
+    // Scene
+    Scene getScene();
 
-	// Scene
-	public Scene getScene();
-
-	public ReadOnlyObjectProperty<Scene> getSceneChange();
+    ReadOnlyObjectProperty<Scene> getSceneChange();
 
 }

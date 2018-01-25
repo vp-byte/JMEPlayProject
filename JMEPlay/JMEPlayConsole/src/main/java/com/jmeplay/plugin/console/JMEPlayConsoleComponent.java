@@ -1,22 +1,18 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.console;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
-import javax.annotation.PostConstruct;
-
-import org.fxmisc.flowless.VirtualizedScrollPane;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayComponent;
-import com.jmeplay.editor.ui.JMEPlayConsole;
-
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Implementation for JMEPlayConsole
@@ -24,138 +20,86 @@ import javafx.scene.layout.StackPane;
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayConsoleComponent extends JMEPlayComponent implements JMEPlayConsole {
+public class JMEPlayConsoleComponent extends JMEPlayComponent {
 
-	private int iconSizeBar;
-	private boolean writeException;
-	private StringBuilder stringBuilder = new StringBuilder();
-	private Label label;
-	private StackPane stackPane;
-	private BorderPane borderPane;
+    private Label label;
 
-	@Autowired
-	private JMEPlayConsoleSettings jmePlayConsoleSettings;
-	
-	@Autowired
-	private JMEPlayConsoleLocalization jmePlayConsoleLocalization;
-	
-	@Autowired
-	private JMEPlayConsoleArea jmePlayConsoleArea;
-	
-	@Autowired
-	private JMEPlayConsoleToolBar jmePlayConsoleToolBar;
+    private final JMEPlayConsoleSettings jmePlayConsoleSettings;
+    private final JMEPlayConsoleLocalization jmePlayConsoleLocalization;
+    private final JMEPlayConsoleRoot jmePlayConsoleRoot;
 
-	/**
-	 * Initialize JMEPlayConsole
-	 */
-	@PostConstruct
-	private void init() {
-		this.setPriority(0);
-		setAlignment(Align.BOTTOM);
-		initSettings();
-		String consoleLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CONSOLE);
-		label = new Label(consoleLabel, ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_CONSOLE, iconSizeBar, iconSizeBar));
+    @Autowired
+    public JMEPlayConsoleComponent(JMEPlayConsoleSettings jmePlayConsoleSettings,
+                                   JMEPlayConsoleLocalization jmePlayConsoleLocalization,
+                                   JMEPlayConsoleRoot jmePlayConsoleRoot) {
+        this.jmePlayConsoleSettings = jmePlayConsoleSettings;
+        this.jmePlayConsoleLocalization = jmePlayConsoleLocalization;
+        this.jmePlayConsoleRoot = jmePlayConsoleRoot;
+    }
 
-		initStackPane();
-		borderPane = new BorderPane();
-		borderPane.setMinHeight(0);
-		borderPane.setLeft(jmePlayConsoleToolBar);
-		borderPane.setCenter(stackPane);
-	}
+    /**
+     * Initialize JMEPlayConsole
+     */
+    @PostConstruct
+    private void init() {
+        this.setPriority(0);
+        setAlignment(Align.BOTTOM);
+        createLabel();
 
-	/**
-	 * Initialize stack pane
-	 */
-	private void initStackPane() {
-		stackPane = new StackPane(new VirtualizedScrollPane<>(jmePlayConsoleArea));
-		stackPane.getStylesheets().add(getClass().getResource(JMEPlayConsoleResources.CSS).toExternalForm());
-	}
+        // Event handler
+        this.jmePlayConsoleRoot.getJmePlayConsoleToolBar().addEventHandler(JMEPlayConsoleEvent.CLOSE_CONSOLE, (event) -> {
+            MouseEvent mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, 0, 0, 0, 0, MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, false, false, false, null);
+            label().fireEvent(mouseEvent);
+        });
+    }
 
-	/**
-	 * Initialize settings for console tool bar
-	 */
-	private void initSettings() {
-		writeException = jmePlayConsoleSettings.writeExceptions();
-		iconSizeBar = jmePlayConsoleSettings.iconSizeBar();
-	}
+    /**
+     * Create label for JMEPlayConsole
+     */
+    private void createLabel() {
+        String labelText = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CONSOLE);
+        int iconSizeBar = jmePlayConsoleSettings.iconSizeBar();
+        label = new Label(labelText, ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_CONSOLE, iconSizeBar, iconSizeBar));
+    }
 
-	/**
-	 * {@link EditorComponent:name}
-	 *
-	 * @return name
-	 */
-	@Override
-	public String name() {
-		return jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CONSOLE);
-	}
+    /**
+     * {@link JMEPlayComponent:name}
+     *
+     * @return name
+     */
+    @Override
+    public String name() {
+        return jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CONSOLE);
+    }
 
-	/**
-	 * {@link EditorComponent:description}
-	 *
-	 * @return description
-	 */
-	@Override
-	public String description() {
-		return jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_DESCRIPTION);
-	}
+    /**
+     * {@link JMEPlayComponent:description}
+     *
+     * @return description
+     */
+    @Override
+    public String description() {
+        return jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_DESCRIPTION);
+    }
 
-	/**
-	 * {@link EditorComponent:label}
-	 *
-	 * @return label
-	 */
-	@Override
-	public Label label() {
-		return label;
-	}
+    /**
+     * {@link JMEPlayComponent:label}
+     *
+     * @return label
+     */
+    @Override
+    public Label label() {
+        return label;
+    }
 
-	/**
-	 * {@link EditorComponent:component}
-	 *
-	 * @return component as node
-	 */
-	@Override
-	public Node component() {
-		return borderPane;
-	}
-
-	/**
-	 * {@link JMEPlayConsole:message}
-	 */
-	public void message(Type type, String message) {
-		String text = "\n[" + type.name() + "] : " + message;
-		stringBuilder.insert(0, text);
-		jmePlayConsoleArea.writeText(stringBuilder.toString());
-		jmePlayConsoleToolBar.updateButtons();
-	}
-
-	/**
-	 * {@link JMEPlayConsole:writeException}
-	 */
-	public void exception(Exception exception) {
-		if (writeException) {
-			message(Type.ERROR, stackTraceToString(exception));
-		}
-	}
-
-	/**
-	 * Clear text buffer
-	 */
-	void clear() {
-		stringBuilder = new StringBuilder();
-	}
-
-	/**
-	 * Convert exception stack trace to string
-	 *
-	 * @param exception to get stack trace
-	 * @return stack trace as string
-	 */
-	private String stackTraceToString(Exception exception) {
-		StringWriter sw = new StringWriter();
-		PrintWriter pw = new PrintWriter(sw);
-		exception.printStackTrace(pw);
-		return sw.toString();
-	}
+    /**
+     * {@link JMEPlayComponent:component}
+     *
+     * @return component as node
+     */
+    @Override
+    public Node component() {
+        return jmePlayConsoleRoot;
+    }
 
 }

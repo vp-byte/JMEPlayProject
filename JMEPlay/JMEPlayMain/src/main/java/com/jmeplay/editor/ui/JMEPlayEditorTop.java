@@ -4,13 +4,12 @@
  */
 package com.jmeplay.editor.ui;
 
-import javax.annotation.PostConstruct;
-
+import javafx.beans.InvalidationListener;
+import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javafx.beans.InvalidationListener;
-import javafx.scene.layout.VBox;
+import javax.annotation.PostConstruct;
 
 /**
  * Top of JMEPlayEditor
@@ -20,20 +19,24 @@ import javafx.scene.layout.VBox;
 @Component
 public class JMEPlayEditorTop {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private JMEPlayEditor jmePlayEditor;
 
-	@PostConstruct
-	private void init() {
-		il = (in) -> {
-			VBox top = new VBox();
-			jmePlayEditor.getContainer().setTop(top);
-			jmePlayEditor.setTop(top);
-			jmePlayEditor.getContainerChange().removeListener(il);
-		};
-		jmePlayEditor.getContainerChange().addListener(il);
-	}
+    @Autowired
+    public JMEPlayEditorTop(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
+
+    @PostConstruct
+    private void init() {
+        il = (in) -> {
+            VBox top = new VBox();
+            jmePlayEditor.getContainer().setTop(top);
+            jmePlayEditor.setTop(top);
+            jmePlayEditor.getContainerChange().removeListener(il);
+        };
+        jmePlayEditor.getContainerChange().addListener(il);
+    }
 
 }

@@ -4,13 +4,12 @@
  */
 package com.jmeplay.editor.ui;
 
-import javax.annotation.PostConstruct;
-
+import javafx.beans.InvalidationListener;
+import javafx.scene.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javafx.beans.InvalidationListener;
-import javafx.scene.Group;
+import javax.annotation.PostConstruct;
 
 /**
  * Root component of JMEPlayEditor
@@ -20,18 +19,22 @@ import javafx.scene.Group;
 @Component
 public class JMEPlayEditorRoot {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    private final JMEPlayEditor jmePlayEditor;
 
-	@PostConstruct
-	public void init() {
-		il = (in) -> {
-			jmePlayEditor.setRoot(new Group());
-			jmePlayEditor.getStageChange().removeListener(il);
-		};
-		jmePlayEditor.getStageChange().addListener(il);
-	}
+    @Autowired
+    public JMEPlayEditorRoot(JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditor = jmePlayEditor;
+    }
+
+    @PostConstruct
+    public void init() {
+        il = (in) -> {
+            jmePlayEditor.setRoot(new Group());
+            jmePlayEditor.getStageChange().removeListener(il);
+        };
+        jmePlayEditor.getStageChange().addListener(il);
+    }
 
 }

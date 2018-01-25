@@ -4,25 +4,23 @@
  */
 package com.jmeplay.editor.ui;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.jmeplay.editor.JMEPlayEditorResources;
 import com.jmeplay.editor.JMEPlayEditorSettings;
 import com.jmeplay.editor.ui.JMEPlayComponent.Align;
-
 import javafx.beans.InvalidationListener;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * BorderBar for left items of JMEPlayEditor
@@ -32,96 +30,100 @@ import javafx.scene.layout.VBox;
 @Component
 public class JMEPlayEditorBorderBarLeft {
 
-	private InvalidationListener il = null;
+    private InvalidationListener il = null;
 
-	private List<JMEPlayComponent> componentsLeft;
-	private List<Node> borderItemsLeft;
-	private Object selectedLeft;
-	private VBox borderBarLeft;
+    private List<Node> borderItemsLeft;
+    private Object selectedLeft;
+    private VBox borderBarLeft;
 
-	@Autowired
-	private JMEPlayEditorSettings jmePlayEditorSettings;
+    private final JMEPlayEditorSettings jmePlayEditorSettings;
+    private final JMEPlayEditor jmePlayEditor;
+    private List<JMEPlayComponent> editorComponents;
 
-	@Autowired
-	private JMEPlayEditor jmePlayEditor;
+    @Autowired
+    public JMEPlayEditorBorderBarLeft(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
+        this.jmePlayEditorSettings = jmePlayEditorSettings;
+        this.jmePlayEditor = jmePlayEditor;
+    }
 
-	@Autowired(required = false)
-	private List<JMEPlayComponent> editorComponents;
+    @Autowired(required = false)
+    public void setEditorComponents(List<JMEPlayComponent> editorComponents) {
+        this.editorComponents = editorComponents;
+    }
 
-	@PostConstruct
-	public void init() {
-		il = (in) -> {
-			initComponentsLeft();
-			initBorderBarLeft();
-			jmePlayEditor.getBorderBarsVisibilityChange().addListener((ch) -> handleBarVisibility());
-			handleBarVisibility();
-			jmePlayEditor.setBorderBarLeft(borderBarLeft);
-			jmePlayEditor.getCenterChange().removeListener(il);
-		};
-		jmePlayEditor.getCenterChange().addListener(il);
-	}
+    @PostConstruct
+    public void init() {
+        il = (in) -> {
+            initComponentsLeft();
+            initBorderBarLeft();
+            jmePlayEditor.getBorderBarsVisibilityChange().addListener((ch) -> handleBarVisibility());
+            handleBarVisibility();
+            jmePlayEditor.setBorderBarLeft(borderBarLeft);
+            jmePlayEditor.getCenterChange().removeListener(il);
+        };
+        jmePlayEditor.getCenterChange().addListener(il);
+    }
 
-	private void initComponentsLeft() {
-		borderItemsLeft = new ArrayList<>();
-		if (editorComponents == null) {
-			return;
-		}
-		componentsLeft = editorComponents.stream().filter(component -> component.align() == Align.LEFT).sorted((c1, c2) -> c1.priority().compareTo(c2.priority())).collect(Collectors.toList());
-		componentsLeft.forEach((component) -> {
-			borderItemsLeft.add(initBorderItem(component));
-			String selected = jmePlayEditorSettings.value(JMEPlayEditorResources.LEFT_SELECTED_COMPONENT, "");
-			if (!selected.isEmpty() && component.name().equals(selected)) {
-				handleBorderItem(component.label());
-			}
-		});
-	}
+    private void initComponentsLeft() {
+        borderItemsLeft = new ArrayList<>();
+        if (editorComponents == null) {
+            return;
+        }
+        List<JMEPlayComponent> componentsLeft = editorComponents.stream().filter(component -> component.align() == Align.LEFT).sorted(Comparator.comparing(JMEPlayComponent::priority)).collect(Collectors.toList());
+        componentsLeft.forEach((component) -> {
+            borderItemsLeft.add(initBorderItem(component));
+            String selected = jmePlayEditorSettings.value(JMEPlayEditorResources.LEFT_SELECTED_COMPONENT, "");
+            if (!selected.isEmpty() && component.name().equals(selected)) {
+                handleBorderItem(component.label());
+            }
+        });
+    }
 
-	private void initBorderBarLeft() {
-		borderBarLeft = new VBox();
-		borderBarLeft.setPrefWidth(jmePlayEditorSettings.iconSizeBar());
-		borderBarLeft.getStyleClass().add("borderbar-v");
-		borderBarLeft.getChildren().addAll(borderItemsLeft);
-	}
+    private void initBorderBarLeft() {
+        borderBarLeft = new VBox();
+        borderBarLeft.setPrefWidth(jmePlayEditorSettings.iconSizeBar());
+        borderBarLeft.getStyleClass().add("borderbar-v");
+        borderBarLeft.getChildren().addAll(borderItemsLeft);
+    }
 
-	private void handleBarVisibility() {
-		if (jmePlayEditor.getBorderBarsVisibility()) {
-			jmePlayEditor.getCenter().setLeft(borderBarLeft);
-		} else {
-			jmePlayEditor.getCenter().setLeft(null);
-		}
-	}
+    private void handleBarVisibility() {
+        if (jmePlayEditor.getBorderBarsVisibility()) {
+            jmePlayEditor.getCenter().setLeft(borderBarLeft);
+        } else {
+            jmePlayEditor.getCenter().setLeft(null);
+        }
+    }
 
-	private Node initBorderItem(JMEPlayComponent component) {
-		Label label = component.label();
-		label.setMinHeight(jmePlayEditorSettings.iconSizeBar());
-		label.getStyleClass().add("borderbar-label");
-		label.setRotate(-90);
-		label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> handleBorderItem(event.getSource()));
-		return new Group(label);
-	}
+    private Node initBorderItem(JMEPlayComponent component) {
+        Label label = component.label();
+        label.setMinHeight(jmePlayEditorSettings.iconSizeBar());
+        label.getStyleClass().add("borderbar-label");
+        label.setRotate(-90);
+        label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> handleBorderItem(event.getSource()));
+        return new Group(label);
+    }
 
-	private void handleBorderItem(Object label) {
-		borderItemsLeft.forEach((control) -> {
-			((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-label-selected");
-			((Group) control).getChildren().get(0).getStyleClass().add("borderbar-label");
-		});
-		handleBorderItemLeft(label);
-	}
+    private void handleBorderItem(Object label) {
+        borderItemsLeft.forEach((control) -> {
+            ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-label-selected");
+            ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-label");
+        });
+        handleBorderItemLeft(label);
+    }
 
-	private void handleBorderItemLeft(Object label) {
-		if (label == selectedLeft) {
-			jmePlayEditor.setLeftPlayComponent(null);
-			selectedLeft = null;
-		} else {
-			List<JMEPlayComponent> comp = editorComponents.stream().filter(component -> component.label() == label).collect(Collectors.toList());
-			JMEPlayComponent component = comp.get(0);
-			if (comp.size() > 0) {
-				jmePlayEditor.setLeftPlayComponent(component);
-			}
-			((Node) label).getStyleClass().remove("borderbar-label");
-			((Node) label).getStyleClass().add("borderbar-label-selected");
-			selectedLeft = label;
-		}
-	}
+    private void handleBorderItemLeft(Object label) {
+        if (label == selectedLeft) {
+            jmePlayEditor.setLeftPlayComponent(null);
+            selectedLeft = null;
+        } else {
+            List<JMEPlayComponent> comp = editorComponents.stream().filter(component -> component.label() == label).collect(Collectors.toList());
+            if (comp.size() > 0) {
+                jmePlayEditor.setLeftPlayComponent(comp.get(0));
+            }
+            ((Node) label).getStyleClass().remove("borderbar-label");
+            ((Node) label).getStyleClass().add("borderbar-label-selected");
+            selectedLeft = label;
+        }
+    }
 
 }
