@@ -13,7 +13,7 @@ public class JMEPlayAssetsResources {
 	public final static String SETTINGSFILE = JMEPlayGlobalResources.SETTINGSFOLDER + "AssetsSettings.xml";
 
 	// CSS
-	public final static String CSS = JMEPlayGlobalResources.CSS + "plugin/console/JMEPlayConsole.css";
+	public final static String CSS = JMEPlayGlobalResources.CSS + "plugin/assets/JMEPlayAssets.css";
 
     // ICONS
     public final static String ICONS_ASSETS_ASSETS = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssets.svg";
