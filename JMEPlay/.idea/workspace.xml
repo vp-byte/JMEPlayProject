@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33e4780f-9b6a-44cb-ab43-52699f2a5a91" name="Default" comment="Update all ReadOnlyPropertyWrapper to ReadOnlyProperty">
+    <list default="true" id="33e4780f-9b6a-44cb-ab43-52699f2a5a91" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlay.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlay.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditor.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditor.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarBottom.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarBottom.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarLeft.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarLeft.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBottomInfoBar.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBottomInfoBar.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorCenter.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorCenter.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorContainer.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorContainer.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorRoot.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorRoot.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorScene.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorScene.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorSplits.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorSplits.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorStage.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorStage.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTop.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTop.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopMenuBar.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopMenuBar.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopToolBar.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopToolBar.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuFile.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuFile.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuHelp.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuHelp.java" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuSettings.java" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuSettings.java" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -51,26 +34,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JMEPlayEditorResources.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java">
+      <file leaf-file-name="JMEPlayAssetsTreeView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="38" column="67" lean-forward="false" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#2089#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="274">
+              <caret line="129" column="62" lean-forward="false" selection-start-line="129" selection-start-column="62" selection-end-line="129" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JMEPlayEditorBorderBarLeft.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarLeft.java">
+      <file leaf-file-name="JMEPlayAssetsImageDefinder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsImageDefinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="73" column="91" lean-forward="false" selection-start-line="73" selection-start-column="91" selection-end-line="73" selection-end-column="91" />
-              <folding>
-                <element signature="e#0#4756#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="414">
+              <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1048,7 +1027,6 @@
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayInfoMessage.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorSettings.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayGlobal.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlay.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditor.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarBottom.java" />
@@ -1068,6 +1046,7 @@
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuSettings.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorLocalization.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
       </list>
     </option>
   </component>
@@ -1098,6 +1077,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1108,52 +1091,42 @@
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -1162,10 +1135,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1182,6 +1151,7 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="SearchEverywhereHistoryKey" value="MouseE&#9;PSI&#9;JAVA://javafx.scene.input.MouseEvent&#10;JMEPlayE&#9;FILE&#9;file:///home/vp-byte/JME_PRO/JMEPlayProject/JMEPlay/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditor.java" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1307,7 +1277,10 @@
       <workItem from="1516881718996" duration="763000" />
       <workItem from="1516888113354" duration="3020000" />
       <workItem from="1516891240237" duration="141000" />
-      <workItem from="1516892843129" duration="2269000" />
+      <workItem from="1516892843129" duration="2570000" />
+      <workItem from="1516899818552" duration="561000" />
+      <workItem from="1516989125786" duration="337000" />
+      <workItem from="1516989487608" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Change spring injection from field to constructor">
       <created>1516870003227</created>
@@ -1323,11 +1296,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516894456052</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Checked all JMEPlayMain classes">
+      <created>1516895138380</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1516895138380</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33826000" />
+    <option name="totallyTimeSpent" value="35028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -1335,27 +1315,25 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34961155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34961155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28525642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29540598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1363,7 +1341,9 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1401,7 +1381,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change spring injection from field to constructor" />
     <MESSAGE value="Update all ReadOnlyPropertyWrapper to ReadOnlyProperty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update all ReadOnlyPropertyWrapper to ReadOnlyProperty" />
+    <MESSAGE value="Checked all JMEPlayMain classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checked all JMEPlayMain classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1441,45 +1422,23 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsImageDefinder.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.fxmisc.richtext/richtextfx/0.7-M5/c18d2ca4cbbce027b8ff014aa2646f5812b8800b/richtextfx-0.7-M5-sources.jar!/org/fxmisc/richtext/model/NavigationActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="216" column="17" lean-forward="false" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/input/InputEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/MenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3844">
-          <caret line="316" column="39" lean-forward="false" selection-start-line="316" selection-start-column="20" selection-end-line="316" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleEvents.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1620,33 +1579,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/resources/JMEPlayEditor.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/resources/JMEPlayEditor_de.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/resources/JMEPlayEditor_ru.properties">
+      <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="ResourceBundle">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayGlobal.java">
@@ -1656,21 +1615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleArea.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#8067#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1678,9 +1626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1757,9 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#4929#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1767,9 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#3335#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1797,9 +1736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#964#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1827,9 +1763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#4638#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1837,9 +1770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#1043#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1847,9 +1777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#2185#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1857,9 +1784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1306#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1867,9 +1791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#2436#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1877,9 +1798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1026#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1887,9 +1805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1054#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1897,9 +1812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1091#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1913,23 +1825,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarLeft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="73" column="91" lean-forward="false" selection-start-line="73" selection-start-column="91" selection-end-line="73" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#4756#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="38" column="67" lean-forward="false" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#2089#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorBorderBarLeft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="73" column="91" lean-forward="false" selection-start-line="73" selection-start-column="91" selection-end-line="73" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPLayAssetsTreeViewWatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsImageDefinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="129" column="62" lean-forward="false" selection-start-line="129" selection-start-column="62" selection-end-line="129" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

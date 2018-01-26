@@ -56,7 +56,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         rootTreeItem = new TreeItem<>(rootPath);
         setRoot(rootTreeItem);
         setShowRoot(false);
-        // setCellFactory(param -> new JMEPlayAssetsTreeCell(fileHandlers));
+        setCellFactory(param -> new JMEPlayAssetsTreeCell(fileHandlers));
         try {
             createTree(rootTreeItem);
         } catch (IOException e) {
@@ -122,11 +122,12 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
                 // sub-directories
                 if (kind == ENTRY_CREATE) {
                     try {
+                        TreeItem<Path> item = new TreeItem(child, jmePlayAssetsImageDefinder.imageByFilename(child));
                         if (Files.isDirectory(child)) {
-                            TreeItem item = new TreeItem<>(child);
                             createTree(item);
-                            keys.get(key).getChildren().add(item);
                         }
+
+                        keys.get(key).getChildren().add(item);
                     } catch (IOException x) {
                         // do something useful
                     }
