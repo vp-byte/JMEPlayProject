@@ -20,6 +20,7 @@ public class JMEPlayAssetsResources {
 
     // ICONS
     public final static String ICONS_ASSETS_ASSETS = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssets.svg";
+    public final static String ICONS_ASSETS_OPEN = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpen.svg";
     public final static String ICONS_ASSETS_COPY = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsCopy.svg";
     public final static String ICONS_ASSETS_CUT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsCut.svg";
     public final static String ICONS_ASSETS_DELETE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsDelete.svg";
@@ -29,7 +30,6 @@ public class JMEPlayAssetsResources {
     public final static String ICONS_ASSETS_IMAGE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsImage.svg";
     public final static String ICONS_ASSETS_MATERIAL = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsMaterial.svg";
     public final static String ICONS_ASSETS_OBJECT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsObject.svg";
-    public final static String ICONS_ASSETS_OPEN = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpen.svg";
     public final static String ICONS_ASSETS_OPENASTXT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpenAsTxt.svg";
     public final static String ICONS_ASSETS_OPENEXTERNAL = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpenExternal.svg";
     public final static String ICONS_ASSETS_PASTE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsPaste.svg";
