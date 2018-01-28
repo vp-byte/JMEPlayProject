@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets;
 
 import java.nio.file.Files;
@@ -91,9 +94,9 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 		return null;
 	}
 
-	private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler(List<JMEPlayFileHandler<TreeView<Path>>> JMEPlayFileHandlers) {
+	private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler(List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
 		String fileExtension = ExtensionResolver.resolve(getItem());
-		return JMEPlayFileHandlers.stream().filter(fileHandler -> {
+		return jmePlayFileHandlers.stream().filter(fileHandler -> {
 			for (String filetype : fileHandler.filetypes()) {
 				if (fileExtension != null && fileExtension.equals(filetype)) {
 					return true;

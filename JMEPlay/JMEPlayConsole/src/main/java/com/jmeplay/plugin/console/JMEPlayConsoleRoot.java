@@ -36,6 +36,6 @@ public class JMEPlayConsoleRoot extends BorderPane {
         setMinHeight(0);
         getStylesheets().add(getClass().getResource(JMEPlayConsoleResources.CSS).toExternalForm());
         setLeft(jmePlayConsoleToolBar);
-        setRight(new StackPane(new VirtualizedScrollPane<>(jmePlayConsoleArea)));
+        setCenter(new StackPane(new VirtualizedScrollPane<>(jmePlayConsoleArea)));
     }
 }

@@ -32,8 +32,6 @@ import java.util.regex.Pattern;
  */
 @Component
 public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
-
-    private StringBuilder stringBuilder = new StringBuilder();
     private int toolsIconSize;
     private ContextMenu codeAreaMenu;
 
@@ -110,7 +108,7 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
      */
     private MenuItem createCopyMenuItem() {
         ImageView copyImage = ImageLoader.imageView(getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_COPY, toolsIconSize, toolsIconSize);
-        String copyLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_COPY);
+        String copyLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_COPY);
         MenuItem copyMenuItem = new MenuItem(copyLabel, copyImage);
         copyMenuItem.setOnAction(eventCopy -> copy());
         return copyMenuItem;
@@ -123,7 +121,7 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
      */
     private MenuItem createSelectAllMenuItem() {
         ImageView selectAllImage = ImageLoader.imageView(getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_SELECTALL, toolsIconSize, toolsIconSize);
-        String selectAllLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_SELECTALL);
+        String selectAllLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_SELECTALL);
         MenuItem selectAllMenuItem = new MenuItem(selectAllLabel, selectAllImage);
         selectAllMenuItem.setOnAction(eventSelectAll -> {
             this.selectAll();
@@ -139,7 +137,7 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
      */
     private MenuItem createClearAllMenuItem() {
         ImageView clearAllImage = ImageLoader.imageView(getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_DELETE, toolsIconSize, toolsIconSize);
-        String clearAllLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CLEARALL);
+        String clearAllLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_CLEARALL);
         MenuItem clearAllMenuItem = new MenuItem(clearAllLabel, clearAllImage);
         clearAllMenuItem.setOnAction(eventClearAll -> {
             clear();
@@ -186,17 +184,9 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
      */
     public void message(Type type, String message) {
         String text = "\n[" + type.name() + "] : " + message;
-        stringBuilder.insert(0, text);
-        writeText(stringBuilder.toString());
-        this.fireEvent(new JMEPlayConsoleEvent(JMEPlayConsoleEvent.UPDATE_TOOLBAR_BUTTONS));
-    }
-
-    /**
-     * Write text to code area
-     */
-    private void writeText(String message) {
-        this.replaceText(message);
+        insertText(0, text);
         this.setStyleSpans(0, computeHighlighting(this.getText()));
+        this.fireEvent(new JMEPlayConsoleEvent(JMEPlayConsoleEvent.UPDATE_TOOLBAR_BUTTONS));
     }
 
 
@@ -204,7 +194,7 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
      * Clear text buffer
      */
     public void clear() {
-        stringBuilder = new StringBuilder();
+        super.clear();
     }
 
     /**

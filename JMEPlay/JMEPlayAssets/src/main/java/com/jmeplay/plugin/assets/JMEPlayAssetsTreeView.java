@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;

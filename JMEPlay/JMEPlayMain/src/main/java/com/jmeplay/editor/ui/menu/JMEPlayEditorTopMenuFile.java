@@ -37,16 +37,16 @@ public class JMEPlayEditorTopMenuFile {
 
     @PostConstruct
     private void init() {
-        menuFile = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_FILE));
+        menuFile = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_FILE));
 
-        MenuItem menuFileOpen = new MenuItem(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_OPEN_ASSETS));
+        MenuItem menuFileOpen = new MenuItem(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_OPEN_ASSETS));
         menuFile.getItems().add(menuFileOpen);
         menuFileOpen.setOnAction((event) -> openDirectoryChooser());
     }
 
     private void openDirectoryChooser() {
         DirectoryChooser chooser = new DirectoryChooser();
-        chooser.setTitle(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_OPEN_ASSETS_DIALOG_TITLE));
+        chooser.setTitle(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_OPEN_ASSETS_DIALOG_TITLE));
         File defaultDirectory = new File(jmePlayGlobalSettings.rootFolder());
         chooser.setInitialDirectory(defaultDirectory);
         File selectedDirectory = chooser.showDialog(jmePlayEditor.stage());

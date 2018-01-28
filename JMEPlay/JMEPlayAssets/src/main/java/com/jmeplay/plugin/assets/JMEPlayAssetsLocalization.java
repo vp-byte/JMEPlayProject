@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets;
 
 import java.util.ResourceBundle;
@@ -12,9 +15,12 @@ import org.springframework.stereotype.Component;
 public class JMEPlayAssetsLocalization {
 
     // LOCALIZATION
-    final static String ASSETS_RESOURCEBUNDLE_ASSETS = "JMEPlayAssets";
-    final static String ASSETS_LOCALISATION_ASSETS = "assets";
-    final static String ASSETS_LOCALIZATION_DESCRIPTION = "description";
+    final static String LOCALISATION_ASSETS_RESOURCEBUNDLE = "JMEPlayAssets";
+    final static String LOCALISATION_ASSETS_ASSETS = "assets";
+    final static String LOCALISATION_ASSETS_DESCRIPTION = "description";
+
+    public final static String LOCALISATION_ASSETS_HANDLER_OPEN = "open";
+    public final static String LOCALISATION_ASSETS_HANDLER_OPEN_TOOLTIP = "opentooltip";
 
     private ResourceBundle bundle;
 
@@ -24,9 +30,9 @@ public class JMEPlayAssetsLocalization {
      * @param key
      * @return
      */
-    public final String getString(String key) {
+    public final String value(String key) {
         if (bundle == null) {
-            bundle = ResourceBundle.getBundle(JMEPlayAssetsLocalization.ASSETS_RESOURCEBUNDLE_ASSETS);
+            bundle = ResourceBundle.getBundle(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_RESOURCEBUNDLE);
         }
         return bundle.getString(key);
     }

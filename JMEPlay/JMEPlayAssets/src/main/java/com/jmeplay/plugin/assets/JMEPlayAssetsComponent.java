@@ -49,7 +49,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      * Create label for JMEPlayConsole
      */
     private void createLabel() {
-        String labelText = jmePlayAssetsLocalization.getString(jmePlayAssetsLocalization.ASSETS_LOCALISATION_ASSETS);
+        String labelText = jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
         int iconSizeBar = jmePlayAssetsSettings.iconSizeBar();
         label = new Label(labelText, ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_ASSETS, iconSizeBar, iconSizeBar));
     }
@@ -61,7 +61,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      */
     @Override
     public String name() {
-        return jmePlayAssetsLocalization.getString(jmePlayAssetsLocalization.ASSETS_LOCALISATION_ASSETS);
+        return jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
     }
 
     /**
@@ -71,7 +71,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      */
     @Override
     public String description() {
-        return jmePlayAssetsLocalization.getString(jmePlayAssetsLocalization.ASSETS_LOCALIZATION_DESCRIPTION);
+        return jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_DESCRIPTION);
     }
 
     /**

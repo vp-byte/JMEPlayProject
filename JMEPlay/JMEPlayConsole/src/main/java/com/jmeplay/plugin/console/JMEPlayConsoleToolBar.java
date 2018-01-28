@@ -72,7 +72,7 @@ public class JMEPlayConsoleToolBar extends VBox {
     private void initButtonClose() {
         ImageView closeImage = ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_CLOSE, toolsIconSize, toolsIconSize);
         Button buttonClose = new Button(null, closeImage);
-        String closeTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CLOSE_TOOLTIP);
+        String closeTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_CLOSE_TOOLTIP);
         buttonClose.setTooltip(new Tooltip(closeTooltipLabel));
         buttonClose.setOnAction(event -> fireEvent(new JMEPlayConsoleEvent(JMEPlayConsoleEvent.CLOSE_CONSOLE)));
         getChildren().add(buttonClose);
@@ -84,7 +84,7 @@ public class JMEPlayConsoleToolBar extends VBox {
     private void initToggleButtonLogExceptions() {
         ImageView exceptionImage = ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_EXCEPTION, toolsIconSize, toolsIconSize);
         toggleButtonExceptions = new ToggleButton(null, exceptionImage);
-        String exceptionTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_EXCEPTION_TOOLTIP);
+        String exceptionTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_EXCEPTION_TOOLTIP);
         toggleButtonExceptions.setTooltip(new Tooltip(exceptionTooltipLabel));
         toggleButtonExceptions.setSelected(jmePlayConsoleSettings.writeExceptions());
         toggleButtonExceptions.setOnAction(event -> jmePlayConsoleSettings.setValue(JMEPlayConsoleResources.CONSOLE_WRITE_EXCEPTIONS, toggleButtonExceptions.isSelected()));
@@ -97,7 +97,7 @@ public class JMEPlayConsoleToolBar extends VBox {
     private void initButtonSelectAll() {
         ImageView selectAllImage = ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_SELECTALL, toolsIconSize, toolsIconSize);
         buttonSelectAll = new Button(null, selectAllImage);
-        String selectAllTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_SELECTALL_TOOLTIP);
+        String selectAllTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_SELECTALL_TOOLTIP);
         buttonSelectAll.setTooltip(new Tooltip(selectAllTooltipLabel));
         buttonSelectAll.setDisable(true);
         buttonSelectAll.setOnAction(event -> {
@@ -113,7 +113,7 @@ public class JMEPlayConsoleToolBar extends VBox {
     private void initButtonCopy() {
         ImageView copyImage = ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_COPY, toolsIconSize, toolsIconSize);
         buttonCopy = new Button(null, copyImage);
-        String copyTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_COPY_TOOLTIP);
+        String copyTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_COPY_TOOLTIP);
         buttonCopy.setTooltip(new Tooltip(copyTooltipLabel));
         buttonCopy.setDisable(true);
         buttonCopy.setOnAction(event -> {
@@ -129,7 +129,7 @@ public class JMEPlayConsoleToolBar extends VBox {
     private void initButtonClear() {
         ImageView clearAllImage = ImageLoader.imageView(this.getClass(), JMEPlayConsoleResources.ICONS_CONSOLE_DELETE, toolsIconSize, toolsIconSize);
         buttonClear = new Button(null, clearAllImage);
-        String clearAllTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.CONSOLE_LOCALIZATION_CLEARALL_TOOLTIP);
+        String clearAllTooltipLabel = jmePlayConsoleLocalization.getString(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_CLEARALL_TOOLTIP);
         buttonClear.setTooltip(new Tooltip(clearAllTooltipLabel));
         buttonClear.setDisable(true);
         buttonClear.setOnAction(event -> {

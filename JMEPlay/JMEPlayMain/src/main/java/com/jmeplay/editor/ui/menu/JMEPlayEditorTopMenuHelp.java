@@ -29,7 +29,7 @@ public class JMEPlayEditorTopMenuHelp {
 
     @PostConstruct
     private void init() {
-        menuHelp = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_MENU_HELP));
+        menuHelp = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_HELP));
     }
 
     public Menu menu() {
