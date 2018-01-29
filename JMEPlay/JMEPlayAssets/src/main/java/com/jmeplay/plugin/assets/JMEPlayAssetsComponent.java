@@ -3,17 +3,14 @@
  */
 package com.jmeplay.plugin.assets;
 
-import javax.annotation.PostConstruct;
-
 import com.jmeplay.core.utils.ImageLoader;
+import com.jmeplay.editor.ui.JMEPlayComponent;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jmeplay.editor.ui.JMEPlayComponent;
-
-import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
+import javax.annotation.PostConstruct;
 
 /**
  * Implementation for JMEPlayAssets
@@ -22,8 +19,8 @@ import javafx.scene.layout.BorderPane;
  */
 @Component
 public class JMEPlayAssetsComponent extends JMEPlayComponent {
+
     private Label label;
-    private BorderPane component;
 
     private final JMEPlayAssetsSettings jmePlayAssetsSettings;
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
@@ -49,7 +46,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      * Create label for JMEPlayConsole
      */
     private void createLabel() {
-        String labelText = jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
+        String labelText = jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
         int iconSizeBar = jmePlayAssetsSettings.iconSizeBar();
         label = new Label(labelText, ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_ASSETS, iconSizeBar, iconSizeBar));
     }
@@ -61,7 +58,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      */
     @Override
     public String name() {
-        return jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_ASSETS);
     }
 
     /**
@@ -71,7 +68,7 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
      */
     @Override
     public String description() {
-        return jmePlayAssetsLocalization.value(jmePlayAssetsLocalization.LOCALISATION_ASSETS_DESCRIPTION);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_DESCRIPTION);
     }
 
     /**

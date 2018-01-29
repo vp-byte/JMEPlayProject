@@ -3,14 +3,13 @@
  */
 package com.jmeplay.plugin.assets;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
+import com.jmeplay.core.JMEPlayGlobalSettings;
+import com.jmeplay.core.utils.SettingsLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jmeplay.core.JMEPlayGlobalSettings;
-import com.jmeplay.core.utils.SettingsLoader;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * All Assets settings
@@ -20,43 +19,40 @@ import com.jmeplay.core.utils.SettingsLoader;
 @Component
 public class JMEPlayAssetsSettings extends SettingsLoader {
 
-	@Autowired
-	private JMEPlayGlobalSettings jmePlayGlobalSettings;
+    private final JMEPlayGlobalSettings jmePlayGlobalSettings;
 
-	public JMEPlayAssetsSettings() {
-		super();
-	}
+    @Autowired
+    public JMEPlayAssetsSettings(JMEPlayGlobalSettings jmePlayGlobalSettings) {
+        super();
+        this.jmePlayGlobalSettings = jmePlayGlobalSettings;
+    }
 
-	/**
-	 * Load settings
-	 */
-	@PostConstruct
-	private void init() {
-		loadSettings(JMEPlayAssetsResources.SETTINGSFILE);
-	}
+    /**
+     * Load settings
+     */
+    @PostConstruct
+    private void init() {
+        loadSettings(JMEPlayAssetsResources.SETTINGSFILE);
+    }
 
-	/**
-	 * Write settings
-	 */
-	@PreDestroy
-	private void destroy() {
-		writeSettings();
-	}
+    /**
+     * Write settings
+     */
+    @PreDestroy
+    private void destroy() {
+        writeSettings();
+    }
 
-	public String rootFolder() {
-		return jmePlayGlobalSettings.rootFolder();
-	}
+    public String rootFolder() {
+        return jmePlayGlobalSettings.rootFolder();
+    }
 
-	public int iconSize() {
-		return jmePlayGlobalSettings.iconSize();
-	}
+    public int iconSize() {
+        return jmePlayGlobalSettings.iconSize();
+    }
 
-	public int iconSizeBar() {
-		return jmePlayGlobalSettings.iconSizeBar();
-	}
-
-	public int iconSpacing() {
-		return jmePlayGlobalSettings.iconSpacing();
-	}
+    public int iconSizeBar() {
+        return jmePlayGlobalSettings.iconSizeBar();
+    }
 
 }

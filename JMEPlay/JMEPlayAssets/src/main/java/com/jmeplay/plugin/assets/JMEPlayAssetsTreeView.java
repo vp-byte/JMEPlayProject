@@ -21,24 +21,35 @@ import java.util.Map;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 
+/**
+ * Create AssetsTreeView to manage dir structure and all action in JMEPlayEditor
+ *
+ * @author vp-byte (Vladimir Petrenko)
+ */
 @Component
 public class JMEPlayAssetsTreeView extends TreeView<Path> {
 
     private WatchService watcher;
     private Map<WatchKey, TreeItem<Path>> keys;
-    private TreeItem<Path> rootTreeItem;
 
-    @Autowired
     private JMEPlayGlobal jmePlayGlobal;
-
-    @Autowired
     private JMEPlayAssetsSettings jmePlayAssetsSettings;
-
-    @Autowired
     private JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder;
+    private List<JMEPlayFileHandler<TreeView<Path>>> fileHandlers;
 
     @Autowired
-    private List<JMEPlayFileHandler<TreeView<Path>>> fileHandlers;
+    public JMEPlayAssetsTreeView(JMEPlayGlobal jmePlayGlobal,
+                                 JMEPlayAssetsSettings jmePlayAssetsSettings,
+                                 JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder) {
+        this.jmePlayGlobal = jmePlayGlobal;
+        this.jmePlayAssetsSettings = jmePlayAssetsSettings;
+        this.jmePlayAssetsImageDefinder = jmePlayAssetsImageDefinder;
+    }
+
+    @Autowired(required = false)
+    public void setFileHandlers(List<JMEPlayFileHandler<TreeView<Path>>> fileHandlers) {
+        this.fileHandlers = fileHandlers;
+    }
 
     /**
      * Load settings
@@ -46,9 +57,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
     @PostConstruct
     private void init() throws Exception {
         watcher = FileSystems.getDefault().newWatchService();
-        jmePlayGlobal.assetFolderChange().addListener((in) -> {
-            reloadAssetFolder();
-        });
+        jmePlayGlobal.assetFolderChange().addListener((in) -> reloadAssetFolder());
         reloadAssetFolder();
     }
 
@@ -56,17 +65,16 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         String rootFolder = jmePlayAssetsSettings.rootFolder();
         Path rootPath = Paths.get(rootFolder);
         keys = new HashMap<>();
-        rootTreeItem = new TreeItem<>(rootPath);
+        TreeItem<Path> rootTreeItem = new TreeItem<>(rootPath);
         setRoot(rootTreeItem);
         setShowRoot(false);
         setCellFactory(param -> new JMEPlayAssetsTreeCell(fileHandlers));
         try {
             createTree(rootTreeItem);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Thread thread = new Thread(() -> processEvents());
+        Thread thread = new Thread(this::processEvents);
         thread.setDaemon(true);
         thread.start();
 
@@ -78,7 +86,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         keys.put(key, treeItem);
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(treeItem.getValue())) {
             for (Path path : directoryStream) {
-                TreeItem<Path> newItem = new TreeItem(path, jmePlayAssetsImageDefinder.imageByFilename(path));
+                TreeItem<Path> newItem = new TreeItem<>(path, jmePlayAssetsImageDefinder.imageByFilename(path));
                 treeItem.getChildren().add(newItem);
                 if (Files.isDirectory(path)) {
                     createTree(newItem);
@@ -92,10 +100,8 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
     /**
      * Process all events for keys queued to the watcher
      */
-    void processEvents() {
+    private void processEvents() {
         while (true) {
-
-            // wait for key to be signalled
             WatchKey key;
             try {
                 key = watcher.take();
@@ -105,12 +111,10 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
 
             Path dir = keys.get(key).getValue();
             if (dir == null) {
-                System.err.println("WatchKey not recognized!!");
                 continue;
             }
 
             for (WatchEvent<?> event : key.pollEvents()) {
-                @SuppressWarnings("rawtypes")
                 WatchEvent.Kind kind = event.kind();
 
                 // Context for directory entry event is the file name of entry
@@ -118,35 +122,29 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
                 Path name = ((WatchEvent<Path>) event).context();
                 Path child = dir.resolve(name);
 
-                // print out event
-                System.out.format("%s: %s\n", event.kind().name(), child);
-
-                // if directory is created, and watching recursively, then register it and its
-                // sub-directories
                 if (kind == ENTRY_CREATE) {
                     try {
-                        TreeItem<Path> item = new TreeItem(child, jmePlayAssetsImageDefinder.imageByFilename(child));
-                        if (Files.isDirectory(child)) {
-                            createTree(item);
-                        }
+                        if (keys.get(key).getChildren().stream().noneMatch((ch) -> ch.getValue().equals(child))) {
+                            TreeItem<Path> item = new TreeItem<>(child, jmePlayAssetsImageDefinder.imageByFilename(child));
+                            if (Files.isDirectory(child)) {
+                                createTree(item);
+                            }
 
-                        keys.get(key).getChildren().add(item);
+                            keys.get(key).getChildren().add(item);
+                        }
                     } catch (IOException x) {
-                        // do something useful
+                        x.printStackTrace();
                     }
                 }
                 if (kind == ENTRY_DELETE) {
-                    TreeItem<Path> item = keys.get(key).getChildren().stream().filter((ch) -> ch.getValue().equals(child)).findFirst().get();
-                    keys.get(key).getChildren().remove(item);
+                    keys.get(key).getChildren().stream().filter((ch) -> ch.getValue().equals(child)).findFirst().ifPresent(
+                            (first) -> keys.get(key).getChildren().remove(first));
                 }
             }
 
-            // reset key and remove from set if directory no longer accessible
             boolean valid = key.reset();
             if (!valid) {
                 keys.remove(key);
-
-                // all directories are inaccessible
                 if (keys.isEmpty()) {
                     break;
                 }

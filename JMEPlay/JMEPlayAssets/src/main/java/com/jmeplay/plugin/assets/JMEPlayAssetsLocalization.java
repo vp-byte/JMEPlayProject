@@ -3,8 +3,9 @@
  */
 package com.jmeplay.plugin.assets;
 
-import java.util.ResourceBundle;
 import org.springframework.stereotype.Component;
+
+import java.util.ResourceBundle;
 
 /**
  * Localization for JMEPLayAssets
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class JMEPlayAssetsLocalization {
 
     // LOCALIZATION
-    final static String LOCALISATION_ASSETS_RESOURCEBUNDLE = "JMEPlayAssets";
+    private final static String LOCALISATION_ASSETS_RESOURCEBUNDLE = "JMEPlayAssets";
     final static String LOCALISATION_ASSETS_ASSETS = "assets";
     final static String LOCALISATION_ASSETS_DESCRIPTION = "description";
 
@@ -27,8 +28,8 @@ public class JMEPlayAssetsLocalization {
     /**
      * Gets a string for the given key from JMEPlayImageLocalization resource bundle
      *
-     * @param key
-     * @return
+     * @param key for value
+     * @return localized string
      */
     public final String value(String key) {
         if (bundle == null) {

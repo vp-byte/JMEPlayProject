@@ -67,6 +67,7 @@ public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         // TODO Auto-generated method stub
         jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Open file");
     }
+
     /*
      * private int size = 24;
      *
