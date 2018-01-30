@@ -22,6 +22,10 @@ public class JMEPlayAssetsLocalization {
 
     public final static String LOCALISATION_ASSETS_HANDLER_OPEN = "open";
     public final static String LOCALISATION_ASSETS_HANDLER_OPEN_TOOLTIP = "opentooltip";
+    public final static String LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL = "openexternal";
+    public final static String LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL_TOOLTIP = "openexternaltooltip";
+    public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER = "opensystemexplorer";
+    public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER_TOOLTIP = "opensystemexplorertooltip";
 
     private ResourceBundle bundle;
 

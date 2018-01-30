@@ -32,6 +32,7 @@ public class JMEPlayAssetsResources {
     public final static String ICONS_ASSETS_OBJECT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsObject.svg";
     public final static String ICONS_ASSETS_OPENASTXT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpenAsTxt.svg";
     public final static String ICONS_ASSETS_OPENEXTERNAL = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpenExternal.svg";
+    public final static String ICONS_ASSETS_OPENSYSTEMEXPLORER = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsOpenExplorer.svg";
     public final static String ICONS_ASSETS_PASTE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsPaste.svg";
     public final static String ICONS_ASSETS_RENAME = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsRename.svg";
     public final static String ICONS_ASSETS_SOUND = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsSound.svg";

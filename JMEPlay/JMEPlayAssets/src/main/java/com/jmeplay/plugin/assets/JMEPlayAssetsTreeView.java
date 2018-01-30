@@ -5,6 +5,7 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         this.jmePlayGlobal = jmePlayGlobal;
         this.jmePlayAssetsSettings = jmePlayAssetsSettings;
         this.jmePlayAssetsImageDefinder = jmePlayAssetsImageDefinder;
+        getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @Autowired(required = false)

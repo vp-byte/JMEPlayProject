@@ -17,19 +17,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
 import static java.util.Collections.singletonList;
 
 /**
- * Handler to open file in external editor support for mac, win, linux operating systems
+ * Handler to open file or folder in external system explorer support for mac, win, linux operating systems
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
 @Order(value = 1)
-public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class OpenInSystemExplorerHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int iconSize;
 
@@ -37,9 +38,9 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
-    public OpenExternalFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
-                                   JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                                   JMEPlayConsole jmePlayConsole) {
+    public OpenInSystemExplorerHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                                       JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                                       JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.jmePlayConsole = jmePlayConsole;
         iconSize = jmePlayAssetsSettings.iconSizeBar();
@@ -58,7 +59,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
      */
     @Override
     public String label() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER);
     }
 
     /**
@@ -66,7 +67,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
      */
     @Override
     public String tooltip() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL_TOOLTIP);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER_TOOLTIP);
     }
 
     /**
@@ -74,7 +75,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
      */
     @Override
     public ImageView image() {
-        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_OPENEXTERNAL, iconSize, iconSize);
+        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_OPENSYSTEMEXPLORER, iconSize, iconSize);
     }
 
     /**
@@ -99,8 +100,11 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
         @Override
         public void run() {
             try {
+                if (Files.isRegularFile(path)) {
+                    path = path.getParent();
+                }
                 SystemOpener.openExtern(path);
-                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Open file " + path + " external success");
+                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Open in file explorer " + path + " success");
             } catch (IllegalArgumentException e) {
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, e.getMessage());
                 jmePlayConsole.exception(e);
