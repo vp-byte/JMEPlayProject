@@ -50,7 +50,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
      */
     @Override
     public List<String> filetypes() {
-        return singletonList(JMEPlayFileHandler.any);
+        return singletonList(JMEPlayFileHandler.file);
     }
 
     /**
