@@ -3,14 +3,13 @@
  */
 package com.jmeplay.core.handler.file;
 
-import javafx.scene.image.ImageView;
+import javafx.scene.control.MenuItem;
 
-import java.nio.file.Path;
 import java.util.List;
 
 /**
  * Interface to handle filetypes and folders
- * 
+ *
  * @author Vladimir Petrenko (vp-byte)
  */
 public abstract class JMEPlayFileHandler<T> {
@@ -30,30 +29,11 @@ public abstract class JMEPlayFileHandler<T> {
     public abstract List<String> filetypes();
 
     /**
-     * Label value to represent handler in the GUI
+     * Menu or MenuItem to handle filetypes and folders
      *
-     * @return label to view in the GUI
+     * @param source for MenuItem
+     * @return created menu item
      */
-    public abstract String label();
+    public abstract MenuItem menu(T source);
 
-    /**
-     * Tooltip value to describe doing of the handler in the GUI
-     *
-     * @return description of the handler to view in the GUI
-     */
-    public abstract String tooltip();
-
-    /**
-     * Image or icon to represent action of the handler
-     *
-     * @return image to view in the GUI
-     */
-    public abstract ImageView image();
-
-    /**
-     * Execute action on the file
-     *
-     * @param path to the file
-     */
-    public abstract void handle(Path path, T source);
 }

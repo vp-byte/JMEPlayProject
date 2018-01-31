@@ -20,12 +20,18 @@ public class JMEPlayAssetsLocalization {
     final static String LOCALISATION_ASSETS_ASSETS = "assets";
     final static String LOCALISATION_ASSETS_DESCRIPTION = "description";
 
+
+    public final static String LOCALISATION_ASSETS_HANDLER_NEW = "new";
     public final static String LOCALISATION_ASSETS_HANDLER_OPEN = "open";
-    public final static String LOCALISATION_ASSETS_HANDLER_OPEN_TOOLTIP = "opentooltip";
     public final static String LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL = "openexternal";
-    public final static String LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL_TOOLTIP = "openexternaltooltip";
+    public final static String LOCALISATION_ASSETS_HANDLER_CUT = "cut";
+    public final static String LOCALISATION_ASSETS_HANDLER_COPY = "copy";
+    public final static String LOCALISATION_ASSETS_HANDLER_PASTE = "paste";
+    public final static String LOCALISATION_ASSETS_HANDLER_RENAME = "rename";
+    public final static String LOCALISATION_ASSETS_HANDLER_DELETE = "delete";
     public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER = "opensystemexplorer";
-    public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER_TOOLTIP = "opensystemexplorertooltip";
+
+    public final static String LOCALISATION_ASSETS_HANDLER_NEW_FOLDER = "newfolder";
 
     private ResourceBundle bundle;
 

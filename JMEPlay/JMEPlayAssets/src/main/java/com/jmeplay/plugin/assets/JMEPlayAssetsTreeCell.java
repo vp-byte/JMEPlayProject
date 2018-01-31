@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ExtensionResolver;
 import com.jmeplay.plugin.assets.handler.OpenFileHandler;
-
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
@@ -28,11 +27,11 @@ import javafx.scene.input.MouseEvent;
  */
 public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 
-    private List<JMEPlayFileHandler<TreeView<Path>>> JMEPlayFileHandlers;
+    private List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
     private ContextMenu contextMenu = null;
 
-    JMEPlayAssetsTreeCell(List<JMEPlayFileHandler<TreeView<Path>>> JMEPlayFileHandlers) {
-        this.JMEPlayFileHandlers = JMEPlayFileHandlers;
+    JMEPlayAssetsTreeCell(List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
+        this.jmePlayFileHandlers = jmePlayFileHandlers;
         setOnMouseClicked(this::processClick);
     }
 
@@ -60,9 +59,9 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 
         if (button.equals(MouseButton.PRIMARY)) {
             if (event.getClickCount() == 2) {
-                Optional<JMEPlayFileHandler<TreeView<Path>>> openJMEPlayFileHandler = filterJMEPlayFileHandler(JMEPlayFileHandlers).stream()
-                        .filter(openFileHandler -> openFileHandler instanceof OpenFileHandler).findFirst();
-                openJMEPlayFileHandler.ifPresent(treeViewJMEPlayFileHandler -> treeViewJMEPlayFileHandler.handle(getItem(), this.getTreeView()));
+                filterJMEPlayFileHandler(jmePlayFileHandlers).stream()
+                        .filter(openFileHandler -> openFileHandler instanceof OpenFileHandler).findFirst()
+                        .ifPresent(treeViewJMEPlayFileHandler -> ((OpenFileHandler) treeViewJMEPlayFileHandler).handle(this.getTreeView()));
             }
         }
 
@@ -78,13 +77,9 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
     }
 
     private ContextMenu updateContextMenu() {
-        if (JMEPlayFileHandlers != null) {
+        if (jmePlayFileHandlers != null) {
             ContextMenu updatedContextMenu = new ContextMenu();
-            filterJMEPlayFileHandler(JMEPlayFileHandlers).forEach(JMEPlayFileHandler -> {
-                MenuItem menuItem = new MenuItem(JMEPlayFileHandler.label(), JMEPlayFileHandler.image());
-                menuItem.setOnAction(event -> JMEPlayFileHandler.handle(this.getItem(), this.getTreeView()));
-                updatedContextMenu.getItems().add(menuItem);
-            });
+            updatedContextMenu.getItems().addAll(jmePlayFileHandlers.stream().map((handler) -> handler.menu(getTreeView())).collect(Collectors.toList()));
             return updatedContextMenu;
         }
         return null;

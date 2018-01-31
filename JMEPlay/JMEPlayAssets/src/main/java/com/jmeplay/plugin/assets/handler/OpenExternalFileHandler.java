@@ -11,6 +11,7 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import javafx.application.Platform;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ import static java.util.Collections.singletonList;
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-@Order(value = 1)
+@Order(value = 2)
 public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int iconSize;
@@ -42,7 +43,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
                                    JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.jmePlayConsole = jmePlayConsole;
-        iconSize = jmePlayAssetsSettings.iconSizeBar();
+        iconSize = jmePlayAssetsSettings.iconSize();
     }
 
     /**
@@ -53,39 +54,23 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
         return singletonList(JMEPlayFileHandler.file);
     }
 
-    /**
-     * {@link JMEPlayFileHandler:name}
-     */
     @Override
+    public MenuItem menu(TreeView<Path> source) {
+        MenuItem menuItem = new MenuItem(label(), image());
+        menuItem.setOnAction((event) -> handle(source));
+        return menuItem;
+    }
+
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL);
     }
 
-    /**
-     * {@link JMEPlayFileHandler:description}
-     */
-    @Override
-    public String tooltip() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL_TOOLTIP);
-    }
-
-    /**
-     * {@link JMEPlayFileHandler:image}
-     */
-    @Override
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_OPENEXTERNAL, iconSize, iconSize);
     }
 
-    /**
-     * Handle event to open file in external editor
-     *
-     * @param path   to the file
-     * @param source of event
-     */
-    @Override
-    public void handle(Path path, TreeView<Path> source) {
-        Platform.runLater(new ProcessRunner(path));
+    public void handle(TreeView<Path> source) {
+        Platform.runLater(new ProcessRunner(source.getSelectionModel().getSelectedItem().getValue()));
     }
 
     private class ProcessRunner implements Runnable {

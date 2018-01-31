@@ -1,9 +1,6 @@
-/*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
- */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.filecreators;
 
-import com.jmeplay.core.handler.file.JMEPlayFileHandler;
+import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
@@ -17,18 +14,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
-import java.util.List;
 
-import static java.util.Collections.singletonList;
-
-/**
- * Handler to rename file
- *
- * @author vp-byte (Vladimir Petrenko)
- */
 @Component
-@Order(value = 6)
-public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+@Order(value = 0)
+public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<Path>> {
 
     private final int size;
 
@@ -36,17 +25,12 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
-    public RenameFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
-                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             JMEPlayConsole jmePlayConsole) {
+    public CreateFolderHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                               JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                               JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
-    }
-
-    @Override
-    public List<String> filetypes() {
-        return singletonList(JMEPlayFileHandler.any);
     }
 
     @Override
@@ -57,14 +41,14 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     public String label() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER);
     }
 
     public ImageView image() {
-        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_RENAME, size, size);
+        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_FOLDER, size, size);
     }
 
     public void handle(TreeView<Path> source) {
-        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Rename file " + source.getSelectionModel().getSelectedItem().getValue());
+        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Create new folder " + source.getSelectionModel().getSelectedItem().getValue());
     }
 }

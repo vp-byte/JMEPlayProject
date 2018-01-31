@@ -11,6 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.jmeplay.editor.ui.JMEPlayConsole;
+import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
+import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import javafx.scene.control.MenuItem;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -32,68 +37,41 @@ import javafx.scene.input.DataFormat;
 @Order(value = 5)
 public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
-	private int size = 24;
+    private final int size;
 
-	@Override
-	public List<String> filetypes() {
-		return singletonList(JMEPlayFileHandler.any);
-	}
+    private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
+    private final JMEPlayConsole jmePlayConsole;
 
-	@Override
-	public String label() {
-		return "Paste";
-	}
+    @Autowired
+    public PasteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                            JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                            JMEPlayConsole jmePlayConsole) {
+        this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
+        this.jmePlayConsole = jmePlayConsole;
+        size = jmePlayAssetsSettings.iconSize();
+    }
 
-	@Override
-	public String tooltip() {
-		return "Paste file to clipboard";
-	}
+    @Override
+    public List<String> filetypes() {
+        return singletonList(JMEPlayFileHandler.any);
+    }
 
-	@Override
-	public ImageView image() {
-		return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_PASTE, size, size);
-	}
+    @Override
+    public MenuItem menu(TreeView<Path> source) {
+        MenuItem menuItem = new MenuItem(label(), image());
+        menuItem.setOnAction((event) -> handle(source));
+        return menuItem;
+    }
 
-	@Override
-	public void handle(Path path, TreeView<Path> source) {
-		final Clipboard clipboard = Clipboard.getSystemClipboard();
-		if (clipboard == null) {
-			return;
-		}
+    public String label() {
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE);
+    }
 
-		final List<File> files = (List<File>) clipboard.getContent(DataFormat.FILES);
-		if (files == null || files.isEmpty()) {
-			return;
-		}
+    public ImageView image() {
+        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_PASTE, size, size);
+    }
 
-		Map<Path, Path> pasteOrder = new HashMap<>();
-		files.forEach(filepath -> {
-			try {
-				fillPasteOrder(filepath.toPath(), pasteOrder);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		});
-
-		pasteOrder.forEach((k, v) -> System.err.println(v));
-
-		// Dateien einzeln kopieren und unter umstaenden umbenennen
-	}
-
-	private void fillPasteOrder(Path path, Map<Path, Path> pasteOrder) throws IOException {
-		if (!Files.isDirectory(path)) {
-			pasteOrder.put(path, path);
-			return;
-		}
-		pasteOrder.put(path, path);
-		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
-			for (Path subpath : directoryStream) {
-				pasteOrder.put(subpath, subpath);
-				if (Files.isDirectory(subpath)) {
-					fillPasteOrder(subpath, pasteOrder);
-				}
-			}
-		}
-	}
+    public void handle(TreeView<Path> source) {
+        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file " + source.getSelectionModel().getSelectedItem().getValue());
+    }
 }

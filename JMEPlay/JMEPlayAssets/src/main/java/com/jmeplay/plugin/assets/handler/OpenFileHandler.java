@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets.handler;
 
 import static java.util.Collections.singletonList;
@@ -10,6 +13,7 @@ import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import javafx.scene.control.MenuItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -19,16 +23,16 @@ import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 
 /**
- * Handler to open image file
+ * Handler to open file
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-@Order(value = 0)
+@Order(value = 1)
 public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
-    private final JMEPlayAssetsSettings jmePlayAssetsSettings;
+
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
     private final JMEPlayConsole jmePlayConsole;
 
@@ -36,10 +40,10 @@ public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     public OpenFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                            JMEPlayAssetsLocalization jmePlayAssetsLocalization,
                            JMEPlayConsole jmePlayConsole) {
-        this.jmePlayAssetsSettings = jmePlayAssetsSettings;
+        JMEPlayAssetsSettings jmePlayAssetsSettings1 = jmePlayAssetsSettings;
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.jmePlayConsole = jmePlayConsole;
-        size = this.jmePlayAssetsSettings.iconSizeBar();
+        size = jmePlayAssetsSettings1.iconSize();
     }
 
     @Override
@@ -48,24 +52,23 @@ public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     @Override
+    public MenuItem menu(TreeView<Path> source) {
+        MenuItem menuItem = new MenuItem(label(), image());
+        menuItem.setOnAction((event) -> handle(source));
+        return menuItem;
+    }
+
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPEN);
     }
 
-    @Override
-    public String tooltip() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPEN_TOOLTIP);
-    }
-
-    @Override
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_OPEN, size, size);
     }
 
-    @Override
-    public void handle(Path path, TreeView<Path> source) {
+    public void handle(TreeView<Path> source) {
         // TODO Auto-generated method stub
-        jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Open file");
+        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Open file " + source.getSelectionModel().getSelectedItem().getValue());
     }
 
     /*

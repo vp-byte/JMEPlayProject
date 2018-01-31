@@ -3,12 +3,13 @@
  */
 package com.jmeplay.plugin.assets.handler;
 
+import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -18,30 +19,34 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.Collections.singletonList;
 
 /**
- * Handler to rename file
+ * Handler to create new files
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-@Order(value = 6)
-public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+@Order(value = 0)
+public class NewFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayConsole jmePlayConsole;
+    private List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers;
 
     @Autowired
-    public RenameFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
-                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             JMEPlayConsole jmePlayConsole) {
+    public NewFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                          JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
+    }
+
+    @Autowired
+    public void setFileCreatorHandlers(List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers) {
+        this.fileCreatorHandlers = fileCreatorHandlers;
     }
 
     @Override
@@ -51,20 +56,17 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     @Override
     public MenuItem menu(TreeView<Path> source) {
-        MenuItem menuItem = new MenuItem(label(), image());
-        menuItem.setOnAction((event) -> handle(source));
-        return menuItem;
+        Menu menu = new Menu(label(), image());
+        menu.getItems().addAll(fileCreatorHandlers.stream().map((item) -> item.menu(source)).collect(Collectors.toList()));
+        return menu;
     }
 
     public String label() {
-        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME);
+        return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW);
     }
 
     public ImageView image() {
-        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_RENAME, size, size);
+        return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_NEWFILE, size, size);
     }
 
-    public void handle(TreeView<Path> source) {
-        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Rename file " + source.getSelectionModel().getSelectedItem().getValue());
-    }
 }
