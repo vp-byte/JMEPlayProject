@@ -18,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,6 @@ import static java.util.Collections.singletonList;
 public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
-    private Path path = null;
     private TreeView<Path> source = null;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
@@ -69,17 +69,16 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     public void handle(TreeView<Path> source) {
-        this.path = source.getSelectionModel().getSelectedItem().getValue();
         this.source = source;
 
         Optional<ButtonType> result = createConfirmAlert().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             try {
                 executeDelete();
-                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Delete " + path + " from project");
-            } catch (IOException ex) {
-                jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Delete " + path + " from project fail");
-                jmePlayConsole.exception(ex);
+                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Delete done");
+            } catch (IllegalArgumentException e) {
+                jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Delete fail");
+                jmePlayConsole.exception(e);
             }
         }
     }
@@ -91,25 +90,28 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      */
     private Alert createConfirmAlert() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete");
+        alert.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE));
         alert.setHeaderText(null);
-        alert.setContentText("Really delete " + path.getFileName() + "?");
+        alert.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION));
         return alert;
     }
 
-    /**
-     * Delete execution
-     *
-     * @throws IOException if file do not exist
-     */
-    private void executeDelete() throws IOException {
-        if (!Files.isDirectory(path)) {
-            Files.delete(path);
-        } else {
-            Files.walkFileTree(path, new DeleteFileVisitor());
+    private void executeDelete() {
+        new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach((item) -> delete(item.getValue()));
+    }
+
+    private void delete(Path path) {
+        try {
+            if (!Files.isDirectory(path)) {
+                Files.delete(path);
+            } else {
+                Files.walkFileTree(path, new DeleteFileVisitor());
+            }
+            TreeItem<Path> treeItem = source.getSelectionModel().getSelectedItem();
+            treeItem.getParent().getChildren().remove(treeItem);
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
         }
-        TreeItem<Path> treeItem = source.getSelectionModel().getSelectedItem();
-        treeItem.getParent().getChildren().remove(treeItem);
     }
 
     /**

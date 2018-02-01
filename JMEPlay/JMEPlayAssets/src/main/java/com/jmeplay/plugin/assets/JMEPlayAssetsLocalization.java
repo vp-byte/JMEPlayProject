@@ -29,6 +29,8 @@ public class JMEPlayAssetsLocalization {
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE = "paste";
     public final static String LOCALISATION_ASSETS_HANDLER_RENAME = "rename";
     public final static String LOCALISATION_ASSETS_HANDLER_DELETE = "delete";
+    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE = "deleteconfirm";
+    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION = "deletequestion";
     public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER = "opensystemexplorer";
 
     public final static String LOCALISATION_ASSETS_HANDLER_NEW_FOLDER = "newfolder";
