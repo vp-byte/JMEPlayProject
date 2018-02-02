@@ -28,21 +28,20 @@ public class JMEPlayAssetsLocalization {
     public final static String LOCALISATION_ASSETS_HANDLER_COPY = "copy";
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE = "paste";
     public final static String LOCALISATION_ASSETS_HANDLER_RENAME = "rename";
+
     public final static String LOCALISATION_ASSETS_HANDLER_DELETE = "delete";
-    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE = "deleteconfirm";
-    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION = "deletequestion";
+    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE = "deleteconfirmtitle";
+    public final static String LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION = "deleteconfirmquestion";
+
     public final static String LOCALISATION_ASSETS_HANDLER_OPENSYSTEMEXPLORER = "opensystemexplorer";
 
     public final static String LOCALISATION_ASSETS_HANDLER_NEW_FOLDER = "newfolder";
+    public final static String LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE = "newfoldertitle";
+    public final static String LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TEXT = "newfoldertext";
+
 
     private ResourceBundle bundle;
 
-    /**
-     * Gets a string for the given key from JMEPlayImageLocalization resource bundle
-     *
-     * @param key for value
-     * @return localized string
-     */
     public final String value(String key) {
         if (bundle == null) {
             bundle = ResourceBundle.getBundle(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_RESOURCEBUNDLE);

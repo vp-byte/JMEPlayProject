@@ -83,11 +83,6 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         }
     }
 
-    /**
-     * Create alert to confirm file delete
-     *
-     * @return confirm alert
-     */
     private Alert createConfirmAlert() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE));
@@ -114,9 +109,6 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         }
     }
 
-    /**
-     * FileVisitor to delete filetypes or folders
-     */
     private class DeleteFileVisitor extends SimpleFileVisitor<Path> {
 
         @Override

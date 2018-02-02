@@ -3,22 +3,20 @@
  */
 package com.jmeplay.plugin.assets;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ExtensionResolver;
 import com.jmeplay.plugin.assets.handler.OpenFileHandler;
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Create AssetsTreeCell to manage actions on tree cells

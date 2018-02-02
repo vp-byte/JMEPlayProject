@@ -20,6 +20,6 @@ public interface JMEPlayFileCreatorHandler<T> {
      * @param source for MenuItem
      * @return created menu item
      */
-    public abstract MenuItem menu(T source);
+    MenuItem menu(final T source);
 
 }
