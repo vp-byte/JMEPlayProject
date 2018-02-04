@@ -3,13 +3,17 @@
  */
 package com.jmeplay.plugin.assets.handler;
 
+import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
+import com.jmeplay.core.utils.OSInfo;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.Collections.singletonList;
 
@@ -67,14 +72,21 @@ public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     public void handle(TreeView<Path> source) {
-        Path path = source.getSelectionModel().getSelectedItem().getValue();
-        jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Copy " + path + " to clipboard");
+        List<Path> paths = source.getSelectionModel().getSelectedItems().stream().map(TreeItem::getValue).collect(Collectors.toList());
 
         ClipboardContent content = new ClipboardContent();
-        content.putFiles(singletonList(path.toFile()));
+
+        content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
+        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, "copy");
+
+        if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
+            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBuffer(paths));
+        }
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);
+
+        paths.forEach(path -> jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Copy " + path + " to clipboard"));
     }
 
 }

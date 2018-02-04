@@ -15,22 +15,25 @@ import java.util.List;
  */
 public class SystemOpener {
 
-    private static final String OS = System.getProperty("os.name").toLowerCase();
 
     public static void openExtern(Path path) {
         final List<String> commands = new ArrayList<>();
-        if (isMac()) {
-            commands.add("open");
-        } else if (isWindows()) {
-            commands.add("cmd");
-            commands.add("/c");
-            commands.add("start");
-        } else if (isUnix()) {
-            commands.add("xdg-open");
-        }
 
-        if (commands.isEmpty()) {
-            return;
+        switch (OSInfo.OS()) {
+            case MAC:
+                commands.add("open");
+                break;
+            case WINDOWS:
+                commands.add("cmd");
+                commands.add("/c");
+                commands.add("start");
+                break;
+            case UNIX:
+            case POSIX_UNIX:
+                commands.add("xdg-open");
+                break;
+            default:
+                return;
         }
 
         String url;
@@ -53,24 +56,4 @@ public class SystemOpener {
         }
     }
 
-    /**
-     * @return true if actual operating system windows
-     */
-    private static boolean isWindows() {
-        return (OS.contains("win"));
-    }
-
-    /**
-     * @return true if actual operating system mac
-     */
-    private static boolean isMac() {
-        return (OS.contains("mac"));
-    }
-
-    /**
-     * @return true if actual operating system linux or unix
-     */
-    private static boolean isUnix() {
-        return (OS.contains("nix") || OS.contains("nux") || OS.contains("aix"));
-    }
 }
