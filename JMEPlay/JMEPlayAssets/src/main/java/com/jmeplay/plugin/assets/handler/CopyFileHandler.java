@@ -80,7 +80,7 @@ public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, "copy");
 
         if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
-            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBuffer(paths));
+            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCopy(paths));
         }
 
         Clipboard clipboard = Clipboard.getSystemClipboard();

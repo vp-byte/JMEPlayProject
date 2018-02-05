@@ -5,19 +5,18 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
+import javafx.scene.Node;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.cell.TextFieldTreeCell;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.*;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
@@ -154,4 +153,17 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         }
     }
 
+    public void markCutedFilesInTreeView() {
+        List<Node> cells = new ArrayList<>(lookupAll(".tree-cell"));
+        getSelectionModel().getSelectedItems().forEach(pathTreeItem -> {
+            TextFieldTreeCell cell = ((TextFieldTreeCell) cells.get(getRow(pathTreeItem)));
+            cell.getStyleClass().add("tree-item-cut");
+        });
+    }
+
+
+    public void unmarkCutedFilesInTreeView() {
+        List<Node> cells = new ArrayList<>(lookupAll(".tree-item-cut"));
+        cells.forEach(cell -> cell.getStyleClass().remove("tree-item-cut"));
+    }
 }

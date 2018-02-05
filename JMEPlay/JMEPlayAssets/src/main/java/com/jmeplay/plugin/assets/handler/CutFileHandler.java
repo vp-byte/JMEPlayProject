@@ -11,6 +11,8 @@ import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
+import com.jmeplay.plugin.assets.handler.util.ClipboardWatcher;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeItem;
@@ -57,9 +59,9 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(TreeView<Path> treeView) {
         MenuItem menuItem = new MenuItem(label(), image());
-        menuItem.setOnAction((event) -> handle(source));
+        menuItem.setOnAction((event) -> handle(treeView));
         return menuItem;
     }
 
@@ -71,21 +73,26 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_CUT, size, size);
     }
 
-    public void handle(TreeView<Path> source) {
-        List<Path> paths = source.getSelectionModel().getSelectedItems().stream().map(TreeItem::getValue).collect(Collectors.toList());
+    public void handle(TreeView<Path> treeView) {
+        List<Path> paths = treeView.getSelectionModel().getSelectedItems().stream().map(TreeItem::getValue).collect(Collectors.toList());
 
         ClipboardContent content = new ClipboardContent();
-
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, "cut");
-
         if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
-            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBuffer(paths));
+            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCut(paths));
         }
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);
 
+        Thread thread = new Thread(new ClipboardWatcher((JMEPlayAssetsTreeView) treeView));
+        thread.setDaemon(true);
+        thread.start();
+
+        ((JMEPlayAssetsTreeView) treeView).markCutedFilesInTreeView();
         paths.forEach(path -> jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Cut " + path + " to clipboard"));
     }
+
+
 }

@@ -1,13 +1,22 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets.handler.util;
 
 import com.jmeplay.core.utils.OSInfo;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Util to help file handlers
+ *
+ * @author vp-byte (Vladimir Petrenko)
+ */
 public class FileHandlerUtil {
 
     public static void openExtern(Path path) {
@@ -50,22 +59,32 @@ public class FileHandlerUtil {
         }
     }
 
-    public static ByteBuffer toByteBuffer(final List<Path> paths) {
+    public static ByteBuffer toByteBufferCopy(final List<Path> paths) {
+        return toByteBuffer(new StringBuilder("copy\n"), paths);
+    }
 
-        final StringBuilder builder = new StringBuilder("copy\n");
+    public static ByteBuffer toByteBufferCut(final List<Path> paths) {
+        return toByteBuffer(new StringBuilder("cut\n"), paths);
 
-        paths.forEach(path ->
-                builder.append(path.toUri().toASCIIString()).append('\n'));
+    }
 
+    private static ByteBuffer toByteBuffer(final StringBuilder builder, final List<Path> paths) {
+        paths.forEach(path -> builder.append(path.toUri().toASCIIString()).append('\n'));
         builder.delete(builder.length() - 1, builder.length());
-
         final ByteBuffer buffer = ByteBuffer.allocate(builder.length());
-
         for (int i = 0, length = builder.length(); i < length; i++) {
             buffer.put((byte) builder.charAt(i));
         }
-
         buffer.flip();
         return buffer;
+    }
+
+    public static String fromByteBuffer(ByteBuffer buffer) {
+        try {
+            return new String(buffer.array(), "ASCII");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
