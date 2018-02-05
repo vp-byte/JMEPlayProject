@@ -57,7 +57,7 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 
         if (button.equals(MouseButton.PRIMARY)) {
             if (event.getClickCount() == 2) {
-                filterJMEPlayFileHandler(jmePlayFileHandlers).stream()
+                filterJMEPlayFileHandler().stream()
                         .filter(openFileHandler -> openFileHandler instanceof OpenFileHandler).findFirst()
                         .ifPresent(treeViewJMEPlayFileHandler -> ((OpenFileHandler) treeViewJMEPlayFileHandler).handle(this.getTreeView()));
             }
@@ -77,13 +77,13 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
     private ContextMenu updateContextMenu() {
         if (jmePlayFileHandlers != null) {
             ContextMenu updatedContextMenu = new ContextMenu();
-            updatedContextMenu.getItems().addAll(jmePlayFileHandlers.stream().map((handler) -> handler.menu(getTreeView())).collect(Collectors.toList()));
+            updatedContextMenu.getItems().addAll(filterJMEPlayFileHandler().stream().map((handler) -> handler.menu(getTreeView())).collect(Collectors.toList()));
             return updatedContextMenu;
         }
         return null;
     }
 
-    private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler(List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
+    private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler() {
         String fileExtension = ExtensionResolver.resolve(getItem());
         return jmePlayFileHandlers.stream().filter(fileHandler -> {
             for (String filetype : fileHandler.filetypes()) {

@@ -5,7 +5,7 @@ package com.jmeplay.plugin.assets.handler;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.core.utils.SystemOpener;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
@@ -84,7 +84,7 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
         @Override
         public void run() {
             try {
-                SystemOpener.openExtern(path);
+                FileHandlerUtil.openExtern(path);
                 jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Open file " + path + " external success");
             } catch (IllegalArgumentException e) {
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, e.getMessage());

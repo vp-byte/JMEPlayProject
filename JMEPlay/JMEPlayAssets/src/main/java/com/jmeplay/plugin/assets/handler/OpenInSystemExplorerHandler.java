@@ -5,7 +5,7 @@ package com.jmeplay.plugin.assets.handler;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.core.utils.SystemOpener;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
@@ -85,7 +85,7 @@ public class OpenInSystemExplorerHandler extends JMEPlayFileHandler<TreeView<Pat
                 if (Files.isRegularFile(path)) {
                     path = path.getParent();
                 }
-                SystemOpener.openExtern(path);
+                FileHandlerUtil.openExtern(path);
                 jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Open in file explorer " + path + " success");
             } catch (IllegalArgumentException e) {
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, e.getMessage());
