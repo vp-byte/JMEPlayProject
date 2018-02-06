@@ -12,7 +12,6 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
-import com.jmeplay.plugin.assets.handler.util.ClipboardWatcher;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeItem;
@@ -86,10 +85,8 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);
 
-        Thread thread = new Thread(new ClipboardWatcher((JMEPlayAssetsTreeView) treeView));
-        thread.setDaemon(true);
-        thread.start();
 
+        ((JMEPlayAssetsTreeView) treeView).unmarkCutedFilesInTreeView();
         ((JMEPlayAssetsTreeView) treeView).markCutedFilesInTreeView();
         paths.forEach(path -> jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Cut " + path + " to clipboard"));
     }

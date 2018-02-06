@@ -5,11 +5,13 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
+import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
+import javafx.scene.input.Clipboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
 
     private WatchService watcher;
     private Map<WatchKey, TreeItem<Path>> keys;
+    private boolean hasCutedFiles = false;
 
     private JMEPlayGlobal jmePlayGlobal;
     private JMEPlayAssetsSettings jmePlayAssetsSettings;
@@ -130,8 +133,10 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
                             if (Files.isDirectory(child)) {
                                 createTree(item);
                             }
-
                             keys.get(key).getChildren().add(item);
+                            if (hasCutedFiles) {
+                                unmarkCutedFilesInTreeView();
+                            }
                         }
                     } catch (IOException x) {
                         x.printStackTrace();
@@ -139,7 +144,12 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
                 }
                 if (kind == ENTRY_DELETE) {
                     keys.get(key).getChildren().stream().filter((ch) -> ch.getValue().equals(child)).findFirst().ifPresent(
-                            (first) -> keys.get(key).getChildren().remove(first));
+                            (first) -> {
+                                keys.get(key).getChildren().remove(first);
+                                if (hasCutedFiles) {
+                                    unmarkCutedFilesInTreeView();
+                                }
+                            });
                 }
             }
 
@@ -154,6 +164,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
     }
 
     public void markCutedFilesInTreeView() {
+        hasCutedFiles = true;
         List<Node> cells = new ArrayList<>(lookupAll(".tree-cell"));
         getSelectionModel().getSelectedItems().forEach(pathTreeItem -> {
             TextFieldTreeCell cell = ((TextFieldTreeCell) cells.get(getRow(pathTreeItem)));
@@ -161,8 +172,9 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         });
     }
 
-
     public void unmarkCutedFilesInTreeView() {
+        hasCutedFiles = false;
+        Platform.runLater(() -> Clipboard.getSystemClipboard().clear());
         List<Node> cells = new ArrayList<>(lookupAll(".tree-item-cut"));
         cells.forEach(cell -> cell.getStyleClass().remove("tree-item-cut"));
     }
