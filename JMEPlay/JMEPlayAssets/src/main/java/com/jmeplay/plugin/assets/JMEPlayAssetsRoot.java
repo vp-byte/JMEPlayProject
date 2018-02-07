@@ -17,7 +17,7 @@ import javax.annotation.PostConstruct;
 @Component
 public class JMEPlayAssetsRoot extends BorderPane {
 
-    public final JMEPlayAssetsTreeView jmePlayAssetsTreeView;
+    private final JMEPlayAssetsTreeView jmePlayAssetsTreeView;
 
     @Autowired
     public JMEPlayAssetsRoot(JMEPlayAssetsTreeView jmePlayAssetsTreeView) {
@@ -30,4 +30,5 @@ public class JMEPlayAssetsRoot extends BorderPane {
         getStylesheets().add(getClass().getResource(JMEPlayAssetsResources.CSS).toExternalForm());
         setCenter(jmePlayAssetsTreeView);
     }
+
 }

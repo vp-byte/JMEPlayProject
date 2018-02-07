@@ -15,7 +15,7 @@ import java.util.List;
 public interface JMEPlayFileCreatorHandler<T> {
 
     /**
-     * Menu or MenuItem to handle filetypes and folders
+     * Menu or MenuItem to handle extension and folders
      *
      * @param source for MenuItem
      * @return created menu item

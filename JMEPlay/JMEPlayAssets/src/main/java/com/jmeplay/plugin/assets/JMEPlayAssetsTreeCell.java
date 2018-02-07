@@ -6,12 +6,15 @@ package com.jmeplay.plugin.assets;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ExtensionResolver;
 import com.jmeplay.plugin.assets.handler.OpenFileHandler;
+import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,10 +28,12 @@ import java.util.stream.Collectors;
  */
 public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 
-    private List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
+    private final OpenByExtensionFileHandler openByExtensionFileHandler;
+    private final List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
     private ContextMenu contextMenu = null;
 
-    JMEPlayAssetsTreeCell(List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
+    JMEPlayAssetsTreeCell(OpenByExtensionFileHandler openByExtensionFileHandler, List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
+        this.openByExtensionFileHandler = openByExtensionFileHandler;
         this.jmePlayFileHandlers = jmePlayFileHandlers;
         setOnMouseClicked(this::processClick);
     }
@@ -57,9 +62,7 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
 
         if (button.equals(MouseButton.PRIMARY)) {
             if (event.getClickCount() == 2) {
-                filterJMEPlayFileHandler().stream()
-                        .filter(openFileHandler -> openFileHandler instanceof OpenFileHandler).findFirst()
-                        .ifPresent(treeViewJMEPlayFileHandler -> ((OpenFileHandler) treeViewJMEPlayFileHandler).handle(this.getTreeView()));
+                openByExtensionFileHandler.handle(this.getTreeView());
             }
         }
 

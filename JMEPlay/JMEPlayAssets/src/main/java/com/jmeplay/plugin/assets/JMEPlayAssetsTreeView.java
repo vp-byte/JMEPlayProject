@@ -5,6 +5,7 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
+import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
 import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.SelectionMode;
@@ -35,24 +36,24 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
     private Map<WatchKey, TreeItem<Path>> keys;
     private boolean hasCutedFiles = false;
 
-    private JMEPlayGlobal jmePlayGlobal;
-    private JMEPlayAssetsSettings jmePlayAssetsSettings;
-    private JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder;
-    private List<JMEPlayFileHandler<TreeView<Path>>> fileHandlers;
+    private final JMEPlayGlobal jmePlayGlobal;
+    private final JMEPlayAssetsSettings jmePlayAssetsSettings;
+    private final JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder;
+    private final OpenByExtensionFileHandler openByExtensionFileHandler;
+    private final List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
 
     @Autowired
     public JMEPlayAssetsTreeView(JMEPlayGlobal jmePlayGlobal,
                                  JMEPlayAssetsSettings jmePlayAssetsSettings,
-                                 JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder) {
+                                 JMEPlayAssetsImageDefinder jmePlayAssetsImageDefinder,
+                                 OpenByExtensionFileHandler openByExtensionFileHandler,
+                                 List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
         this.jmePlayGlobal = jmePlayGlobal;
         this.jmePlayAssetsSettings = jmePlayAssetsSettings;
         this.jmePlayAssetsImageDefinder = jmePlayAssetsImageDefinder;
+        this.openByExtensionFileHandler = openByExtensionFileHandler;
+        this.jmePlayFileHandlers = jmePlayFileHandlers;
         getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    }
-
-    @Autowired(required = false)
-    public void setFileHandlers(List<JMEPlayFileHandler<TreeView<Path>>> fileHandlers) {
-        this.fileHandlers = fileHandlers;
     }
 
     /**
@@ -72,7 +73,7 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
         TreeItem<Path> rootTreeItem = new TreeItem<>(rootPath);
         setRoot(rootTreeItem);
         setShowRoot(false);
-        setCellFactory(param -> new JMEPlayAssetsTreeCell(fileHandlers));
+        setCellFactory(param -> new JMEPlayAssetsTreeCell(openByExtensionFileHandler, jmePlayFileHandlers));
         try {
             createTree(rootTreeItem);
         } catch (IOException e) {

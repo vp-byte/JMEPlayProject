@@ -1,15 +1,16 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.fileopeners;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
+import com.jmeplay.core.handler.file.JMEPlayFileOpenerHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.application.Platform;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
@@ -19,9 +20,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
-
-import static java.util.Collections.singletonList;
 
 /**
  * Handler to open file in external editor support for mac, win, linux operating systems
@@ -29,8 +29,8 @@ import static java.util.Collections.singletonList;
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-@Order(value = 2)
-public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+@Order(value = 1)
+public class OpenExternalFileHandler extends JMEPlayFileOpenerHandler<TreeView<Path>> {
 
     private final int iconSize;
 
@@ -47,11 +47,11 @@ public class OpenExternalFileHandler extends JMEPlayFileHandler<TreeView<Path>> 
     }
 
     /**
-     * {@link JMEPlayFileHandler:filetype}
+     * {@link JMEPlayFileOpenerHandler}
      */
     @Override
-    public List<String> filetypes() {
-        return singletonList(JMEPlayFileHandler.file);
+    public List<String> extension() {
+        return Arrays.asList(JMEPlayFileHandler.file, JMEPlayFileOpenerHandler.filenoextension);
     }
 
     @Override
