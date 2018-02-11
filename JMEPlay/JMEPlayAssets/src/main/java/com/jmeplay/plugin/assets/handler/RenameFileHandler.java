@@ -4,20 +4,28 @@
 package com.jmeplay.plugin.assets.handler;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
+import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayConsole;
+import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Collections.singletonList;
 
@@ -65,6 +73,41 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     public void handle(TreeView<Path> source) {
-        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Rename file " + source.getSelectionModel().getSelectedItem().getValue());
+        final Path path = source.getSelectionModel().getSelectedItem().getValue();
+        Optional<String> result = createInputNewFileNameDialog(path).showAndWait();
+        result.ifPresent((v) -> {
+            try {
+                final Path parenPath = path.getParent();
+                final String extension = PathResolver.extension(path);
+                ((JMEPlayTreeView) source).setSelectAddedItem();
+                String point = Files.isRegularFile(path) ? "." : "";
+                Files.move(path, Paths.get(parenPath + "/" + result.get() + point + extension));
+                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Renamed file from " + source.getSelectionModel().getSelectedItem().getValue() + " to " + result.get() + " success");
+            } catch (final IOException e) {
+                jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Renamed file from " + source.getSelectionModel().getSelectedItem().getValue() + " to " + result.get() + " fail");
+            }
+        });
+    }
+
+    private TextInputDialog createInputNewFileNameDialog(final Path path) {
+        final String filename = PathResolver.name(path);
+        final Path parentPath = path.getParent();
+        final String extension = PathResolver.extension(path);
+
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TITLE));
+        dialog.setHeaderText(null);
+        dialog.getEditor().setText(filename);
+        dialog.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TEXT));
+        dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
+        dialog.getEditor().textProperty().addListener((ob, o, n) -> {
+            Path pathToCreate = Paths.get(parentPath + "/" + n + "." + extension);
+            if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.nameinvalid(n)) {
+                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
+            } else {
+                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
+            }
+        });
+        return dialog;
     }
 }

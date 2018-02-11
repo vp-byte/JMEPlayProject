@@ -3,7 +3,7 @@
  */
 package com.jmeplay.plugin.assets;
 
-import com.jmeplay.core.utils.ExtensionResolver;
+import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.core.utils.ImageLoader;
 import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * Defines image from filename
+ * Defines image from name
  *
  * @author vp-byte(Vladimir Petrenko)
  */
@@ -42,7 +42,7 @@ public class JMEPlayAssetsImageDefinder {
         if (Files.isDirectory(path)) {
             return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_FOLDER, iconSize, iconSize);
         } else {
-            String fileExtension = ExtensionResolver.resolve(path);
+            String fileExtension = PathResolver.extension(path);
             if (fileExtension != null) {
                 switch (fileExtension.toLowerCase()) {
                     case JMEPlayAssetsResources.J3O:

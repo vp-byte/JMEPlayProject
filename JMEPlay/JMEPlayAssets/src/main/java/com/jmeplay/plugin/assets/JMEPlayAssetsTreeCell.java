@@ -4,8 +4,7 @@
 package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
-import com.jmeplay.core.utils.ExtensionResolver;
-import com.jmeplay.plugin.assets.handler.OpenFileHandler;
+import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
@@ -13,8 +12,6 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -87,7 +84,7 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
     }
 
     private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler() {
-        String fileExtension = ExtensionResolver.resolve(getItem());
+        String fileExtension = PathResolver.extension(getItem());
         return jmePlayFileHandlers.stream().filter(fileHandler -> {
             for (String filetype : fileHandler.filetypes()) {
                 if (fileExtension != null && fileExtension.equals(filetype)) {

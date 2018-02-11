@@ -1,13 +1,17 @@
 package com.jmeplay.plugin.assets.handler.filecreators;
 
 import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
+import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayConsole;
+import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import javafx.collections.ListChangeListener;
-import javafx.scene.control.*;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -57,13 +61,9 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
         result.ifPresent((v) -> {
             final Path pathToCreate = Paths.get(path.toString(), result.get());
             try {
-                Files.createDirectory(pathToCreate);
                 source.getSelectionModel().getSelectedItem().setExpanded(true);
-                ListChangeListener<? super TreeItem<Path>> li = change -> {
-                    change.next();
-                    source.getSelectionModel().clearAndSelect(source.getRow(change.getAddedSubList().get(0)));
-                };
-                source.getSelectionModel().getSelectedItem().getChildren().addListener(li);
+                ((JMEPlayTreeView) source).setSelectAddedItem();
+                Files.createDirectory(pathToCreate);
                 jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Create folder " + pathToCreate + " success");
             } catch (Exception e) {
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Create folder " + pathToCreate + " fail");
@@ -88,7 +88,7 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
         dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
         dialog.getEditor().textProperty().addListener((ob, o, n) -> {
             Path pathToCreate = Paths.get(path.toString(), n);
-            if (Files.exists(pathToCreate) || n.isEmpty()) {
+            if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.nameinvalid(n)) {
                 dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
             } else {
                 dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);

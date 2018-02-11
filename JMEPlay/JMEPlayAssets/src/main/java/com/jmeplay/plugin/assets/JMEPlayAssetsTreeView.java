@@ -5,6 +5,7 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
+import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
 import javafx.application.Platform;
 import javafx.scene.Node;
@@ -30,11 +31,12 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayAssetsTreeView extends TreeView<Path> {
+public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
 
     private WatchService watcher;
     private Map<WatchKey, TreeItem<Path>> keys;
     private boolean hasCutedFiles = false;
+
 
     private final JMEPlayGlobal jmePlayGlobal;
     private final JMEPlayAssetsSettings jmePlayAssetsSettings;
@@ -135,6 +137,11 @@ public class JMEPlayAssetsTreeView extends TreeView<Path> {
                                 createTree(item);
                             }
                             keys.get(key).getChildren().add(item);
+                            keys.get(key).getChildren().sort(Comparator.comparing(t -> t.getValue().getFileName().toString().toLowerCase()));
+                            if (isSelectAddedItem()) {
+                                getSelectionModel().clearAndSelect(getRow(item));
+                                setSelectAddedItem(false);
+                            }
                             if (hasCutedFiles) {
                                 unmarkCutedFilesInTreeView();
                             }

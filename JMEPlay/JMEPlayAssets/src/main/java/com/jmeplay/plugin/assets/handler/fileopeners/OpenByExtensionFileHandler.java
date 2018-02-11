@@ -87,7 +87,7 @@ public class OpenByExtensionFileHandler extends JMEPlayFileOpenerHandler<TreeVie
      * editorViewerTab; } } return null; }
      *
      * private void openEditorViewer(Path path) { String fileExtension =
-     * ExtensionResolver.resolve(path); for (EditorViewer editorViewer :
+     * PathResolver.extension(path); for (EditorViewer editorViewer :
      * editorViewers) { for (String filetype : editorViewer.extension()) { if
      * (fileExtension.equalsIgnoreCase(filetype)) { EditorViewerTab tab =
      * editorViewer.view(path); editorCenter.centerView().getTabs().add(tab);

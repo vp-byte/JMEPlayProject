@@ -16,7 +16,7 @@ public class ImageLoader {
 	/**
 	 * Loads image and create ImageView with original width and height
 	 * 
-	 * @param clazz to resolve resource from class loader
+	 * @param clazz to extension resource from class loader
 	 * @param imagePath path in resource folder
 	 * @return {@link ImageView} of JavaFX
 	 */
@@ -27,7 +27,7 @@ public class ImageLoader {
 	/**
 	 * Loads image and create ImageView with defined width and height
 	 * 
-	 * @param clazz to resolve resource from class loader
+	 * @param clazz to extension resource from class loader
 	 * @param imagePath path in resource folder
 	 * @param width to set {@link ImageView#setFitWidth(double)}
 	 * @param height to set {@link ImageView#setFitHeight(double)}
