@@ -7,13 +7,11 @@ import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
 import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
-import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.TextFieldTreeCell;
-import javafx.scene.input.Clipboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -73,8 +71,8 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
         Path rootPath = Paths.get(rootFolder);
         keys = new HashMap<>();
         TreeItem<Path> rootTreeItem = new TreeItem<>(rootPath);
+        rootTreeItem.setExpanded(true);
         setRoot(rootTreeItem);
-        setShowRoot(false);
         setCellFactory(param -> new JMEPlayAssetsTreeCell(openByExtensionFileHandler, jmePlayFileHandlers));
         try {
             createTree(rootTreeItem);
@@ -182,7 +180,6 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
 
     public void unmarkCutedFilesInTreeView() {
         hasCutedFiles = false;
-        Platform.runLater(() -> Clipboard.getSystemClipboard().clear());
         List<Node> cells = new ArrayList<>(lookupAll(".tree-item-cut"));
         cells.forEach(cell -> cell.getStyleClass().remove("tree-item-cut"));
     }

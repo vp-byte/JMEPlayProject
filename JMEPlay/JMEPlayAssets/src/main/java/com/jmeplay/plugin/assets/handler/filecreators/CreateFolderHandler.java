@@ -57,7 +57,7 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
 
     public void handle(final TreeView<Path> source) {
         final Path path = pathFromSelectedItem(source);
-        Optional<String> result = createInputFolderNameDialog(path).showAndWait();
+        Optional<String> result = createInputFileFolderNameDialog(path).showAndWait();
         result.ifPresent((v) -> {
             final Path pathToCreate = Paths.get(path.toString(), result.get());
             try {
@@ -80,7 +80,7 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
         return path;
     }
 
-    private TextInputDialog createInputFolderNameDialog(final Path path) {
+    private TextInputDialog createInputFileFolderNameDialog(final Path path) {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
         dialog.setHeaderText(null);

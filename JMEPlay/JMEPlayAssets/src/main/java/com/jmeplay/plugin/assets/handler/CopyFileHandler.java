@@ -11,6 +11,7 @@ import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeItem;
@@ -77,7 +78,7 @@ public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         ClipboardContent content = new ClipboardContent();
 
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
-        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, "copy");
+        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.COPY);
 
         if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
             content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCopy(paths));
@@ -85,7 +86,7 @@ public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);
-
+        ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
         paths.forEach(path -> jmePlayConsole.message(JMEPlayConsole.Type.INFO, "Copy " + path + " to clipboard"));
     }
 

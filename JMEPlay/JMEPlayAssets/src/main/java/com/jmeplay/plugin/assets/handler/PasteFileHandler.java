@@ -1,32 +1,39 @@
+/*
+ * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ */
 package com.jmeplay.plugin.assets.handler;
 
-import static java.util.Collections.singletonList;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.jmeplay.editor.ui.JMEPlayConsole;
-import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
-import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import javafx.scene.control.MenuItem;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
+import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
+import com.jmeplay.core.utils.OSInfo;
+import com.jmeplay.editor.ui.JMEPlayConsole;
+import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
-
+import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import static java.util.Collections.singletonList;
 
 /**
  * Handler to paste file
@@ -72,6 +79,103 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     public void handle(TreeView<Path> source) {
-        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file " + source.getSelectionModel().getSelectedItem().getValue());
+
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (clipboard == null) return;
+
+        List<File> files = new ArrayList<>();
+        String clipboardAction = defineClipboardActionSetupFiles(clipboard, files);
+        if (clipboardAction == null || files.size() <= 0) {
+            return;
+        }
+
+        Path targetPath = source.getSelectionModel().getSelectedItem().getValue();
+        if (Files.isRegularFile(targetPath)) {
+            targetPath = targetPath.getParent();
+        }
+
+        switch (clipboardAction) {
+            case JMEPlayClipboardFormat.CUT:
+                try {
+                    move(targetPath, files);
+                    jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste cuted files success");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste cuted files fail");
+                }
+                break;
+            case JMEPlayClipboardFormat.COPY:
+                try {
+                    copy(targetPath, files);
+                    jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste copped files success");
+                } catch (Exception e) {
+                    jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste copped files fail");
+                }
+                break;
+        }
+
+        ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
     }
+
+    @SuppressWarnings("unchecked")
+    private String defineClipboardActionSetupFiles(final Clipboard clipboard, List<File> files) {
+        String clipboardAction = null;
+        if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
+            String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
+            if (clipboardContent == null) {
+                return null;
+            }
+            clipboardContent = clipboardContent.replace("file:", "");
+            clipboardContent = clipboardContent.replace("%20", " ");
+            StringTokenizer tokenizer = new StringTokenizer(clipboardContent, "\n");
+            int counter = 0;
+            while (tokenizer.hasMoreTokens()) {
+                if (counter == 0) {
+                    clipboardAction = tokenizer.nextToken();
+                }
+                files.add(Paths.get(tokenizer.nextToken()).toFile());
+                counter++;
+            }
+        } else {
+            clipboardAction = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
+            files.addAll((List<File>) (clipboard.getContent(DataFormat.FILES)));
+        }
+        return clipboardAction;
+    }
+
+    private void move(final Path targetPath, final List<File> files) {
+
+        files.forEach(file -> {
+            Path newFile = targetPath.resolve(file.getName());
+
+            // TODO Datei oder Ordnernamen aendern
+            if (files.size() == 1 && Files.exists(newFile)) {
+
+            }
+            try {
+                Files.move(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
+            } catch (final IOException e) {
+                throw new IllegalArgumentException(e);
+            }
+        });
+    }
+
+
+    private void copy(final Path targetPath, final List<File> files) {
+        files.forEach(file -> {
+            final Path newFile = targetPath.resolve(file.getName());
+            try {
+                Files.copy(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
+            } catch (final IOException e) {
+                throw new IllegalArgumentException(e);
+            }
+        });
+    }
+
+    Path changeNewFileName(Path newFile) {
+
+        // OK Abbrechen [x] Ueberschreiben
+        return newFile;
+    }
+
 }

@@ -3,6 +3,7 @@
  */
 package com.jmeplay.plugin.assets.handler.util;
 
+import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.utils.OSInfo;
 
 import java.io.UnsupportedEncodingException;
@@ -60,12 +61,11 @@ public class FileHandlerUtil {
     }
 
     public static ByteBuffer toByteBufferCopy(final List<Path> paths) {
-        return toByteBuffer(new StringBuilder("copy\n"), paths);
+        return toByteBuffer(new StringBuilder(JMEPlayClipboardFormat.COPY + "\n"), paths);
     }
 
     public static ByteBuffer toByteBufferCut(final List<Path> paths) {
-        return toByteBuffer(new StringBuilder("cut\n"), paths);
-
+        return toByteBuffer(new StringBuilder(JMEPlayClipboardFormat.CUT + "\n"), paths);
     }
 
     private static ByteBuffer toByteBuffer(final StringBuilder builder, final List<Path> paths) {
