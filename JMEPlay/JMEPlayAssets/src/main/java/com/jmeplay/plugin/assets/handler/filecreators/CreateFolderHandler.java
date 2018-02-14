@@ -1,16 +1,14 @@
 package com.jmeplay.plugin.assets.handler.filecreators;
 
 import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
-import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.editor.ui.JMEPlayTreeView;
+import com.jmeplay.plugin.assets.JMEPlayAssetsDialogs;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +27,16 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
+    private final JMEPlayAssetsDialogs jmePlayAssetsDialogs;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public CreateFolderHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                                JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                               JMEPlayAssetsDialogs jmePlayAssetsDialogs,
                                JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
+        this.jmePlayAssetsDialogs = jmePlayAssetsDialogs;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -57,7 +58,7 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
 
     public void handle(final TreeView<Path> source) {
         final Path path = pathFromSelectedItem(source);
-        Optional<String> result = createInputFileFolderNameDialog(path).showAndWait();
+        Optional<String> result = jmePlayAssetsDialogs.createInputFileFolderNameDialog(path).showAndWait();
         result.ifPresent((v) -> {
             final Path pathToCreate = Paths.get(path.toString(), result.get());
             try {
@@ -80,20 +81,5 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
         return path;
     }
 
-    private TextInputDialog createInputFileFolderNameDialog(final Path path) {
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
-        dialog.setHeaderText(null);
-        dialog.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TEXT));
-        dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
-        dialog.getEditor().textProperty().addListener((ob, o, n) -> {
-            Path pathToCreate = Paths.get(path.toString(), n);
-            if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.nameinvalid(n)) {
-                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
-            } else {
-                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
-            }
-        });
-        return dialog;
-    }
+
 }
