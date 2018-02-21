@@ -26,7 +26,10 @@ public class JMEPlayAssetsLocalization {
     public final static String LOCALISATION_ASSETS_HANDLER_OPENEXTERNAL = "openexternal";
     public final static String LOCALISATION_ASSETS_HANDLER_CUT = "cut";
     public final static String LOCALISATION_ASSETS_HANDLER_COPY = "copy";
+
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE = "paste";
+    public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REPLACE = "pastereplace";
+    public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REINDEX = "pastereindex";
 
     public final static String LOCALISATION_ASSETS_HANDLER_RENAME = "rename";
     public final static String LOCALISATION_ASSETS_HANDLER_RENAME_TITLE = "renametitle";

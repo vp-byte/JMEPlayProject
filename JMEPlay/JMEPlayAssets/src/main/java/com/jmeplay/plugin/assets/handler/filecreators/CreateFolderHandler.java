@@ -4,10 +4,11 @@ import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.editor.ui.JMEPlayTreeView;
-import com.jmeplay.plugin.assets.JMEPlayAssetsDialogs;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Optional;
 
 @Component
@@ -27,16 +27,16 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsDialogs jmePlayAssetsDialogs;
+    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public CreateFolderHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                                JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                               JMEPlayAssetsDialogs jmePlayAssetsDialogs,
+                               JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
                                JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsDialogs = jmePlayAssetsDialogs;
+        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -58,9 +58,11 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
 
     public void handle(final TreeView<Path> source) {
         final Path path = pathFromSelectedItem(source);
-        Optional<String> result = jmePlayAssetsDialogs.createInputFileFolderNameDialog(path).showAndWait();
-        result.ifPresent((v) -> {
-            final Path pathToCreate = Paths.get(path.toString(), result.get());
+        Dialog<Path> dialog = jmePlayAssetsReNameDialog.construct(path, JMEPlayAssetsReNameDialog.Type.NAME);
+        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
+        dialog.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TEXT));
+        Optional<Path> result = dialog.showAndWait();
+        result.ifPresent((pathToCreate) -> {
             try {
                 source.getSelectionModel().getSelectedItem().setExpanded(true);
                 ((JMEPlayTreeView) source).setSelectAddedItem();

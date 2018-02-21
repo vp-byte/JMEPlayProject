@@ -8,10 +8,8 @@ import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.core.utils.OSInfo;
 import com.jmeplay.editor.ui.JMEPlayConsole;
-import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
-import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
-import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
+import com.jmeplay.plugin.assets.*;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
@@ -31,6 +29,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.StringTokenizer;
 
 import static java.util.Collections.singletonList;
@@ -47,13 +46,16 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
+    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public PasteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                            JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
                             JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
+        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -94,25 +96,7 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             targetPath = targetPath.getParent();
         }
 
-        switch (clipboardAction) {
-            case JMEPlayClipboardFormat.CUT:
-                try {
-                    move(targetPath, files);
-                    jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste cuted files success");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste cuted files fail");
-                }
-                break;
-            case JMEPlayClipboardFormat.COPY:
-                try {
-                    copy(targetPath, files);
-                    jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste copped files success");
-                } catch (Exception e) {
-                    jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste copped files fail");
-                }
-                break;
-        }
+        paste(clipboardAction, targetPath, files);
 
         ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
     }
@@ -143,39 +127,65 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return clipboardAction;
     }
 
-    private void move(final Path targetPath, final List<File> files) {
+    private void paste(String clipboardAction, final Path targetPath, final List<File> files) {
+        if (files.size() == 1) {
+            File file = files.get(0);
+            if (Files.isRegularFile(file.toPath())) {
+                Path newFile = targetPath.resolve(file.getName());
+                if (Files.exists(newFile)) {
+                    Optional<Path> result = jmePlayAssetsReNameDialog.construct(newFile).showAndWait();
+                    result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath, false));
+                } else {
+                    moveOrCopy(clipboardAction, file.toPath(), newFile, false);
+                }
+            }
+        }
 
+/*
         files.forEach(file -> {
             Path newFile = targetPath.resolve(file.getName());
+                  Optional<String> result = jmePlayAssetsDialogs.createPasteOptionsDialog().showAndWait();
+                result.ifPresent((r) -> {
+                    if (r.equals("replace")) {
+                        try {
+                            if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
+                                Files.move(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
+                            }
+                            if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
+                                Files.copy(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
+                            }
+                            jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste file: " + newFile + " success");
+                        } catch (final IOException e) {
+                            e.printStackTrace();
+                            jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file: " + newFile + " fail");
+                        }
+                    }
+                });
 
-            // TODO Datei oder Ordnernamen aendern
-            if (files.size() == 1 && Files.exists(newFile)) {
+        });*/
 
-            }
-            try {
-                Files.move(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
-            } catch (final IOException e) {
-                throw new IllegalArgumentException(e);
-            }
-        });
     }
 
-
-    private void copy(final Path targetPath, final List<File> files) {
-        files.forEach(file -> {
-            final Path newFile = targetPath.resolve(file.getName());
-            try {
-                Files.copy(file.toPath(), newFile, StandardCopyOption.REPLACE_EXISTING);
-            } catch (final IOException e) {
-                throw new IllegalArgumentException(e);
+    private void moveOrCopy(String clipboardAction, final Path file, final Path newFile, final boolean replace) {
+        try {
+            if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
+                if (replace) {
+                    Files.move(file, newFile, StandardCopyOption.REPLACE_EXISTING);
+                } else {
+                    Files.move(file, newFile);
+                }
             }
-        });
+            if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
+                if (replace) {
+                    Files.copy(file, newFile, StandardCopyOption.REPLACE_EXISTING);
+                } else {
+                    Files.copy(file, newFile);
+                }
+            }
+            jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste file: " + newFile + " success");
+        } catch (final IOException e) {
+            e.printStackTrace();
+            jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file: " + newFile + " fail");
+        }
     }
-
-    Path changeNewFileName(Path newFile) {
-
-        // OK Abbrechen [x] Ueberschreiben
-        return newFile;
-    }
-
 }

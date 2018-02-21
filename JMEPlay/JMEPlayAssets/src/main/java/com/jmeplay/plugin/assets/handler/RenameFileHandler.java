@@ -5,13 +5,12 @@ package com.jmeplay.plugin.assets.handler;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.editor.ui.JMEPlayTreeView;
-import com.jmeplay.plugin.assets.JMEPlayAssetsDialogs;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -22,7 +21,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,16 +38,16 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsDialogs jmePlayAssetsDialogs;
+    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public RenameFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                              JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             JMEPlayAssetsDialogs jmePlayAssetsDialogs,
+                             JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
                              JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsDialogs = jmePlayAssetsDialogs;
+        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -76,14 +74,11 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     public void handle(TreeView<Path> source) {
         final Path path = source.getSelectionModel().getSelectedItem().getValue();
-        Optional<String> result = jmePlayAssetsDialogs.createInputNewFileNameDialog(path).showAndWait();
-        result.ifPresent((v) -> {
+        Optional<Path> result = jmePlayAssetsReNameDialog.construct(path).showAndWait();
+        result.ifPresent((newPath) -> {
             try {
-                final Path parenPath = path.getParent();
-                final String extension = PathResolver.extension(path);
                 ((JMEPlayTreeView) source).setSelectAddedItem();
-                String point = Files.isRegularFile(path) ? "." : "";
-                Files.move(path, Paths.get(parenPath + "/" + result.get() + point + extension));
+                Files.move(path, newPath);
                 jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Renamed file from " + source.getSelectionModel().getSelectedItem().getValue() + " to " + result.get() + " success");
             } catch (final IOException e) {
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Renamed file from " + source.getSelectionModel().getSelectedItem().getValue() + " to " + result.get() + " fail");
