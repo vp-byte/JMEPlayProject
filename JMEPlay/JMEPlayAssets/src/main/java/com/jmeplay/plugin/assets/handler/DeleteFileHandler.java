@@ -96,6 +96,7 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private void executeDelete() {
         new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach(this::delete);
+        source.getSelectionModel().clearSelection();
     }
 
     private void delete(TreeItem<Path> item) {
