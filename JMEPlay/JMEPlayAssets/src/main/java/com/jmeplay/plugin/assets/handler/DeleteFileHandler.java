@@ -95,18 +95,18 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     private void executeDelete() {
-        new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach((item) -> delete(item.getValue()));
+        new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach(this::delete);
     }
 
-    private void delete(Path path) {
+    private void delete(TreeItem<Path> item) {
+        final Path path = item.getValue();
         try {
             if (!Files.isDirectory(path)) {
                 Files.delete(path);
             } else {
                 Files.walkFileTree(path, new DeleteFileVisitor());
             }
-            TreeItem<Path> treeItem = source.getSelectionModel().getSelectedItem();
-            treeItem.getParent().getChildren().remove(treeItem);
+            item.getParent().getChildren().remove(item);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
