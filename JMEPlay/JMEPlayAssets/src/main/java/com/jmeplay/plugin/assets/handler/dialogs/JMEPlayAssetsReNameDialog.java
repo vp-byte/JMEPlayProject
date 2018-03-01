@@ -58,11 +58,7 @@ public class JMEPlayAssetsReNameDialog {
         dialog.setResultConverter(buttonType -> {
             ButtonBar.ButtonData buttonData = buttonType.getButtonData();
             if (buttonData == ButtonBar.ButtonData.OK_DONE) {
-                if (type == Type.RENAME) {
-                    return constructPath(path, textField.getText());
-                } else if (type == Type.NAME) {
-                    return Paths.get("" + path, textField.getText());
-                }
+                return constructPath(path, textField.getText());
             }
             return null;
         });
@@ -128,10 +124,14 @@ public class JMEPlayAssetsReNameDialog {
     }
 
     private Path constructPath(final Path path, final String newName) {
-        final Path parentPath = path.getParent();
-        final String extension = PathResolver.extension(path);
-        final String point = Files.isRegularFile(path) ? "." : "";
-        return Paths.get(parentPath + "/" + newName + point + extension);
+        if (type == Type.RENAME) {
+            final Path parentPath = path.getParent();
+            final String extension = PathResolver.extension(path);
+            final String point = Files.isRegularFile(path) ? "." : "";
+            return Paths.get(parentPath + "/" + newName + point + extension);
+        } else {
+            return Paths.get("" + path, textField.getText());
+        }
     }
 
     public enum Type {
