@@ -13,13 +13,16 @@ import java.util.Optional;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 import static java.nio.file.FileVisitResult.SKIP_SUBTREE;
+import static java.nio.file.FileVisitResult.TERMINATE;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 @Component
 public class PasteFileVisitor implements FileVisitor<Path> {
     private Path source;
     private Path target;
     private String clipboardAction;
+    private final CopyOption[] copyOptions = new CopyOption[]{COPY_ATTRIBUTES, REPLACE_EXISTING};
     private JMEPlayAssetsPasteOptionDialog.Option pasteOption;
 
     private final JMEPlayAssetsPasteOptionDialog jmePlayAssetsPasteOptionDialog;
@@ -40,9 +43,9 @@ public class PasteFileVisitor implements FileVisitor<Path> {
         Path newdir = target.resolve(source.relativize(dir));
         try {
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
-                Files.move(dir, newdir, StandardCopyOption.REPLACE_EXISTING);
+                Files.move(dir, newdir, copyOptions);
             } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                Files.copy(dir, newdir, StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(dir, newdir, copyOptions);
             }
         } catch (FileAlreadyExistsException x) {
             // ignore
@@ -59,15 +62,17 @@ public class PasteFileVisitor implements FileVisitor<Path> {
             if (pasteOption == null && Files.exists(target)) {
                 Optional<JMEPlayAssetsPasteOptionDialog.Option> result = jmePlayAssetsPasteOptionDialog.construct().showAndWait();
                 result.ifPresent((option) -> pasteOption = option);
-                // TODO CANCEL
+                if (!result.isPresent()) {
+                    return TERMINATE;
+                }
             }
 
             switch (pasteOption) {
                 case REPLACE:
                     if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
-                        Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+                        Files.move(source, target, copyOptions);
                     } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                        Files.copy(source, target, copyOptions);
                     }
                     break;
                 case REINDEX:

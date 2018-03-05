@@ -12,10 +12,9 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsPasteOptionDialog;
 import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
-import com.jmeplay.plugin.assets.handler.util.PasteFileVisitor;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
+import com.jmeplay.plugin.assets.handler.util.PasteFileVisitor;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -136,9 +135,9 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
                 Path newFile = targetPath.resolve(file.getName());
                 if (Files.exists(newFile)) {
                     Optional<Path> result = jmePlayAssetsReNameDialog.construct(newFile).showAndWait();
-                    result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath, false));
+                    result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath));
                 } else {
-                    moveOrCopy(clipboardAction, file.toPath(), newFile, false);
+                    moveOrCopy(clipboardAction, file.toPath(), newFile);
                 }
                 return;
             }
@@ -156,27 +155,16 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
                 e.printStackTrace();
                 jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file: " + newFile + " fail");
             }
-
-
         });
-
     }
 
-    private void moveOrCopy(String clipboardAction, final Path file, final Path newFile, final boolean replace) {
+    private void moveOrCopy(String clipboardAction, final Path file, final Path newFile) {
         try {
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
-                if (replace) {
-                    Files.move(file, newFile, StandardCopyOption.REPLACE_EXISTING);
-                } else {
-                    Files.move(file, newFile);
-                }
+                Files.move(file, newFile);
             }
             if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                if (replace) {
-                    Files.copy(file, newFile, StandardCopyOption.REPLACE_EXISTING);
-                } else {
-                    Files.copy(file, newFile);
-                }
+                Files.copy(file, newFile);
             }
             jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste file: " + newFile + " success");
         } catch (final IOException e) {

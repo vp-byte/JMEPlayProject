@@ -13,8 +13,6 @@ import javafx.scene.layout.GridPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.Path;
-
 /**
  * Implementation for paste option dialog of JMEPlayAssets
  *
