@@ -42,6 +42,7 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
         Path newdir = target.resolve(source.relativize(dir));
         try {
+            System.out.println(dir + " -> "+ newdir);
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                 Files.move(dir, newdir, copyOptions);
             } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
@@ -67,12 +68,14 @@ public class PasteFileVisitor implements FileVisitor<Path> {
                 }
             }
 
+
+            Files.copy(source, target, copyOptions);
             switch (pasteOption) {
                 case REPLACE:
                     if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                         Files.move(source, target, copyOptions);
                     } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                        Files.copy(source, target, copyOptions);
+                        System.out.println(source + " -> "+ target);
                     }
                     break;
                 case REINDEX:
