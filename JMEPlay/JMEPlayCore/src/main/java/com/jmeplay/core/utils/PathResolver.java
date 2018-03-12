@@ -5,6 +5,9 @@ package com.jmeplay.core.utils;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Resolver name and extension by path
@@ -40,9 +43,43 @@ public class PathResolver {
     public static String name(Path path) {
         if (Files.isRegularFile(path)) {
             String filename = "" + path.getFileName();
-            return filename.substring(0, filename.lastIndexOf("."));
+            if (filename.contains(".")) {
+                return filename.substring(0, filename.lastIndexOf("."));
+            }
         }
-        return "" + path.getName(path.getNameCount() - 1);
+        return "" + path.getFileName();
+    }
+
+
+    public static Path reindexName(final Path path) {
+        Path newPath = path;
+        if (Files.exists(newPath)) {
+            Path parent = path.getParent();
+            String name = name(path);
+            String extension = extension(path);
+            String point = Files.isRegularFile(path) && !extension.isEmpty() ? "." : "";
+
+
+            Matcher matcher = Pattern.compile("-\\d").matcher(name);
+            Integer start = null;
+            Integer end = null;
+            while (matcher.find()) {
+                start = matcher.start() + 1;
+                end = matcher.end();
+            }
+            if (start != null && end != null) {
+                Integer index = Integer.parseInt(name.substring(start, end));
+                name = name.substring(0, start);
+                name += (index + 1);
+            } else {
+                name += "-1";
+            }
+            newPath = Paths.get(parent.toString(), name + point + extension);
+            if (Files.exists(newPath)) {
+                newPath = reindexName(newPath);
+            }
+        }
+        return newPath;
     }
 
     /**
