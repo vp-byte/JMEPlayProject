@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,13 +45,11 @@ public class PathResolverTest {
     }
 
     @Test
-    /** @see PathResolver#extension(Path) */
     public void extension() {
         Assert.assertEquals(extension, PathResolver.extension(path));
     }
 
     @Test
-    /** @see PathResolver#name(Path) */
     public void name() {
         Assert.assertEquals(filename, PathResolver.name(path));
     }

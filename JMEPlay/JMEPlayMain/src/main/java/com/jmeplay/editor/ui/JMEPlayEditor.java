@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -26,17 +26,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class JMEPlayEditor implements JMEPlayGlobal {
 
-    // Asset folder
     private String assetfolder;
     private final ReadOnlyObjectWrapper<String> assetfolderChange = new ReadOnlyObjectWrapper<>();
 
     public void setAssetFolder(String assetfolder) {
         this.assetfolder = assetfolder;
         assetfolderChange.set(this.assetfolder);
-    }
-
-    public String assetFolder() {
-        return assetfolder;
     }
 
     @Override
