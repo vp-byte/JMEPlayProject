@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
+import java.nio.file.Path;
 
 /**
  * File menu of JMEPlayEditor
@@ -51,8 +52,8 @@ public class JMEPlayEditorTopMenuFile {
         chooser.setInitialDirectory(defaultDirectory);
         File selectedDirectory = chooser.showDialog(jmePlayEditor.stage());
         if (selectedDirectory != null) {
-            String rootfolder = selectedDirectory.getAbsolutePath();
-            jmePlayGlobalSettings.setValue(JMEPlayGlobalResources.ROOTFOLDER, rootfolder);
+            Path rootfolder = selectedDirectory.toPath();
+            jmePlayGlobalSettings.setValue(JMEPlayGlobalResources.ROOTFOLDER, "" + rootfolder);
             jmePlayEditor.setAssetFolder(rootfolder);
         }
     }

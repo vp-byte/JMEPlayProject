@@ -11,6 +11,8 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.ToolBar;
 import javafx.stage.Stage;
 
+import java.nio.file.Path;
+
 /**
  * Interface to get all JMEPlay editor components and nodes to use it
  * application wide
@@ -20,7 +22,7 @@ import javafx.stage.Stage;
 public interface JMEPlayGlobal {
 
     // Asset folder
-    ReadOnlyObjectProperty<String> assetFolderChange();
+    ReadOnlyObjectProperty<Path> assetFolderChange();
 
     // ToolBar
     ToolBar toolBar();

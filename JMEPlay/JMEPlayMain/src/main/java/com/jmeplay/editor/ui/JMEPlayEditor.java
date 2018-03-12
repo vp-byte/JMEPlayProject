@@ -16,7 +16,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
+
+import java.nio.file.Path;
 
 /**
  * JMEPlayEditor component to handle all parts and nodes of the editor
@@ -26,16 +29,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class JMEPlayEditor implements JMEPlayGlobal {
 
-    private String assetfolder;
-    private final ReadOnlyObjectWrapper<String> assetfolderChange = new ReadOnlyObjectWrapper<>();
+    private Path assetfolder;
+    private final ReadOnlyObjectWrapper<Path> assetfolderChange = new ReadOnlyObjectWrapper<>();
 
-    public void setAssetFolder(String assetfolder) {
+    public void setAssetFolder(Path assetfolder) {
         this.assetfolder = assetfolder;
         assetfolderChange.set(this.assetfolder);
     }
 
     @Override
-    public ReadOnlyObjectProperty<String> assetFolderChange() {
+    public ReadOnlyObjectProperty<Path> assetFolderChange() {
         return assetfolderChange.getReadOnlyProperty();
     }
 
