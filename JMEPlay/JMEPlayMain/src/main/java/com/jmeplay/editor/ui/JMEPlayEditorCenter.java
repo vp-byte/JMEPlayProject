@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -19,14 +19,24 @@ import javax.annotation.PostConstruct;
 public class JMEPlayEditorCenter {
 
     private InvalidationListener il = null;
-
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Constructor to create center view of editor
+     *
+     * @param jmePlayEditor to setup center view
+     */
     @Autowired
     public JMEPlayEditorCenter(JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize center view for editor
+     * {@link JMEPlayEditor#setCenter(BorderPane)}
+     * {@link JMEPlayEditor#center()}
+     * {@link JMEPlayEditor#centerChange()}
+     */
     @PostConstruct
     private void init() {
         il = (in) -> {

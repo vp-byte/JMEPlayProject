@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -22,11 +22,22 @@ public class JMEPlayEditorTop {
 
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Constructor to create top view of editor
+     *
+     * @param jmePlayEditor to setup top view
+     */
     @Autowired
     public JMEPlayEditorTop(JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize top view for editor
+     * {@link JMEPlayEditor#setTop(VBox)}
+     * {@link JMEPlayEditor#top()}
+     * {@link JMEPlayEditor#topChange()}
+     */
     @PostConstruct
     private void init() {
         il = (in) -> {

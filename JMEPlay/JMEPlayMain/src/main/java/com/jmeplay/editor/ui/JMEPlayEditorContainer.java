@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -21,14 +21,24 @@ import javafx.scene.layout.BorderPane;
 public class JMEPlayEditorContainer {
 
     private InvalidationListener il = null;
-
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Main container of editor
+     *
+     * @param jmePlayEditor parent view
+     */
     @Autowired
     public JMEPlayEditorContainer(JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize and set container
+     * {@link JMEPlayEditor#setContainer(BorderPane)}
+     * {@link JMEPlayEditor#container()}
+     * {@link JMEPlayEditor#containerChange()}
+     */
     @PostConstruct
     private void init() {
         il = (in) -> {

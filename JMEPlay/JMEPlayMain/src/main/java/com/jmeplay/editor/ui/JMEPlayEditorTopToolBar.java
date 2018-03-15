@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -25,11 +25,22 @@ public class JMEPlayEditorTopToolBar {
 
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * * Constructor to create top tool bar of editor
+     *
+     * @param jmePlayEditor to setup top menu bar
+     */
     @Autowired
     public JMEPlayEditorTopToolBar(JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize top tool for editor
+     * {@link JMEPlayEditor#setToolBar(ToolBar)}
+     * {@link JMEPlayEditor#toolBar()}
+     * {@link JMEPlayEditor#toolBarChange()}
+     */
     @PostConstruct
     public void init() {
         il = (in) -> {

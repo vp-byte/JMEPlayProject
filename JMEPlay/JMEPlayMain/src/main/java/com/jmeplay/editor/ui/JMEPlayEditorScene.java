@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -22,14 +22,24 @@ import javafx.scene.Scene;
 public class JMEPlayEditorScene {
 
     private InvalidationListener il = null;
-
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Scene of editor
+     *
+     * @param jmePlayEditor main container
+     */
     @Autowired
     public JMEPlayEditorScene(JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize and set root
+     * {@link JMEPlayEditor#setScene(Scene)}
+     * {@link JMEPlayEditor#scene()}
+     * {@link JMEPlayEditor#sceneChange()}
+     */
     @PostConstruct
     public void init() {
         il = (in) -> {

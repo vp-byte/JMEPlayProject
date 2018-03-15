@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -39,17 +39,37 @@ public class JMEPlayEditorBorderBarLeft {
     private final JMEPlayEditor jmePlayEditor;
     private List<JMEPlayComponent> editorComponents;
 
+    /**
+     * Constructor to create left border bar
+     *
+     * @param jmePlayEditorSettings to configure left border bar
+     * @param jmePlayEditor         to setup left border bar
+     */
     @Autowired
     public JMEPlayEditorBorderBarLeft(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditorSettings = jmePlayEditorSettings;
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Set all editor components for the left region
+     * {@link JMEPlayEditor#setBorderBarLeft(VBox)}
+     * {@link JMEPlayEditor#borderBarLeft()}
+     * {@link JMEPlayEditor#borderBarLeftChange()}
+     * {@link JMEPlayEditor#setLeftPlayComponent(JMEPlayComponent)}
+     * {@link JMEPlayComponent}
+     * {@link JMEPlayComponent.Align#LEFT}
+     *
+     * @param editorComponents for left region
+     */
     @Autowired(required = false)
     public void setEditorComponents(List<JMEPlayComponent> editorComponents) {
         this.editorComponents = editorComponents;
     }
 
+    /**
+     * Initialize left border bar, left region components and setup behavior
+     */
     @PostConstruct
     public void init() {
         il = (in) -> {
@@ -63,6 +83,9 @@ public class JMEPlayEditorBorderBarLeft {
         jmePlayEditor.centerChange().addListener(il);
     }
 
+    /**
+     * Initialize left region components
+     */
     private void initComponentsLeft() {
         borderItemsLeft = new ArrayList<>();
         if (editorComponents == null) {
@@ -78,6 +101,9 @@ public class JMEPlayEditorBorderBarLeft {
         });
     }
 
+    /**
+     * Initialize left border bar
+     */
     private void initBorderBarLeft() {
         borderBarLeft = new VBox();
         borderBarLeft.setPrefWidth(jmePlayEditorSettings.iconSizeBar());
@@ -85,6 +111,9 @@ public class JMEPlayEditorBorderBarLeft {
         borderBarLeft.getChildren().addAll(borderItemsLeft);
     }
 
+    /**
+     * Action to handle visibility of left bar
+     */
     private void handleBarVisibility() {
         if (jmePlayEditor.borderBarsVisibility()) {
             jmePlayEditor.center().setLeft(borderBarLeft);
@@ -93,6 +122,12 @@ public class JMEPlayEditorBorderBarLeft {
         }
     }
 
+    /**
+     * Init visible label for component in the left border bar
+     *
+     * @param component to init label
+     * @return node fully initialized
+     */
     private Node initBorderItem(JMEPlayComponent component) {
         Label label = component.label();
         label.setMinHeight(jmePlayEditorSettings.iconSizeBar());
@@ -102,26 +137,37 @@ public class JMEPlayEditorBorderBarLeft {
         return new Group(label);
     }
 
-    private void handleBorderItem(Object label) {
+    /**
+     * Handle mouse click on left border bars source
+     * Remove all select classes from border bar labels
+     *
+     * @param source of event
+     */
+    private void handleBorderItem(Object source) {
         borderItemsLeft.forEach((control) -> {
-            ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-label-selected");
-            ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-label");
+            ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-source-selected");
+            ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-source");
         });
-        handleBorderItemLeft(label);
+        handleBorderItemLeft(source);
     }
 
-    private void handleBorderItemLeft(Object label) {
-        if (label == selectedLeft) {
+    /**
+     * Select component of clicked source and add select class to source
+     *
+     * @param source of event
+     */
+    private void handleBorderItemLeft(Object source) {
+        if (source == selectedLeft) {
             jmePlayEditor.setLeftPlayComponent(null);
             selectedLeft = null;
         } else {
-            List<JMEPlayComponent> comp = editorComponents.stream().filter(component -> component.label() == label).collect(Collectors.toList());
+            List<JMEPlayComponent> comp = editorComponents.stream().filter(component -> component.label() == source).collect(Collectors.toList());
             if (comp.size() > 0) {
                 jmePlayEditor.setLeftPlayComponent(comp.get(0));
             }
-            ((Node) label).getStyleClass().remove("borderbar-label");
-            ((Node) label).getStyleClass().add("borderbar-label-selected");
-            selectedLeft = label;
+            ((Node) source).getStyleClass().remove("borderbar-source");
+            ((Node) source).getStyleClass().add("borderbar-source-selected");
+            selectedLeft = source;
         }
     }
 

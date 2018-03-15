@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -36,12 +36,21 @@ public class JMEPlayEditorSplits {
     private final JMEPlayEditorSettings jmePlayEditorSettings;
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Initialze all splits of editor
+     *
+     * @param jmePlayEditorSettings to configure splits positions
+     * @param jmePlayEditor         to setup splits
+     */
     @Autowired
     public JMEPlayEditorSplits(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditorSettings = jmePlayEditorSettings;
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Setup all splits in the view
+     */
     @PostConstruct
     private void init() {
         il = (in) -> {
@@ -73,6 +82,9 @@ public class JMEPlayEditorSplits {
         jmePlayEditor.centerChange().addListener(il);
     }
 
+    /**
+     * Setup vertical split
+     */
     private void initSplitVertical() {
         splitVertical = new SplitPane();
         splitVertical.setOrientation(Orientation.HORIZONTAL);
@@ -81,16 +93,28 @@ public class JMEPlayEditorSplits {
         jmePlayEditor.setTabPane(tabPane);
     }
 
+    /**
+     * Setup horizontal split
+     */
     private void initSplitHorizontal() {
         splitHorizontal = new SplitPane();
         splitHorizontal.setOrientation(Orientation.VERTICAL);
         splitHorizontal.getItems().add(splitVertical);
     }
 
+    /**
+     * Change listener for left region
+     * {@link JMEPlayEditor#setLeftPlayComponent(JMEPlayComponent)}
+     */
     private void initLeftChangeListener() {
         jmePlayEditor.leftPlayComponentChange().addListener((ov, o, n) -> handleLeftComponentChange(n));
     }
 
+    /**
+     * Set's component to the left region
+     *
+     * @param comp actual left component
+     */
     private void handleLeftComponentChange(JMEPlayComponent comp) {
         if (comp == null && splitVertical.getItems().size() == 2) {
             splitVertical.getItems().remove(0);
@@ -116,10 +140,19 @@ public class JMEPlayEditorSplits {
         }
     }
 
+    /**
+     * Change listener for bottom region
+     * {@link JMEPlayEditor#setBottomPlayComponent(JMEPlayComponent)}
+     */
     private void initBottomChangeListener() {
         jmePlayEditor.bottomPlayComponentChange().addListener((ov, o, n) -> handleBottomComponentChange(n));
     }
 
+    /**
+     * Set's component to the bottom region
+     *
+     * @param comp actual bottom component
+     */
     private void handleBottomComponentChange(JMEPlayComponent comp) {
         if (comp == null && splitHorizontal.getItems().size() == 2) {
             splitHorizontal.getItems().remove(1);

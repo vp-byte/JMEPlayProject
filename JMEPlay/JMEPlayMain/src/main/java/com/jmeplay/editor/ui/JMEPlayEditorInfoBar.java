@@ -17,12 +17,12 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 /**
- * Bottom InfoBar of JMEPlayEditor
+ * InfoBar of JMEPlayEditor
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
+public class JMEPlayEditorInfoBar implements JMEPlayInfoMessage {
 
     private int size;
 
@@ -34,7 +34,7 @@ public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
     private final JMEPlayEditor jmePlayEditor;
 
     @Autowired
-    public JMEPlayEditorBottomInfoBar(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
+    public JMEPlayEditorInfoBar(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditorSettings = jmePlayEditorSettings;
         this.jmePlayEditor = jmePlayEditor;
     }
@@ -53,7 +53,7 @@ public class JMEPlayEditorBottomInfoBar implements JMEPlayInfoMessage {
             initInfoLabel();
             initBottomInfoBar();
             jmePlayEditor.container().setBottom(bottomInfoBar);
-            jmePlayEditor.setBottomInfoBar(bottomInfoBar);
+            jmePlayEditor.setInfoBar(bottomInfoBar);
         });
     }
 

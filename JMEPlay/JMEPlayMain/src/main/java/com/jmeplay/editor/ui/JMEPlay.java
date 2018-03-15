@@ -22,7 +22,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({"com.jmeplay.core", "com.jmeplay.editor", "com.jmeplay.plugin"})
 public class JMEPlay extends Application {
 
-    // Spring context
     private ConfigurableApplicationContext appContext;
     private JMEPlayEditor jmePlayEditor;
 

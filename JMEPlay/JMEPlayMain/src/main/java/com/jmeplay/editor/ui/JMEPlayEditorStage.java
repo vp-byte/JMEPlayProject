@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -34,12 +34,21 @@ public class JMEPlayEditorStage {
     private final JMEPlayEditorSettings jmePlayEditorSettings;
     private final JMEPlayEditor jmePlayEditor;
 
+    /**
+     * Stage of editor
+     *
+     * @param jmePlayEditorSettings to configure stage
+     * @param jmePlayEditor         to setup stage
+     */
     @Autowired
     public JMEPlayEditorStage(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditorSettings = jmePlayEditorSettings;
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Initialize stage with position, size and other varias properties
+     */
     @PostConstruct
     public void init() {
         il = (in) -> {
@@ -50,6 +59,9 @@ public class JMEPlayEditorStage {
         jmePlayEditor.stageChange().addListener(il);
     }
 
+    /**
+     * Setup full stage
+     */
     private void stage() {
         title();
         minHeight();
@@ -65,37 +77,58 @@ public class JMEPlayEditorStage {
         stageX();
     }
 
+    /**
+     * Init title of stage
+     */
     private void title() {
         stage.setTitle(applicationName + " (" + jmeVersion + ")");
     }
 
+    /**
+     * Init min height of stage
+     */
     private void minHeight() {
         Double stageMinHeight = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_MIN_HEIGHT, JMEPlayEditorResources.STAGE_MIN_HEIGHT_DEFAULT);
         stage.setMinHeight(stageMinHeight);
     }
 
+    /**
+     * Init actual height of stage
+     */
     private void height() {
         Double stageHeight = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_HEIGHT, JMEPlayEditorResources.STAGE_MIN_HEIGHT_DEFAULT);
         stage.setHeight(stageHeight);
         stage.heightProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_HEIGHT, newValue.doubleValue()));
     }
 
+    /**
+     * Init min width of stage
+     */
     private void minWidth() {
         Double stageMinWidth = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_MIN_WIDTH, JMEPlayEditorResources.STAGE_MIN_WIDTH_DEFAULT);
         stage.setMinWidth(stageMinWidth);
     }
 
+    /**
+     * Init actual width of stage
+     */
     private void width() {
         Double stageWidth = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_WIDTH, JMEPlayEditorResources.STAGE_MIN_WIDTH_DEFAULT);
         stage.setWidth(stageWidth);
         stage.widthProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_WIDTH, newValue.doubleValue()));
     }
 
+    /**
+     * Maximize stage if desired
+     */
     private void maximized() {
         stage.setMaximized(jmePlayEditorSettings.value(JMEPlayEditorResources.MAXIMIZED, JMEPlayEditorResources.MAXIMIZED_DEFAULT));
         stage.maximizedProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.MAXIMIZED, newValue));
     }
 
+    /**
+     * Init stage screen position on y-Axis
+     */
     private void stageY() {
         Double stageY = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_Y, JMEPlayEditorResources.STAGE_Y_DEFAULT);
         if (stageY != null) {
@@ -108,6 +141,9 @@ public class JMEPlayEditorStage {
         });
     }
 
+    /**
+     * Init stage screen position on x-Axis
+     */
     private void stageX() {
         Double stageX = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_X, JMEPlayEditorResources.STAGE_X_DEFAULT);
         if (stageX != null) {

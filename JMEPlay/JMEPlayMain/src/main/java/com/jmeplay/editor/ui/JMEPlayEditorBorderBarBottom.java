@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui;
 
@@ -33,28 +33,46 @@ public class JMEPlayEditorBorderBarBottom {
     private InvalidationListener il = null;
 
     private List<Node> borderItemsBottom;
-    private Object selectedLeft;
+    private Object selectedBottom;
     private HBox borderBarBottom;
 
     private final JMEPlayEditorSettings jmePlayEditorSettings;
     private final JMEPlayEditor jmePlayEditor;
     private List<JMEPlayComponent> editorComponents;
 
+    /**
+     * Constructor to create bottom border bar
+     *
+     * @param jmePlayEditorSettings to configure bottom border bar
+     * @param jmePlayEditor         to setup bottom border bar
+     */
     @Autowired
     public JMEPlayEditorBorderBarBottom(JMEPlayEditorSettings jmePlayEditorSettings, JMEPlayEditor jmePlayEditor) {
         this.jmePlayEditorSettings = jmePlayEditorSettings;
         this.jmePlayEditor = jmePlayEditor;
     }
 
+    /**
+     * Set all editor components for the bottom region
+     * {@link JMEPlayEditor#setBorderBarBottom(HBox)}
+     * {@link JMEPlayEditor#setBottomPlayComponent(JMEPlayComponent)}
+     * {@link JMEPlayComponent}
+     * {@link JMEPlayComponent.Align#BOTTOM}
+     *
+     * @param editorComponents for bottom region
+     */
     @Autowired(required = false)
     public void setEditorComponents(List<JMEPlayComponent> editorComponents) {
         this.editorComponents = editorComponents;
     }
 
+    /**
+     * Initialize bottom border bar, bottom region components and setup behavior
+     */
     @PostConstruct
     public void init() {
         il = (in) -> {
-            initComponentsLeft();
+            initComponentsBottom();
             initBorderBarBottom();
             jmePlayEditor.borderBarsVisibilityChange().addListener((ch) -> handleBarVisibility());
             handleBarVisibility();
@@ -64,7 +82,10 @@ public class JMEPlayEditorBorderBarBottom {
         jmePlayEditor.centerChange().addListener(il);
     }
 
-    private void initComponentsLeft() {
+    /**
+     * Initialize bottom region components
+     */
+    private void initComponentsBottom() {
         borderItemsBottom = new ArrayList<>();
         if (editorComponents == null) {
             return;
@@ -80,6 +101,9 @@ public class JMEPlayEditorBorderBarBottom {
         });
     }
 
+    /**
+     * Initialize bottom border bar
+     */
     private void initBorderBarBottom() {
         borderBarBottom = new HBox();
         borderBarBottom.setPadding(new Insets(0, 0, 0, jmePlayEditorSettings.iconSizeBar()));
@@ -88,6 +112,9 @@ public class JMEPlayEditorBorderBarBottom {
         borderBarBottom.getChildren().addAll(borderItemsBottom);
     }
 
+    /**
+     * Action to handle visibility of bottom bar
+     */
     private void handleBarVisibility() {
         if (jmePlayEditor.borderBarsVisibility()) {
             jmePlayEditor.center().setBottom(borderBarBottom);
@@ -96,6 +123,12 @@ public class JMEPlayEditorBorderBarBottom {
         }
     }
 
+    /**
+     * Init visible label for component in the bottom border bar
+     *
+     * @param component to init label
+     * @return node fully initialized
+     */
     private Node initBorderItem(JMEPlayComponent component) {
         Label label = component.label();
         label.setMinHeight(jmePlayEditorSettings.iconSizeBar());
@@ -104,18 +137,29 @@ public class JMEPlayEditorBorderBarBottom {
         return new Group(label);
     }
 
+    /**
+     * Handle mouse click on bottom border bars label
+     * Remove all select classes from border bar labels
+     *
+     * @param source of event
+     */
     private void handleBorderItem(Object source) {
         borderItemsBottom.forEach((control) -> {
             ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-label-selected");
             ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-label");
         });
-        handleBorderItemLeft(source);
+        handleBorderItemBottom(source);
     }
 
-    private void handleBorderItemLeft(Object source) {
-        if (source == selectedLeft) {
+    /**
+     * Select component of clicked label and add select class to label
+     *
+     * @param source of event
+     */
+    private void handleBorderItemBottom(Object source) {
+        if (source == selectedBottom) {
             jmePlayEditor.setBottomPlayComponent(null);
-            selectedLeft = null;
+            selectedBottom = null;
         } else {
             List<JMEPlayComponent> comp = editorComponents.stream().filter(component -> component.label() == source).collect(Collectors.toList());
             if (comp.size() > 0) {
@@ -123,7 +167,7 @@ public class JMEPlayEditorBorderBarBottom {
             }
             ((Node) source).getStyleClass().remove("borderbar-label");
             ((Node) source).getStyleClass().add("borderbar-label-selected");
-            selectedLeft = source;
+            selectedBottom = source;
         }
     }
 
