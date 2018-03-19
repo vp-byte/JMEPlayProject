@@ -20,6 +20,6 @@ public abstract class JMEPlayTreeView extends TreeView<Path> {
     private boolean selectAddedItem = false;
 
     public void setSelectAddedItem() {
-        this.setSelectAddedItem(true);
+        this.selectAddedItem = true;
     }
 }

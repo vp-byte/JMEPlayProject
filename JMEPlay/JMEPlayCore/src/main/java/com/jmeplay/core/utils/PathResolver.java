@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.core.utils;
 
@@ -67,7 +67,7 @@ public class PathResolver {
                 start = matcher.start() + 1;
                 end = matcher.end();
             }
-            if (start != null && end != null) {
+            if (start != null) {
                 Integer index = Integer.parseInt(name.substring(start, end));
                 name = name.substring(0, start);
                 name += (index + 1);

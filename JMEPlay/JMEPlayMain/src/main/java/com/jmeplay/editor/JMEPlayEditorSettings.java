@@ -22,9 +22,9 @@ public class JMEPlayEditorSettings extends SettingsLoader {
     private final JMEPlayGlobalSettings jmePlayGlobalSettings;
 
     /**
-     * Constructor to create global settings
+     * Constructor to create editor settings
      *
-     * @param jmePlayGlobalSettings to configure global settings
+     * @param jmePlayGlobalSettings to configure editor settings
      */
     @Autowired
     public JMEPlayEditorSettings(JMEPlayGlobalSettings jmePlayGlobalSettings) {
@@ -33,7 +33,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
     }
 
     /**
-     * Load global settings from file
+     * Load editor settings from file
      */
     @PostConstruct
     private void init() {
@@ -41,7 +41,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
     }
 
     /**
-     * Write global settings to file
+     * Write editor settings to file
      */
     @PreDestroy
     private void destroy() {
@@ -50,6 +50,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
 
     /**
      * Selected root folder
+     * {@link JMEPlayGlobalSettings#rootFolder()}
      *
      * @return root folder
      */
@@ -59,6 +60,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
 
     /**
      * Default icon size
+     * {@link JMEPlayGlobalSettings#iconSize()}
      *
      * @return icon size
      */
@@ -68,6 +70,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
 
     /**
      * Default icon size for bar
+     * {@link JMEPlayGlobalSettings#iconSizeBar()}
      *
      * @return bars icon size
      */
@@ -77,6 +80,7 @@ public class JMEPlayEditorSettings extends SettingsLoader {
 
     /**
      * Default spacing between icons
+     * {@link JMEPlayGlobalSettings#iconSpacing()}
      *
      * @return icon spacing
      */

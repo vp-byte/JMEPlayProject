@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.core.utils;
 
@@ -12,6 +12,9 @@ import java.util.Locale;
  */
 public class OSInfo {
 
+    /**
+     * Type of running operating system
+     */
     public enum OSType {
         WINDOWS,
         UNIX,
@@ -47,6 +50,12 @@ public class OSInfo {
         }
     }
 
+    /**
+     * Type of actual OS
+     * {@link OSType}
+     *
+     * @return type of OS
+     */
     public static OSType OS() {
         return os;
     }
