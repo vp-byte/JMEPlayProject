@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -25,6 +25,11 @@ public class JMEPlayAssetsImageDefinder {
 
     private final JMEPlayAssetsSettings jmePlayAssetsSettings;
 
+    /**
+     * Constructor to create image definder
+     *
+     * @param jmePlayAssetsSettings to configure definder
+     */
     @Autowired
     public JMEPlayAssetsImageDefinder(JMEPlayAssetsSettings jmePlayAssetsSettings) {
         this.jmePlayAssetsSettings = jmePlayAssetsSettings;

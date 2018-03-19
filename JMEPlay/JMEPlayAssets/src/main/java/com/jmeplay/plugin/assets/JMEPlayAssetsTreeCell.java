@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -29,12 +29,21 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
     private final List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
     private ContextMenu contextMenu = null;
 
+    /**
+     * Implementation of cell for asset tree view
+     *
+     * @param openByExtensionFileHandler to open various files
+     * @param jmePlayFileHandlers        list of all existing file handlers
+     */
     JMEPlayAssetsTreeCell(OpenByExtensionFileHandler openByExtensionFileHandler, List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers) {
         this.openByExtensionFileHandler = openByExtensionFileHandler;
         this.jmePlayFileHandlers = jmePlayFileHandlers;
         setOnMouseClicked(this::processClick);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateItem(Path item, boolean empty) {
         super.updateItem(item, empty);
@@ -74,6 +83,11 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
         }
     }
 
+    /**
+     * Update context menu
+     *
+     * @return updated context
+     */
     private ContextMenu updateContextMenu() {
         if (jmePlayFileHandlers != null) {
             ContextMenu updatedContextMenu = new ContextMenu();
@@ -83,6 +97,11 @@ public class JMEPlayAssetsTreeCell extends TextFieldTreeCell<Path> {
         return null;
     }
 
+    /**
+     * Filter file handler for specific file type (extension of file)
+     *
+     * @return list of file handlers
+     */
     private List<JMEPlayFileHandler<TreeView<Path>>> filterJMEPlayFileHandler() {
         String fileExtension = PathResolver.extension(getItem());
         return jmePlayFileHandlers.stream().filter(fileHandler -> {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -42,6 +42,15 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
     private final OpenByExtensionFileHandler openByExtensionFileHandler;
     private final List<JMEPlayFileHandler<TreeView<Path>>> jmePlayFileHandlers;
 
+    /**
+     * Constructor to create full tree view of assets directory
+     *
+     * @param jmePlayGlobal              global components initializer
+     * @param jmePlayAssetsSettings      to configure assets
+     * @param jmePlayAssetsImageDefinder to load ui images
+     * @param openByExtensionFileHandler to handle files depends on extension
+     * @param jmePlayFileHandlers        all independed file handlers
+     */
     @Autowired
     public JMEPlayAssetsTreeView(JMEPlayGlobal jmePlayGlobal,
                                  JMEPlayAssetsSettings jmePlayAssetsSettings,
@@ -57,7 +66,8 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
     }
 
     /**
-     * Load settings
+     * Load settings and initialize asset tree view
+     * Activate watch service to observe assts directory
      */
     @PostConstruct
     private void init() throws Exception {
@@ -66,6 +76,9 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
         reloadAssetFolder();
     }
 
+    /**
+     * Full reload of asset directory
+     */
     private void reloadAssetFolder() {
         String rootFolder = jmePlayAssetsSettings.rootFolder();
         Path rootPath = Paths.get(rootFolder);
@@ -86,6 +99,12 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
         jmePlayGlobal.assetFolderChange().get();
     }
 
+    /**
+     * Create tree for tree view
+     *
+     * @param treeItem root tree items
+     * @throws IOException if directory nor readable
+     */
     private void createTree(TreeItem<Path> treeItem) throws IOException {
         WatchKey key = treeItem.getValue().register(watcher, ENTRY_CREATE, ENTRY_DELETE);
         keys.put(key, treeItem);
@@ -169,6 +188,9 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
         }
     }
 
+    /**
+     * Marks cuted file's in tree view
+     */
     public void markCutedFilesInTreeView() {
         hasCutedFiles = true;
         List<Node> cells = new ArrayList<>(lookupAll(".tree-cell"));
@@ -178,6 +200,9 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
         });
     }
 
+    /**
+     * Unmark cuted file's in tree view
+     */
     public void unmarkCutedFilesInTreeView() {
         hasCutedFiles = false;
         List<Node> cells = new ArrayList<>(lookupAll(".tree-item-cut"));

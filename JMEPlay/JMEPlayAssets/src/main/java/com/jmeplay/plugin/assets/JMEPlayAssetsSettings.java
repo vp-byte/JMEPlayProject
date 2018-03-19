@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -21,6 +21,11 @@ public class JMEPlayAssetsSettings extends SettingsLoader {
 
     private final JMEPlayGlobalSettings jmePlayGlobalSettings;
 
+    /**
+     * Specify settings of assets
+     *
+     * @param jmePlayGlobalSettings to configure default settings
+     */
     @Autowired
     public JMEPlayAssetsSettings(JMEPlayGlobalSettings jmePlayGlobalSettings) {
         super();
@@ -43,14 +48,32 @@ public class JMEPlayAssetsSettings extends SettingsLoader {
         writeSettings();
     }
 
+    /**
+     * Selected root folder
+     * {@link JMEPlayGlobalSettings#rootFolder()}
+     *
+     * @return root folder
+     */
     public String rootFolder() {
         return jmePlayGlobalSettings.rootFolder();
     }
 
+    /**
+     * Default icon size
+     * {@link JMEPlayGlobalSettings#iconSize()}
+     *
+     * @return icon size
+     */
     public int iconSize() {
         return jmePlayGlobalSettings.iconSize();
     }
 
+    /**
+     * Default icon size bar
+     * {@link JMEPlayGlobalSettings#iconSizeBar()}
+     *
+     * @return icon size bar
+     */
     public int iconSizeBar() {
         return jmePlayGlobalSettings.iconSizeBar();
     }

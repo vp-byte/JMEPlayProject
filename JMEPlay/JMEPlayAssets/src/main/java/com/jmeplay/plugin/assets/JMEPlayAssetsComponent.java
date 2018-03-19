@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -26,6 +26,13 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
     private final JMEPlayAssetsRoot jmePlayAssetsRoot;
 
+    /**
+     * Constructor to create assets component
+     *
+     * @param jmePlayAssetsSettings     to configure assets
+     * @param jmePlayAssetsLocalization to localize ui elements
+     * @param jmePlayAssetsRoot         root node of assets
+     */
     @Autowired
     public JMEPlayAssetsComponent(JMEPlayAssetsSettings jmePlayAssetsSettings,
                                   JMEPlayAssetsLocalization jmePlayAssetsLocalization,
@@ -35,6 +42,9 @@ public class JMEPlayAssetsComponent extends JMEPlayComponent {
         this.jmePlayAssetsRoot = jmePlayAssetsRoot;
     }
 
+    /**
+     * Initialize assets component
+     */
     @PostConstruct
     private void init() {
         this.setPriority(0);

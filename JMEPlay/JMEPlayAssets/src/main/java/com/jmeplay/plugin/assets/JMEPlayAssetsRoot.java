@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -19,11 +19,19 @@ public class JMEPlayAssetsRoot extends BorderPane {
 
     private final JMEPlayAssetsTreeView jmePlayAssetsTreeView;
 
+    /**
+     * Constructor to create root node
+     *
+     * @param jmePlayAssetsTreeView tree view of assets component
+     */
     @Autowired
     public JMEPlayAssetsRoot(JMEPlayAssetsTreeView jmePlayAssetsTreeView) {
         this.jmePlayAssetsTreeView = jmePlayAssetsTreeView;
     }
 
+    /**
+     * Initialize root node of assets component
+     */
     @PostConstruct
     private void init() {
         setMinHeight(0);

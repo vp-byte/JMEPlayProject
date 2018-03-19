@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets;
 
@@ -48,6 +48,12 @@ public class JMEPlayAssetsLocalization {
 
     private ResourceBundle bundle;
 
+    /**
+     * Gets a string for the given key from JMEPlayConsole resource bundle
+     *
+     * @param key for value
+     * @return localized string
+     */
     public final String value(String key) {
         if (bundle == null) {
             bundle = ResourceBundle.getBundle(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_RESOURCEBUNDLE);
