@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.console;
 
@@ -32,6 +32,13 @@ public class JMEPlayConsoleToolBar extends VBox {
     private final JMEPlayConsoleLocalization jmePlayConsoleLocalization;
     private final JMEPlayConsoleArea jmePlayConsoleArea;
 
+    /**
+     * Constructor to create console toolbar
+     *
+     * @param jmePlayConsoleSettings     to configure toolbar
+     * @param jmePlayConsoleLocalization to localize toolbar ui components
+     * @param jmePlayConsoleArea         to handle actions on console area
+     */
     @Autowired
     public JMEPlayConsoleToolBar(JMEPlayConsoleSettings jmePlayConsoleSettings,
                                  JMEPlayConsoleLocalization jmePlayConsoleLocalization,

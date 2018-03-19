@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.console;
 
@@ -47,8 +47,15 @@ public class JMEPlayConsoleArea extends CodeArea implements JMEPlayConsole {
     private JMEPlayConsoleSettings jmePlayConsoleSettings;
     private JMEPlayConsoleLocalization jmePlayConsoleLocalization;
 
+    /**
+     * Constructor to create console area
+     *
+     * @param jmePlayConsoleSettings     to configure console area
+     * @param jmePlayConsoleLocalization to localize all ui components
+     */
     @Autowired
-    public JMEPlayConsoleArea(JMEPlayConsoleSettings jmePlayConsoleSettings, JMEPlayConsoleLocalization jmePlayConsoleLocalization) {
+    public JMEPlayConsoleArea(JMEPlayConsoleSettings jmePlayConsoleSettings,
+                              JMEPlayConsoleLocalization jmePlayConsoleLocalization) {
         this.jmePlayConsoleSettings = jmePlayConsoleSettings;
         this.jmePlayConsoleLocalization = jmePlayConsoleLocalization;
     }

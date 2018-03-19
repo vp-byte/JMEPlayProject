@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.console;
 
@@ -25,12 +25,21 @@ public class JMEPlayConsoleRoot extends BorderPane {
     @Getter
     private final JMEPlayConsoleArea jmePlayConsoleArea;
 
+    /**
+     * Root nodeof console component
+     *
+     * @param jmePlayConsoleToolBar tool bar of console
+     * @param jmePlayConsoleArea    area of console
+     */
     @Autowired
     public JMEPlayConsoleRoot(JMEPlayConsoleToolBar jmePlayConsoleToolBar, JMEPlayConsoleArea jmePlayConsoleArea) {
         this.jmePlayConsoleToolBar = jmePlayConsoleToolBar;
         this.jmePlayConsoleArea = jmePlayConsoleArea;
     }
 
+    /**
+     * Initialize root of console component
+     */
     @PostConstruct
     private void init() {
         setMinHeight(0);

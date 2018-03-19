@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.console;
 
@@ -28,6 +28,13 @@ public class JMEPlayConsoleComponent extends JMEPlayComponent {
     private final JMEPlayConsoleLocalization jmePlayConsoleLocalization;
     private final JMEPlayConsoleRoot jmePlayConsoleRoot;
 
+    /**
+     * Constructor to create console component
+     *
+     * @param jmePlayConsoleSettings     to configure console
+     * @param jmePlayConsoleLocalization to localize console
+     * @param jmePlayConsoleRoot         to get the root node of console
+     */
     @Autowired
     public JMEPlayConsoleComponent(JMEPlayConsoleSettings jmePlayConsoleSettings,
                                    JMEPlayConsoleLocalization jmePlayConsoleLocalization,
