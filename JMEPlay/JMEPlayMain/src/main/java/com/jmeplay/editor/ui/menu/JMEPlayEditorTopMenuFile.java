@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui.menu;
 
@@ -30,12 +30,24 @@ public class JMEPlayEditorTopMenuFile {
     private final JMEPlayEditor jmePlayEditor;
     private final JMEPlayEditorLocalization jmePlayEditorLocalization;
 
-    public JMEPlayEditorTopMenuFile(JMEPlayGlobalSettings jmePlayGlobalSettings, JMEPlayEditor jmePlayEditor, JMEPlayEditorLocalization jmePlayEditorLocalization) {
+    /**
+     * Constructor to create top menu of editor
+     *
+     * @param jmePlayGlobalSettings     to configure top file menu
+     * @param jmePlayEditor             to setup top file menu
+     * @param jmePlayEditorLocalization localization of file menu
+     */
+    public JMEPlayEditorTopMenuFile(JMEPlayGlobalSettings jmePlayGlobalSettings,
+                                    JMEPlayEditor jmePlayEditor,
+                                    JMEPlayEditorLocalization jmePlayEditorLocalization) {
         this.jmePlayGlobalSettings = jmePlayGlobalSettings;
         this.jmePlayEditor = jmePlayEditor;
         this.jmePlayEditorLocalization = jmePlayEditorLocalization;
     }
 
+    /**
+     * Initialize file menu
+     */
     @PostConstruct
     private void init() {
         menuFile = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_FILE));
@@ -45,6 +57,9 @@ public class JMEPlayEditorTopMenuFile {
         menuFileOpen.setOnAction((event) -> openDirectoryChooser());
     }
 
+    /**
+     * Shows directory chooser to define main directory for editor
+     */
     private void openDirectoryChooser() {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_OPEN_ASSETS_DIALOG_TITLE));
@@ -58,6 +73,11 @@ public class JMEPlayEditorTopMenuFile {
         }
     }
 
+    /**
+     * Top file menu
+     *
+     * @return file menu
+     */
     public Menu menu() {
         return menuFile;
     }

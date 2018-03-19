@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor;
 
@@ -25,6 +25,12 @@ public class JMEPlayEditorLocalization {
 
     private ResourceBundle bundle;
 
+    /**
+     * Localized value from key
+     *
+     * @param key of value
+     * @return value
+     */
     public final String value(String key) {
         if (bundle == null) {
             bundle = ResourceBundle.getBundle(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_RESOURCEBUNDLE);

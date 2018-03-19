@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui.menu;
 
@@ -22,16 +22,29 @@ public class JMEPlayEditorTopMenuSettings {
 
     private final JMEPlayEditorLocalization jmePlayEditorLocalization;
 
+    /**
+     * Constructor to create settings item in top menu
+     *
+     * @param jmePlayEditorLocalization localization of menu
+     */
     @Autowired
     public JMEPlayEditorTopMenuSettings(JMEPlayEditorLocalization jmePlayEditorLocalization) {
         this.jmePlayEditorLocalization = jmePlayEditorLocalization;
     }
 
+    /**
+     * Initialize settings menu
+     */
     @PostConstruct
     private void init() {
         menuSettings = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_SETTINGS));
     }
 
+    /**
+     * Top settings menu
+     *
+     * @return settings menu
+     */
     public Menu menu() {
         return menuSettings;
     }

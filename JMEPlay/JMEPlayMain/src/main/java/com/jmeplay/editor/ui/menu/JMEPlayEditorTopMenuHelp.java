@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.editor.ui.menu;
 
@@ -22,16 +22,29 @@ public class JMEPlayEditorTopMenuHelp {
 
     private final JMEPlayEditorLocalization jmePlayEditorLocalization;
 
+    /**
+     * Constructor to create help item in top menu
+     *
+     * @param jmePlayEditorLocalization localization of menu
+     */
     @Autowired
     public JMEPlayEditorTopMenuHelp(JMEPlayEditorLocalization jmePlayEditorLocalization) {
         this.jmePlayEditorLocalization = jmePlayEditorLocalization;
     }
 
+    /**
+     * Initialize help menu
+     */
     @PostConstruct
     private void init() {
         menuHelp = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_HELP));
     }
 
+    /**
+     * Top help menu
+     *
+     * @return help menu
+     */
     public Menu menu() {
         return menuHelp;
     }
