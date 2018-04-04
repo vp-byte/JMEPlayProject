@@ -7,7 +7,7 @@ import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsNameDialog;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
@@ -27,16 +27,16 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
+    private final JMEPlayAssetsNameDialog jmePlayAssetsNameDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public CreateFolderHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                                JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                               JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
+                               JMEPlayAssetsNameDialog jmePlayAssetsNameDialog,
                                JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
+        this.jmePlayAssetsNameDialog = jmePlayAssetsNameDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -58,7 +58,7 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
 
     public void handle(final TreeView<Path> source) {
         final Path path = pathFromSelectedItem(source);
-        Dialog<Path> dialog = jmePlayAssetsReNameDialog.construct(path, JMEPlayAssetsReNameDialog.Type.NAME);
+        Dialog<Path> dialog = jmePlayAssetsNameDialog.construct(path);
         dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
         dialog.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TEXT));
         Optional<Path> result = dialog.showAndWait();

@@ -12,7 +12,7 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsRenameDialog;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import com.jmeplay.plugin.assets.handler.util.PasteFileVisitor;
 import javafx.scene.control.MenuItem;
@@ -44,18 +44,18 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
+    private final JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog;
     private final PasteFileVisitor pasteFileVisitor;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public PasteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                            JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
+                            JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog,
                             PasteFileVisitor pasteFileVisitor,
                             JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
+        this.jmePlayAssetsRenameDialog = jmePlayAssetsRenameDialog;
         this.pasteFileVisitor = pasteFileVisitor;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
@@ -134,7 +134,7 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             if (Files.isRegularFile(file.toPath())) {
                 Path newFile = targetPath.resolve(file.getName());
                 if (Files.exists(newFile)) {
-                    Optional<Path> result = jmePlayAssetsReNameDialog.construct(newFile).showAndWait();
+                    Optional<Path> result = jmePlayAssetsRenameDialog.construct(newFile).showAndWait();
                     result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath));
                 } else {
                     moveOrCopy(clipboardAction, file.toPath(), newFile);

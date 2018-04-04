@@ -10,7 +10,7 @@ import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsReNameDialog;
+import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsRenameDialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -38,16 +38,16 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog;
+    private final JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public RenameFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                              JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             JMEPlayAssetsReNameDialog jmePlayAssetsReNameDialog,
+                             JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog,
                              JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsReNameDialog = jmePlayAssetsReNameDialog;
+        this.jmePlayAssetsRenameDialog = jmePlayAssetsRenameDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -74,7 +74,7 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     public void handle(TreeView<Path> source) {
         final Path path = source.getSelectionModel().getSelectedItem().getValue();
-        Optional<Path> result = jmePlayAssetsReNameDialog.construct(path).showAndWait();
+        Optional<Path> result = jmePlayAssetsRenameDialog.construct(path).showAndWait();
         result.ifPresent((newPath) -> {
             try {
                 ((JMEPlayTreeView) source).setSelectAddedItem();

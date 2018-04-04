@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets.handler.dialogs;
 
@@ -19,14 +19,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Implementation for rename dialog of JMEPlayAssets
+ * Implementation for name dialog of JMEPlayAssets
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayAssetsReNameDialog {
+public class JMEPlayAssetsNameDialog {
 
-    private Type type;
     private DialogPane dialogPane;
 
     private Label label;
@@ -35,20 +34,25 @@ public class JMEPlayAssetsReNameDialog {
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
 
+    /**
+     * Constructor to create name or rename dialog
+     *
+     * @param jmePlayAssetsLocalization localisation for dialog
+     */
     @Autowired
-    public JMEPlayAssetsReNameDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
+    public JMEPlayAssetsNameDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
     }
 
+    /**
+     * Construct dialog
+     *
+     * @param path for file
+     * @return dialog
+     */
     public Dialog<Path> construct(final Path path) {
-        return construct(path, Type.RENAME);
-    }
-
-    public Dialog<Path> construct(final Path path, final Type type) {
-        this.type = type;
-
         Dialog<Path> dialog = new Dialog<>();
-        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TITLE));
+        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NAME_TITLE));
 
         dialogPane = dialog.getDialogPane();
         dialogPane.getStyleClass().add("text-input-dialog");
@@ -58,7 +62,7 @@ public class JMEPlayAssetsReNameDialog {
         dialog.setResultConverter(buttonType -> {
             ButtonBar.ButtonData buttonData = buttonType.getButtonData();
             if (buttonData == ButtonBar.ButtonData.OK_DONE) {
-                return constructPath(path, textField.getText());
+                return constructPath(path);
             }
             return null;
         });
@@ -67,9 +71,9 @@ public class JMEPlayAssetsReNameDialog {
         label = createLabel();
 
         // -- textfield
-        textField = createTextField(path);
+        textField = createTextField();
         textField.textProperty().addListener((ob, o, n) -> {
-            Path pathToCreate = constructPath(path, n);
+            Path pathToCreate = constructPath(path);
             if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.nameinvalid(n)) {
                 dialogPane.lookupButton(ButtonType.OK).setDisable(true);
             } else {
@@ -84,8 +88,13 @@ public class JMEPlayAssetsReNameDialog {
         return dialog;
     }
 
+    /**
+     * Create label of dialog
+     *
+     * @return label
+     */
     private Label createLabel() {
-        final Label label = new Label(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TEXT));
+        final Label label = new Label(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NAME_TEXT));
         label.setMaxWidth(Double.MAX_VALUE);
         label.setMaxHeight(Double.MAX_VALUE);
         label.getStyleClass().add("content");
@@ -95,18 +104,24 @@ public class JMEPlayAssetsReNameDialog {
         return label;
     }
 
-    private TextField createTextField(final Path path) {
-        final String name = PathResolver.name(path);
+    /**
+     * Create text field of dialog
+     *
+     * @return text field
+     */
+    private TextField createTextField() {
         final TextField textField = new TextField();
-        if (type == Type.RENAME) {
-            textField.setText(name);
-        }
         textField.setMaxWidth(Double.MAX_VALUE);
         GridPane.setHgrow(textField, Priority.ALWAYS);
         GridPane.setFillWidth(textField, true);
         return textField;
     }
 
+    /**
+     * Create grid of dialog
+     *
+     * @return grid
+     */
     private GridPane createGrid() {
         final GridPane grid = new GridPane();
         grid.setHgap(10);
@@ -115,6 +130,9 @@ public class JMEPlayAssetsReNameDialog {
         return grid;
     }
 
+    /**
+     * Update grid
+     */
     private void updateGrid() {
         grid.getChildren().clear();
         grid.add(label, 0, 0);
@@ -123,20 +141,14 @@ public class JMEPlayAssetsReNameDialog {
         Platform.runLater(() -> textField.requestFocus());
     }
 
-    private Path constructPath(final Path path, final String newName) {
-        if (type == Type.RENAME) {
-            final Path parentPath = path.getParent();
-            final String extension = PathResolver.extension(path);
-            final String point = Files.isRegularFile(path) ? "." : "";
-            return Paths.get(parentPath + "/" + newName + point + extension);
-        } else {
-            return Paths.get("" + path, textField.getText());
-        }
-    }
-
-    public enum Type {
-        RENAME,
-        NAME
+    /**
+     * Create path for nane dialog
+     *
+     * @param path of file
+     * @return fully qualified path
+     */
+    private Path constructPath(final Path path) {
+        return Paths.get("" + path, textField.getText());
     }
 
 }
