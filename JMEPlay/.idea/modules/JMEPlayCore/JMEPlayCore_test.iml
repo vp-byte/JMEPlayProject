@@ -10,7 +10,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../JMEPlayCore/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../../JMEPlayCore/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../JMEPlayCore/src/test/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../JMEPlayCore/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

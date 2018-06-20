@@ -1,3 +1,6 @@
+/*
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
+ */
 package com.jmeplay.core.utils;
 
 import org.junit.After;
@@ -23,6 +26,9 @@ public class PathResolverTest {
     private static String extension;
     private static Path path;
 
+    /**
+     * Create text file
+     */
     @Before
     public void createFile() {
         filename = UUID.randomUUID().toString();
@@ -35,6 +41,9 @@ public class PathResolverTest {
         }
     }
 
+    /**
+     * Delete test file
+     */
     @After
     public void deleteFile() {
         try {
@@ -44,16 +53,25 @@ public class PathResolverTest {
         }
     }
 
+    /**
+     * Resolve extension
+     */
     @Test
     public void extension() {
         Assert.assertEquals(extension, PathResolver.extension(path));
     }
 
+    /**
+     * Resolve filename
+     */
     @Test
     public void name() {
         Assert.assertEquals(filename, PathResolver.name(path));
     }
 
+    /**
+     * Reindex simple(no index in name) filename
+     */
     @Test
     public void reindexNameNoIndex() {
         try {
@@ -67,6 +85,9 @@ public class PathResolverTest {
         }
     }
 
+    /**
+     * Reindex indexed filename
+     */
     @Test
     public void reindexNameWithIndex() {
         try {
@@ -80,6 +101,9 @@ public class PathResolverTest {
         }
     }
 
+    /**
+     * Reindex simple(no index in name) filename without extension
+     */
     @Test
     public void reindexNameNoIndexAndExtension() {
         try {
@@ -93,6 +117,9 @@ public class PathResolverTest {
         }
     }
 
+    /**
+     * Reindex indexed filename with number in name
+     */
     @Test
     public void reindexNameWithIndexAndNumbers() {
         try {

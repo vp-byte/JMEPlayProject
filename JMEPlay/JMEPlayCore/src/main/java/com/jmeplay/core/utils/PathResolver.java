@@ -51,6 +51,11 @@ public class PathResolver {
     }
 
 
+    /**
+     * Get next indexed filename from actual filename
+     * @param path of file
+     * @return new path of reindexed filename
+     */
     public static Path reindexName(final Path path) {
         Path newPath = path;
         if (Files.exists(newPath)) {
@@ -88,7 +93,7 @@ public class PathResolver {
      * @param name of file
      * @return validity
      */
-    public static boolean nameinvalid(String name) {
+    public static boolean isNameInvalid(String name) {
         return !name.matches("[-_.A-Za-z0-9][^<>?\":|\\/*]*");
     }
 

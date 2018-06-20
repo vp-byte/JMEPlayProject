@@ -76,7 +76,7 @@ public class JMEPlayAssetsRenameDialog {
         textField = createTextField(path);
         textField.textProperty().addListener((ob, o, n) -> {
             Path pathToCreate = constructPath(path, n);
-            if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.nameinvalid(n)) {
+            if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.isNameInvalid(n)) {
                 dialogPane.lookupButton(ButtonType.OK).setDisable(true);
             } else {
                 dialogPane.lookupButton(ButtonType.OK).setDisable(false);
