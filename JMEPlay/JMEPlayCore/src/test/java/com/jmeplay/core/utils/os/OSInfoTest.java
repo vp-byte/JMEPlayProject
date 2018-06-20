@@ -11,7 +11,7 @@ import java.util.Locale;
 import static org.junit.Assert.*;
 
 /**
- * Test for @see OSInfo
+ * Test for {@link OSInfo}
  *
  * @author vp-byte (Vladimir Petrenko)
  */
@@ -43,4 +43,5 @@ public class OSInfoTest {
             Assert.assertEquals(OSType.OTHER, OSInfo.OS());
         }
     }
+
 }
