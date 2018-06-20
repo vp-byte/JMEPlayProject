@@ -32,8 +32,7 @@ public class FileHandlerUtil {
                 commands.add("/c");
                 commands.add("start");
                 break;
-            case UNIX:
-            case POSIX_UNIX:
+            case LINUX:
                 commands.add("xdg-open");
                 break;
             default:

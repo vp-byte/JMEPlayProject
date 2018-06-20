@@ -7,6 +7,7 @@ import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.core.utils.os.OSInfo;
+import com.jmeplay.core.utils.os.OSType;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
@@ -78,7 +79,7 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         ClipboardContent content = new ClipboardContent();
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.CUT);
-        if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
+        if (OSInfo.OS() == OSType.LINUX) {
             content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCut(paths));
         }
 

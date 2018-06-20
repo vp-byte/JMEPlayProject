@@ -7,6 +7,7 @@ import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.core.utils.os.OSInfo;
+import com.jmeplay.core.utils.os.OSType;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
@@ -105,7 +106,7 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     @SuppressWarnings("unchecked")
     private String defineClipboardActionSetupFiles(final Clipboard clipboard, List<File> files) {
         String clipboardAction = null;
-        if (OSInfo.OS() == OSInfo.OSType.UNIX || OSInfo.OS() == OSInfo.OSType.POSIX_UNIX) {
+        if (OSInfo.OS() == OSType.LINUX) {
             String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
             if (clipboardContent == null) {
                 return null;

@@ -3,21 +3,28 @@
  */
 package com.jmeplay.core.utils.os;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.Locale;
 
+import static org.junit.Assert.*;
+
 /**
- * Info about used operating system
+ * Test for @see OSInfo
  *
  * @author vp-byte (Vladimir Petrenko)
  */
-public class OSInfo {
+public class OSInfoTest {
 
-    private static OSType os;
-
-    static {
+    /**
+     * Test find right os name
+     */
+    @Test
+    public void OS() {
         String osName = System.getProperty("os.name").toLowerCase(Locale.ENGLISH);
         if (osName.contains("windows")) {
-            os = OSType.WINDOWS;
+            Assert.assertEquals(OSType.WINDOWS, OSInfo.OS());
         } else if (osName.contains("linux")
                 || osName.contains("mpe/ix")
                 || osName.contains("freebsd")
@@ -29,21 +36,11 @@ public class OSInfo {
                 || osName.contains("solaris")
                 || osName.contains("hp-ux")
                 || osName.contains("aix")) {
-            os = OSType.LINUX;
+            Assert.assertEquals(OSType.LINUX, OSInfo.OS());
         } else if (osName.contains("mac os")) {
-            os = OSType.MAC;
+            Assert.assertEquals(OSType.MAC, OSInfo.OS());
         } else {
-            os = OSType.OTHER;
+            Assert.assertEquals(OSType.OTHER, OSInfo.OS());
         }
-    }
-
-    /**
-     * Type of actual OS
-     * {@link OSType}
-     *
-     * @return type of OS
-     */
-    public static OSType OS() {
-        return os;
     }
 }
