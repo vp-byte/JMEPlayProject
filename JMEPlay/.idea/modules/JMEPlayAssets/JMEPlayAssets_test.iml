@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="JMEPlayAssets_main" />
     <orderEntry type="module" module-name="JMEPlayCore_main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="library" name="Gradle: de.codecentric.centerdevice:javafxsvg:1.2.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />

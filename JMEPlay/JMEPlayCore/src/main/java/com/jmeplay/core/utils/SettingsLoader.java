@@ -33,7 +33,6 @@ public class SettingsLoader {
             settings.loadFromXML(inputStream);
             inputStream.close();
         } catch (IOException e) {
-           throw new RuntimeException(e);
         }
     }
 

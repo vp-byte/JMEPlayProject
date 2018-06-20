@@ -5,20 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Change to MIT License">
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsPasteOptionDialog2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayAssets/JMEPlayAssets_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayConsole/JMEPlayConsole_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayCore/JMEPlayCore_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlay_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlay_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlay_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlay_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlay.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CopyFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CopyFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CutFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CutFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/PasteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/PasteFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/OSInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/os/OSInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -50,17 +64,15 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="JMEPlay" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="JMEPlay" type="f1a62948:ProjectNode" />
-                <item name="JMEPlay" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -71,11 +83,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SettingsLoader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SettingsLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state relative-caret-position="1217">
+              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JMEPlayGlobalSettings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="49" column="87" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#1723#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#970#971#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JMEPlayEditorTopMenuFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JMEPlayAssetsSettings.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+              <folding>
+                <element signature="e#1008#1009#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +134,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JMEPlayMain/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="187">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -136,7 +187,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\12petre\.gradle\wrapper\dists\gradle-4.0-bin\3p92xsbhik5vmig8i90n16yxc\gradle-4.0" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -911,14 +962,14 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="12158512980000" />
+        <entry key="$PROJECT_DIR$" value="12235900527587" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/JMEPlayAssets/build.gradle" value="3112603043" />
         <entry key="$PROJECT_DIR$/JMEPlayConsole/build.gradle" value="3024971603" />
         <entry key="$PROJECT_DIR$/JMEPlayCore/build.gradle" value="1270743395" />
-        <entry key="$PROJECT_DIR$/JMEPlayMain/build.gradle" value="2043594368" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="3836630594" />
-        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="975608090" />
+        <entry key="$PROJECT_DIR$/JMEPlayMain/build.gradle" value="1861977328" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="2150975565" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="566444372" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="4049139826" />
       </map>
     </option>
@@ -969,75 +1020,138 @@
               <option name="name" value="JMEPlay" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-logging-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-docs-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-wrapper-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-base-services-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-script-kotlin-tooling-models-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/groovy-all-2.4.11.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-base-services-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-script-kotlin-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-process-services-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-cli-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-jvm-services-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-script-kotlin-tooling-builders-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-model-core-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-script-kotlin-compiler-plugin-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-runtime-api-info-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-model-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-installation-beacon-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-launcher-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-tooling-api-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-core-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-messaging-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/gradle-resources-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-test-kit-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-testing-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-plugins-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-plugin-use-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-dependency-management-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-osgi-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-composite-builds-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-javascript-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-ivy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-ide-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-testing-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-workers-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-code-quality-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-maven-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-ide-play-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-ide-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-resources-sftp-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-ear-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-language-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-publish-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-platform-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-plugin-development-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-language-java-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-reporting-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-antlr-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-announce-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-signing-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-build-comparison-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-resources-s3-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-language-scala-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-platform-play-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-language-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-diagnostics-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-build-init-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-resources-http-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-scala-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-tooling-api-builders-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-jacoco-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-platform-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-build-cache-http-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-language-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-testing-base-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-bin/3p92xsbhik5vmig8i90n16yxc/gradle-4.0/lib/plugins/gradle-platform-base-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-groovy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-cli-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-core-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-docs-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-installation-beacon-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-jvm-services-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-launcher-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-logging-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-messaging-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-model-core-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-model-groovy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-process-services-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-resources-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-runtime-api-info-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-compiler-plugin-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-builders-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-models-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-tooling-api-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-wrapper-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/groovy-all-2.4.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-announce-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-antlr-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-cache-http-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-comparison-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-init-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-code-quality-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-composite-builds-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-dependency-management-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-diagnostics-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ear-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-play-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ivy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-jacoco-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-javascript-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-groovy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-java-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-jvm-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-scala-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-maven-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-osgi-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-base-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-jvm-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-play-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugin-development-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugin-use-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugins-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-publish-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-reporting-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-http-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-s3-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-sftp-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-scala-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-signing-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-test-kit-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-base-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-jvm-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-tooling-api-builders-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-workers-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -1056,9 +1170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTop.java" />
-        <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopMenuBar.java" />
-        <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditor.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorTopToolBar.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorLocalization.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorResources.java" />
@@ -1073,7 +1184,6 @@
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/OSInfo.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/PathResolver.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalResources.java" />
-        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorSettings.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayComponent.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayConsole.java" />
@@ -1092,9 +1202,7 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsImageDefinder.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsResources.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsRoot.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeCell.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsReNameDialog.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/filecreators/CreateFolderHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsPasteOptionDialog.java" />
@@ -1105,8 +1213,14 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_de.properties" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_ru.properties" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsPasteOptionDialog2.java" />
-        <option value="$PROJECT_DIR$/JMEPlayMain/build.gradle" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/build.gradle" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/os/OSInfo.java" />
+        <option value="$PROJECT_DIR$/JMEPlayMain/build.gradle" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java" />
       </list>
     </option>
   </component>
@@ -1120,9 +1234,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="2048" />
-    <option name="height" value="843" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1216" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1130,8 +1245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1142,13 +1256,71 @@
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'JMEPlayAssets'" type="a6c14932:ResourceBundleNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1162,7 +1334,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/ltt" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -1215,7 +1387,7 @@
       <module name="JMEPlayCore_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="PATTERN" value="com.jmeplay.core.utils.os.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1238,7 +1410,7 @@
       <module name="JMEPlayCore_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="PATTERN" value="com.jmeplay.core.utils.os.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1261,7 +1433,7 @@
       <module name="JMEPlayCore_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="PATTERN" value="com.jmeplay.core.utils.os.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1284,7 +1456,7 @@
       <module name="JMEPlayCore_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="PATTERN" value="com.jmeplay.core.utils.os.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1307,7 +1479,7 @@
       <module name="JMEPlayCore_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="PATTERN" value="com.jmeplay.core.utils.os.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1500,6 +1672,7 @@
       <workItem from="1529479062647" duration="576000" />
       <workItem from="1529479737240" duration="21000" />
       <workItem from="1529485434616" duration="414000" />
+      <workItem from="1529486458961" duration="4137000" />
     </task>
     <task id="LOCAL-00001" summary="Copy Files done">
       <created>1517753134020</created>
@@ -1712,43 +1885,43 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214071000" />
+    <option name="totallyTimeSpent" value="218208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="2048" height="1127" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1216" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.30769232" side_tool="true" visible="true" weight="0.45975855" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3097015" side_tool="true" visible="true" weight="0.45529953" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.4975025" weight="0.31991953" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.4968017" weight="0.3196172" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39955604" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946696" weight="0.39907834" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4885115" weight="0.34507042" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48667377" weight="0.34470046" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.6923077" visible="true" weight="0.45975855" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.6902985" visible="true" weight="0.45529953" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.24528302" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
-      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.32917082" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24840085" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49840087" weight="0.3299539" />
+      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.2553305" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4995005" weight="0.33064517" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.13651498" />
     </layout>
   </component>
@@ -1790,52 +1963,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java</url>
+          <line>82</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/OSInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/handler/file/JMEPlayFileOpenerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/PathResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayInfoMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayTreeView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1906,20 +2045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsRoot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -1927,27 +2052,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="668" column="19" selection-start-line="668" selection-start-column="19" selection-end-line="668" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/cell/DefaultTreeCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="118" column="21" lean-forward="true" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/cell/TextFieldTreeCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="211" column="4" lean-forward="true" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/Cell.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/cell/DefaultTreeCell.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/cell/TextFieldTreeCell.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1983,20 +2090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="203" column="39" selection-start-line="203" selection-start-column="39" selection-end-line="203" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/filecreators/CreateFolderHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -2011,27 +2104,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/ButtonBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348">
-          <caret line="195" column="23" selection-start-line="195" selection-start-column="23" selection-end-line="195" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/ButtonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Runnable.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/ButtonBar.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/ButtonType.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsRenameDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -2071,28 +2146,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayGlobal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-          <folding>
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2110,20 +2167,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java">
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/PathResolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/SettingsLoaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#4288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/os/OSInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#1535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsRoot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/editor/ui/JMEPlayGlobal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -2134,19 +2250,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_de.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="187">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -2155,8 +2277,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+        <state relative-caret-position="1217">
+          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/menu/JMEPlayEditorTopMenuFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="49" column="87" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#1723#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

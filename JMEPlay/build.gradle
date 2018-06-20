@@ -18,6 +18,7 @@ allprojects {
     def junit = [v: '4.12']
     def spring_boot = [v: '1.5.2.RELEASE']
     def lombok = [v: '1.16.20']
+    def javaxinject = [v: '1']
     def javafxsvg = [v: '1.2.1']
 
     dependencies {
@@ -29,7 +30,8 @@ allprojects {
         testCompile "org.springframework.boot:spring-boot-starter-test:${spring_boot.v}"
 
         // Lombok
-        compile "org.projectlombok:lombok:${lombok.v}"
+        compileOnly "org.projectlombok:lombok:${lombok.v}"
+        compileOnly "javax.inject:javax.inject:${javaxinject.v}"
 
         // JavaFxSVG
         compile "de.codecentric.centerdevice:javafxsvg:${javafxsvg.v}"

@@ -6,7 +6,7 @@ package com.jmeplay.plugin.assets.handler;
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.core.utils.OSInfo;
+import com.jmeplay.core.utils.os.OSInfo;
 import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;

@@ -55,6 +55,9 @@ public class JMEPlayAssetsSettings extends SettingsLoader {
      * @return root folder
      */
     public String rootFolder() {
+        if(jmePlayGlobalSettings.rootFolder().equals(System.getProperty("user.home"))){
+            return null;
+        }
         return jmePlayGlobalSettings.rootFolder();
     }
 

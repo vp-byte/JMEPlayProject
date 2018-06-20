@@ -81,6 +81,9 @@ public class JMEPlayAssetsTreeView extends JMEPlayTreeView {
      */
     private void reloadAssetFolder() {
         String rootFolder = jmePlayAssetsSettings.rootFolder();
+        if(rootFolder== null){
+            return;
+        }
         Path rootPath = Paths.get(rootFolder);
         keys = new HashMap<>();
         TreeItem<Path> rootTreeItem = new TreeItem<>(rootPath);
