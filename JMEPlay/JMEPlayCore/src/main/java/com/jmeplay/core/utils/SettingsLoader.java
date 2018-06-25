@@ -3,6 +3,10 @@
  */
 package com.jmeplay.core.utils;
 
+import com.jmeplay.core.utils.os.OSInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -12,6 +16,8 @@ import java.util.Properties;
  * @author Vladimir Petrenko (vp-byte)
  */
 public class SettingsLoader {
+
+    private static final Logger logger = LoggerFactory.getLogger(SettingsLoader.class.getName());
 
     private String filename;
     private Properties settings;
@@ -32,7 +38,9 @@ public class SettingsLoader {
             inputStream = new FileInputStream(filename);
             settings.loadFromXML(inputStream);
             inputStream.close();
+            logger.trace("{} success to load {} setting", SettingsLoader.class, filename);
         } catch (IOException e) {
+            logger.info("{} fail to load {} setting", SettingsLoader.class, filename);
         }
     }
 
@@ -43,6 +51,7 @@ public class SettingsLoader {
         File path = new File(filename).getParentFile();
         if (!path.exists()) {
             if (path.mkdir()) {
+                logger.error("{} create dir {} for setting", SettingsLoader.class, path);
                 throw new IllegalArgumentException("Can't create directory " + path);
             }
         }
@@ -51,6 +60,7 @@ public class SettingsLoader {
             outputStream = new FileOutputStream(filename);
             settings.storeToXML(outputStream, "Settings for " + filename + " application");
         } catch (IOException e) {
+            logger.error("{} fail to write {} setting", SettingsLoader.class, filename);
             throw new IllegalArgumentException("Can't write settings file", e);
         }
     }
@@ -61,6 +71,7 @@ public class SettingsLoader {
     public void deleteSettings() {
         File file = new File(filename);
         if (!file.delete()) {
+            logger.error("{} fail to delete {} setting", SettingsLoader.class, filename);
             throw new IllegalArgumentException("Can't delete " + filename);
         }
     }
@@ -73,6 +84,7 @@ public class SettingsLoader {
      */
     private String value(String key) {
         String option = settings.getProperty(key);
+        logger.trace("{} -> key {}, value: {}", SettingsLoader.class, key, option);
         return option == null || option.equals("null") ? null : option;
     }
 
@@ -86,6 +98,7 @@ public class SettingsLoader {
     public String value(String key, String defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, defaultValue);
             return defaultValue;
         }
@@ -102,6 +115,7 @@ public class SettingsLoader {
     public Boolean value(String key, Boolean defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, Boolean defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, "" + defaultValue);
             return defaultValue;
         }
@@ -118,6 +132,7 @@ public class SettingsLoader {
     public Integer value(String key, Integer defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, Integer defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, "" + defaultValue);
             return defaultValue;
         }
@@ -134,6 +149,7 @@ public class SettingsLoader {
     public Long value(String key, Long defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, Long defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, "" + defaultValue);
             return defaultValue;
         }
@@ -150,6 +166,7 @@ public class SettingsLoader {
     public Float value(String key, Float defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, Float defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, "" + defaultValue);
             return defaultValue;
         }
@@ -166,6 +183,7 @@ public class SettingsLoader {
     public Double value(String key, Double defaultValue) {
         String option = value(key);
         if (option == null) {
+            logger.trace("{} -> key {}, Double defaultValue: {}", SettingsLoader.class, key, defaultValue);
             setValue(key, "" + defaultValue);
             return defaultValue;
         }

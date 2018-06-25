@@ -3,6 +3,9 @@
  */
 package com.jmeplay.core.utils.os;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Locale;
 
 /**
@@ -11,6 +14,8 @@ import java.util.Locale;
  * @author vp-byte (Vladimir Petrenko)
  */
 public class OSInfo {
+
+    private static final Logger logger = LoggerFactory.getLogger(OSInfo.class.getName());
 
     private static OSType os;
 
@@ -44,6 +49,7 @@ public class OSInfo {
      * @return type of OS
      */
     public static OSType OS() {
+        logger.trace("OS from {}: {}", OSInfo.class, os);
         return os;
     }
 
