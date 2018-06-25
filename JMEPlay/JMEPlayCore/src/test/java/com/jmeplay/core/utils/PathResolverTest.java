@@ -25,6 +25,7 @@ public class PathResolverTest {
     private static String filename;
     private static String extension;
     private static Path path;
+    private static Path pathNoExtension;
 
     /**
      * Create text file
@@ -34,8 +35,10 @@ public class PathResolverTest {
         filename = UUID.randomUUID().toString();
         extension = "txt";
         path = Paths.get(home, filename + "." + extension);
+        pathNoExtension = Paths.get(home, filename);
         try {
             Files.createFile(path);
+            Files.createFile(pathNoExtension);
         } catch (IOException e) {
             Assert.fail(e.getMessage());
         }
@@ -48,6 +51,7 @@ public class PathResolverTest {
     public void deleteFile() {
         try {
             Files.deleteIfExists(path);
+            Files.deleteIfExists(pathNoExtension);
         } catch (IOException e) {
             Assert.fail(e.getMessage());
         }
@@ -59,6 +63,30 @@ public class PathResolverTest {
     @Test
     public void extension() {
         Assert.assertEquals(extension, PathResolver.extension(path));
+    }
+
+    /**
+     * Resolve extension from null path
+     */
+    @Test
+    public void extensionPathNull() {
+        Assert.assertEquals(null, PathResolver.extension(null));
+    }
+
+    /**
+     * Resolve extension from directory
+     */
+    @Test
+    public void extensionDirectory() {
+        Assert.assertEquals("", PathResolver.extension(Paths.get(home)));
+    }
+
+    /**
+     * Resolve extension from file with no extension
+     */
+    @Test
+    public void extensionPathNoExtension() {
+        Assert.assertEquals("", PathResolver.extension(pathNoExtension));
     }
 
     /**

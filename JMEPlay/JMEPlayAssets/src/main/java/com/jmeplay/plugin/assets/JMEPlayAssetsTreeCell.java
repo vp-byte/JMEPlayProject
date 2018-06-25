@@ -5,7 +5,7 @@ package com.jmeplay.plugin.assets;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.PathResolver;
-import com.jmeplay.plugin.assets.handler.fileopeners.OpenByExtensionFileHandler;
+import com.jmeplay.plugin.assets.handler.open.OpenByExtensionFileHandler;
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TreeView;

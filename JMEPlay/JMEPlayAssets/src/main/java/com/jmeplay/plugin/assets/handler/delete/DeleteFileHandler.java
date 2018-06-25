@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.delete;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
@@ -16,11 +16,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -40,22 +37,36 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private TreeView<Path> source = null;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
+    private final DeleteFileHandlerDialog deleteFileHandlerDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public DeleteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                              JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                             DeleteFileHandlerDialog deleteFileHandlerDialog,
                              JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
+        this.deleteFileHandlerDialog = deleteFileHandlerDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
 
+    /**
+     * Support any filetype
+     *
+     * @return list of supported files
+     */
     @Override
     public List<String> filetypes() {
         return singletonList(JMEPlayFileHandler.any);
     }
 
+    /**
+     * Menu item to support delete action
+     *
+     * @param source for MenuItem
+     * @return menu item
+     */
     @Override
     public MenuItem menu(TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
@@ -63,18 +74,33 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return menuItem;
     }
 
+    /**
+     * Localized label for delete action
+     *
+     * @return label rename
+     */
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE);
     }
 
+    /**
+     * Image view for delete action
+     *
+     * @return image view delete
+     */
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_DELETE, size, size);
     }
 
+    /**
+     * Handle delete action
+     *
+     * @param source of action
+     */
     public void handle(TreeView<Path> source) {
         this.source = source;
 
-        Optional<ButtonType> result = createConfirmAlert().showAndWait();
+        Optional<ButtonType> result = deleteFileHandlerDialog.create().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             try {
                 executeDelete();
@@ -86,19 +112,19 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         }
     }
 
-    private Alert createConfirmAlert() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE));
-        alert.setHeaderText(null);
-        alert.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION));
-        return alert;
-    }
-
+    /**
+     * Execute delete action
+     */
     private void executeDelete() {
         new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach(this::delete);
         source.getSelectionModel().clearSelection();
     }
 
+    /**
+     * Delete path from file system
+     *
+     * @param item to delete
+     */
     private void delete(TreeItem<Path> item) {
         final Path path = item.getValue();
         try {
@@ -113,18 +139,4 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         }
     }
 
-    private class DeleteFileVisitor extends SimpleFileVisitor<Path> {
-
-        @Override
-        public FileVisitResult postVisitDirectory(final Path dir, final IOException exc) throws IOException {
-            Files.delete(dir);
-            return FileVisitResult.CONTINUE;
-        }
-
-        @Override
-        public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs) throws IOException {
-            Files.delete(file);
-            return FileVisitResult.CONTINUE;
-        }
-    }
 }

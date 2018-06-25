@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
@@ -13,7 +13,7 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsRenameDialog;
+import com.jmeplay.plugin.assets.handler.rename.RenameFileHandlerDialog;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import com.jmeplay.plugin.assets.handler.util.PasteFileVisitor;
 import javafx.scene.control.MenuItem;
@@ -45,18 +45,18 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog;
+    private final RenameFileHandlerDialog renameFileHandlerDialog;
     private final PasteFileVisitor pasteFileVisitor;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public PasteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                            JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog,
+                            RenameFileHandlerDialog renameFileHandlerDialog,
                             PasteFileVisitor pasteFileVisitor,
                             JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsRenameDialog = jmePlayAssetsRenameDialog;
+        this.renameFileHandlerDialog = renameFileHandlerDialog;
         this.pasteFileVisitor = pasteFileVisitor;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
@@ -135,7 +135,7 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             if (Files.isRegularFile(file.toPath())) {
                 Path newFile = targetPath.resolve(file.getName());
                 if (Files.exists(newFile)) {
-                    Optional<Path> result = jmePlayAssetsRenameDialog.construct(newFile).showAndWait();
+                    Optional<Path> result = renameFileHandlerDialog.construct(newFile).showAndWait();
                     result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath));
                 } else {
                     moveOrCopy(clipboardAction, file.toPath(), newFile);

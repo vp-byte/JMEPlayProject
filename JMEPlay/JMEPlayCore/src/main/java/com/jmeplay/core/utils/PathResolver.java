@@ -3,6 +3,9 @@
  */
 package com.jmeplay.core.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,6 +19,8 @@ import java.util.regex.Pattern;
  */
 public class PathResolver {
 
+    private static final Logger logger = LoggerFactory.getLogger(PathResolver.class.getName());
+
     /**
      * Extension from path (last point as separator)
      *
@@ -23,15 +28,26 @@ public class PathResolver {
      * @return extension of file (.svg, .jpg, other..., empty string if directory)
      */
     public static String extension(Path path) {
-        if (path == null) {
-            return null;
+        String extension = null;
+        if (path != null) {
+            if (Files.isRegularFile(path)) {
+                String filename = path.getFileName().toString();
+                int lastIndexOfDot = filename.lastIndexOf(".");
+                if (lastIndexOfDot > 1) {
+                    extension = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
+                    logger.trace("Extract extension " + extension + " from path " + path);
+                } else {
+                    logger.trace("Can't extract extension from path/file with no extension: " + path);
+                    extension = "";
+                }
+            } else {
+                logger.trace("Can't extract extension from folder: " + path);
+                extension = "";
+            }
+        } else {
+            logger.trace("Can't extract extension, path is null");
         }
-        String filename = path.getFileName().toString();
-        int lastIndexOfDot = filename.lastIndexOf(".");
-        if (lastIndexOfDot > 0) {
-            return filename.substring(filename.lastIndexOf(".") + 1, filename.length());
-        }
-        return "";
+        return extension;
     }
 
     /**
@@ -41,18 +57,23 @@ public class PathResolver {
      * @return extension of file (.svg, .jpg, other...)
      */
     public static String name(Path path) {
+        String filename = "";
         if (Files.isRegularFile(path)) {
-            String filename = "" + path.getFileName();
+            filename += path.getFileName();
             if (filename.contains(".")) {
-                return filename.substring(0, filename.lastIndexOf("."));
+                filename = filename.substring(0, filename.lastIndexOf("."));
             }
+        } else {
+            filename += path.getFileName();
         }
-        return "" + path.getFileName();
+        logger.trace("Extract filename " + filename + " from path/file: " + path);
+        return filename;
     }
 
 
     /**
      * Get next indexed filename from actual filename
+     *
      * @param path of file
      * @return new path of reindexed filename
      */

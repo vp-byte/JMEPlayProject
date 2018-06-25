@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.open;
 
 import static java.util.Collections.singletonList;
 

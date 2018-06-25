@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.dialogs;
+package com.jmeplay.plugin.assets.handler.rename;
 
 import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
@@ -19,12 +19,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Implementation for rename dialog of JMEPlayAssets
+ * Dialog implementation to rename files
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayAssetsRenameDialog {
+public class RenameFileHandlerDialog {
 
     private DialogPane dialogPane;
 
@@ -40,7 +40,7 @@ public class JMEPlayAssetsRenameDialog {
      * @param jmePlayAssetsLocalization localisation for dialog
      */
     @Autowired
-    public JMEPlayAssetsRenameDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
+    public RenameFileHandlerDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
     }
 

@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.rename;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
@@ -10,7 +10,6 @@ import com.jmeplay.editor.ui.JMEPlayTreeView;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsRenameDialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
@@ -38,16 +37,16 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog;
+    private final RenameFileHandlerDialog renameFileHandlerDialog;
     private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public RenameFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                              JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             JMEPlayAssetsRenameDialog jmePlayAssetsRenameDialog,
+                             RenameFileHandlerDialog renameFileHandlerDialog,
                              JMEPlayConsole jmePlayConsole) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsRenameDialog = jmePlayAssetsRenameDialog;
+        this.renameFileHandlerDialog = renameFileHandlerDialog;
         this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
@@ -95,7 +94,7 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      */
     public void handle(TreeView<Path> source) {
         final Path path = source.getSelectionModel().getSelectedItem().getValue();
-        Optional<Path> result = jmePlayAssetsRenameDialog.construct(path).showAndWait();
+        Optional<Path> result = renameFileHandlerDialog.construct(path).showAndWait();
         result.ifPresent((newPath) -> {
             try {
                 ((JMEPlayTreeView) source).setSelectAddedItem();

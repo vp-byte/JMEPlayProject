@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler;
+package com.jmeplay.plugin.assets.handler.create;
 
 import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
@@ -24,13 +24,13 @@ import java.util.stream.Collectors;
 import static java.util.Collections.singletonList;
 
 /**
- * Handler to create new files
+ * Handler to create files
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
 @Order(value = 0)
-public class NewFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class CreateFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
 
@@ -38,8 +38,8 @@ public class NewFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     private List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers;
 
     @Autowired
-    public NewFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
-                          JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
+    public CreateFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
+                             JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         size = jmePlayAssetsSettings.iconSize();
     }

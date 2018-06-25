@@ -1,4 +1,4 @@
-package com.jmeplay.plugin.assets.handler.filecreators;
+package com.jmeplay.plugin.assets.handler.create.folder;
 
 import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
 import com.jmeplay.core.utils.ImageLoader;

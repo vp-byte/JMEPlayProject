@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ImageLoader {
 
-
     private static final Logger logger = LoggerFactory.getLogger(OSInfo.class.getName());
 
     /**
