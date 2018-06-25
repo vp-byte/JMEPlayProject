@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets.handler;
 
@@ -52,11 +52,20 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         size = jmePlayAssetsSettings.iconSize();
     }
 
+    /**
+     * Support any filetype
+     * @return list of supported files
+     */
     @Override
     public List<String> filetypes() {
         return singletonList(JMEPlayFileHandler.any);
     }
 
+    /**
+     * Menu item to support rename action
+     * @param source for MenuItem
+     * @return menu item
+     */
     @Override
     public MenuItem menu(TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
@@ -64,14 +73,26 @@ public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return menuItem;
     }
 
+    /**
+     * Localized label for rename action
+     * @return label rename
+     */
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME);
     }
 
+    /**
+     * Image view for rename action
+     * @return image view rename
+     */
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_RENAME, size, size);
     }
 
+    /**
+     * Handle rename action
+     * @param source of action
+     */
     public void handle(TreeView<Path> source) {
         final Path path = source.getSelectionModel().getSelectedItem().getValue();
         Optional<Path> result = jmePlayAssetsRenameDialog.construct(path).showAndWait();

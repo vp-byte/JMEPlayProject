@@ -28,7 +28,7 @@ public class JMEPlayAssetsResources {
     public final static String ICONS_ASSETS_PASTE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsPaste.svg";
     public final static String ICONS_ASSETS_DELETE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsDelete.svg";
 
-    public final static String ICONS_ASSETS_FILE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsFile.svg";
+    public final static String ICONS_ASSETS_FILE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAsse tsFile.svg";
     public final static String ICONS_ASSETS_FOLDER = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsFolder.svg";
     public final static String ICONS_ASSETS_FONT = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsFont.svg";
     public final static String ICONS_ASSETS_IMAGE = JMEPlayGlobalResources.ICONS + "plugin/assets/JMEPlayAssetsImage.svg";
