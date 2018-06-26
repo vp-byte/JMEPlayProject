@@ -5,4 +5,7 @@ apply plugin: 'java'
 
 dependencies {
     compile project(':JMEPlayCore')
+
+    testCompile "org.testfx:testfx-core:4.0.13-alpha"
+    testCompile "org.testfx:testfx-junit:4.0.13-alpha"
 }

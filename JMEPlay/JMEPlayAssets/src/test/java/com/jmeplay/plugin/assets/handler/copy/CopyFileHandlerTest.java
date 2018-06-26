@@ -4,9 +4,16 @@
 package com.jmeplay.plugin.assets.handler.copy;
 
 import com.jmeplay.core.JMEPlayGlobalSettings;
+import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
+import com.jmeplay.core.utils.os.OSInfo;
+import com.jmeplay.core.utils.os.OSType;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
+import javafx.application.Platform;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.DataFormat;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,8 +22,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.testfx.framework.junit.ApplicationTest;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -37,11 +47,10 @@ import java.util.UUID;
                 JMEPlayAssetsLocalization.class,
                 CopyFileHandler.class
         })
-public class CopyFileHandlerTest {
+public class CopyFileHandlerTest extends ApplicationTest {
 
     @Autowired
     private CopyFileHandler copyFileHandler;
-    private static Path path;
     private static List<Path> paths;
 
     /**
@@ -49,15 +58,13 @@ public class CopyFileHandlerTest {
      */
     @Before
     public void createFile() {
-        path = Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString());
         paths = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
         }
         try {
-            Files.createFile(path);
-            for (int i = 0; i < paths.size(); i++) {
-                Files.createFile(paths.get(i));
+            for (Path path : paths) {
+                Files.createFile(path);
             }
         } catch (IOException e) {
             Assert.fail(e.getMessage());
@@ -70,20 +77,21 @@ public class CopyFileHandlerTest {
     @After
     public void deleteFile() {
         try {
-            Files.deleteIfExists(path);
+            for (Path path : paths) {
+                Files.deleteIfExists(path);
+            }
         } catch (IOException e) {
             Assert.fail(e.getMessage());
         }
     }
-
 
     /**
      * Supported file type is any
      */
     @Test
     public void filetypes() {
-        Assert.assertTrue(copyFileHandler.filetypes().size() == 1);
-        Assert.assertTrue(copyFileHandler.filetypes().get(0) == JMEPlayFileHandler.any);
+        Assert.assertEquals(1, copyFileHandler.filetypes().size());
+        Assert.assertEquals(JMEPlayFileHandler.any, copyFileHandler.filetypes().get(0));
     }
 
     /**
@@ -111,13 +119,38 @@ public class CopyFileHandlerTest {
         Assert.assertNotNull(copyFileHandler.image());
     }
 
+    /**
+     * Test copy files to clipboard
+     */
     @Test
-    public void handleCopySingleFile() {
-        hier weiter
+    public void handleCopyFiles() {
+        Platform.runLater(() -> {
+            copyFileHandler.copyPathsToClipboard(paths);
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            if (OSInfo.OS() == OSType.LINUX) {
+                final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
+                if (clipboardContent != null) {
+                    paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
+                } else {
+                    Assert.fail("Clipboard content is null");
+                }
+            } else {
+                final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
+                final Object clipboardFiles = clipboard.getContent(DataFormat.FILES);
+                if (clipboardFiles instanceof List<?>) {
+                    final ArrayList<?> filesArray = new ArrayList<>((List<?>) (clipboard.getContent(DataFormat.FILES)));
+                    final ArrayList<File> files = new ArrayList<>();
+                    filesArray.forEach(fileObject -> {
+                        if (fileObject instanceof File) {
+                            files.add((File) fileObject);
+                        }
+                    });
+                    paths.forEach(path -> {
+                        Assert.assertEquals(path, files.stream().filter(fPath -> fPath.equals(path)).findFirst().get().toPath());
+                    });
+                }
+            }
+        });
     }
 
-
-    @Test
-    public void handleCopyMultiplyFiles() {
-    }
 }
