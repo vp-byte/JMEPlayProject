@@ -54,7 +54,7 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     /**
-     * Support any filetype
+     * Support any file type
      *
      * @return list of supported files
      */
@@ -101,19 +101,26 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      */
     public void handle(TreeView<Path> source) {
         List<Path> paths = source.getSelectionModel().getSelectedItems().stream().map(TreeItem::getValue).collect(Collectors.toList());
+        cutPathsToClipboard(paths);
+        ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
+        ((JMEPlayAssetsTreeView) source).markCutedFilesInTreeView();
+    }
 
+    /**
+     * Cut all paths to clipboard
+     *
+     * @param paths to copy
+     */
+    void cutPathsToClipboard(List<Path> paths) {
+        paths.forEach(path -> logger.trace("Cut " + path + " to clipboard"));
         ClipboardContent content = new ClipboardContent();
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.CUT);
         if (OSInfo.OS() == OSType.LINUX) {
             content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCut(paths));
         }
-
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);
-        ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
-        ((JMEPlayAssetsTreeView) source).markCutedFilesInTreeView();
-        paths.forEach(path -> logger.trace("Cut " + path + " to clipboard"));
     }
 
 }

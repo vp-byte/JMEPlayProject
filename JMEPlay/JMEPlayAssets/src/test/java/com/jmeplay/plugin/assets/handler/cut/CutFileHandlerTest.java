@@ -1,7 +1,7 @@
 /*
- * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
+ * MIT-LICENSE cutright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.copy;
+package com.jmeplay.plugin.assets.handler.cut;
 
 import com.jmeplay.core.JMEPlayGlobalSettings;
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Test to copy files from menu
+ * Test to cut files from menu
  *
  * @author vp-byte (Vladimir Petrenko)
  */
@@ -45,12 +45,12 @@ import java.util.UUID;
                 JMEPlayGlobalSettings.class,
                 JMEPlayAssetsSettings.class,
                 JMEPlayAssetsLocalization.class,
-                CopyFileHandler.class
+                CutFileHandler.class
         })
-public class CopyFileHandlerTest extends ApplicationTest {
+public class CutFileHandlerTest extends ApplicationTest {
 
     @Autowired
-    private CopyFileHandler copyFileHandler;
+    private CutFileHandler cutFileHandler;
     private static List<Path> paths;
 
     /**
@@ -90,8 +90,8 @@ public class CopyFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void filetypes() {
-        Assert.assertEquals(1, copyFileHandler.filetypes().size());
-        Assert.assertEquals(JMEPlayFileHandler.any, copyFileHandler.filetypes().get(0));
+        Assert.assertEquals(1, cutFileHandler.filetypes().size());
+        Assert.assertEquals(JMEPlayFileHandler.any, cutFileHandler.filetypes().get(0));
     }
 
     /**
@@ -99,7 +99,7 @@ public class CopyFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void menu() {
-        Assert.assertNotNull(copyFileHandler.menu(null));
+        Assert.assertNotNull(cutFileHandler.menu(null));
     }
 
     /**
@@ -107,8 +107,8 @@ public class CopyFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void label() {
-        Assert.assertNotNull(copyFileHandler.label());
-        Assert.assertFalse(copyFileHandler.label().isEmpty());
+        Assert.assertNotNull(cutFileHandler.label());
+        Assert.assertFalse(cutFileHandler.label().isEmpty());
     }
 
     /**
@@ -116,28 +116,28 @@ public class CopyFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void image() {
-        Assert.assertNotNull(copyFileHandler.image());
+        Assert.assertNotNull(cutFileHandler.image());
     }
 
     /**
-     * Test copy files to clipboard
+     * Test cut files to clipboard
      */
     @Test
-    public void copyPathsToClipboard() {
+    public void cutPathsToClipboard() {
         Platform.runLater(() -> {
-            copyFileHandler.copyPathsToClipboard(paths);
+            cutFileHandler.cutPathsToClipboard(paths);
             Clipboard clipboard = Clipboard.getSystemClipboard();
             if (OSInfo.OS() == OSType.LINUX) {
                 final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
                 if (clipboardContent != null) {
-                    Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
+                    Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
                     paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
                 } else {
                     Assert.fail("Clipboard content is null");
                 }
             } else {
                 final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
-                Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
+                Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
                 final Object clipboardFiles = clipboard.getContent(DataFormat.FILES);
                 if (clipboardFiles instanceof List<?>) {
                     final ArrayList<?> filesArray = new ArrayList<>((List<?>) (clipboard.getContent(DataFormat.FILES)));
@@ -152,5 +152,4 @@ public class CopyFileHandlerTest extends ApplicationTest {
             }
         });
     }
-
 }
