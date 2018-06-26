@@ -93,8 +93,8 @@ public class CreateFolderHandler implements JMEPlayFileCreatorHandler<TreeView<P
                 ((JMEPlayTreeView) source).setSelectAddedItem();
                 createPath(pathToCreate);
                 logger.trace("Directory " + pathToCreate + " created");
-            } catch (Exception e) {
-                logger.trace("Directory " + pathToCreate + " creation fail");
+            } catch (IOException e) {
+                logger.trace("Directory " + pathToCreate + " creation fail", e);
             }
         });
     }

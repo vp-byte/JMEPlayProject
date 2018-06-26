@@ -105,11 +105,7 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
         Optional<ButtonType> result = deleteFileHandlerDialog.create().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            try {
-                executeDelete();
-            } catch (IllegalArgumentException e) {
-                logger.trace("Delete files canceled by user");
-            }
+            executeDelete();
         }
     }
 
@@ -122,16 +118,18 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     /**
-     * Delete item with path
+     * Delete source with path
      *
-     * @param item with path to delete
+     * @param source with path to delete
      */
-    private void deleteItem(final TreeItem<Path> item) {
+    private void deleteItem(final TreeItem<Path> source) {
+
+        final Path path = source.getValue();
         try {
-            deletePath(item.getValue());
-            item.getParent().getChildren().remove(item);
+            deletePath(path);
+            source.getParent().getChildren().remove(source);
         } catch (IOException e) {
-            throw new IllegalArgumentException(e);
+            logger.trace("Delete file " + path + " fail", e);
         }
     }
 

@@ -16,7 +16,7 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +56,8 @@ public class CutFileHandlerTest extends ApplicationTest {
     /**
      * Create text file
      */
-    @Before
-    public void createFile() {
+    @BeforeClass
+    public static void createFile() {
         paths = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));

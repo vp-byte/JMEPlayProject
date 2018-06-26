@@ -8,7 +8,7 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +46,8 @@ public class CreateFolderHandlerTest {
     /**
      * Create list of folders
      */
-    @Before
-    public void createFoldersList() {
+    @BeforeClass
+    public static void createFoldersList() {
         paths = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
