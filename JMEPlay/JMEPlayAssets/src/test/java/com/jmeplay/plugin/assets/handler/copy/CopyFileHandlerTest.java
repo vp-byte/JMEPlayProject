@@ -130,12 +130,14 @@ public class CopyFileHandlerTest extends ApplicationTest {
             if (OSInfo.OS() == OSType.LINUX) {
                 final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
                 if (clipboardContent != null) {
+                    Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
                     paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
                 } else {
                     Assert.fail("Clipboard content is null");
                 }
             } else {
                 final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
+                Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
                 final Object clipboardFiles = clipboard.getContent(DataFormat.FILES);
                 if (clipboardFiles instanceof List<?>) {
                     final ArrayList<?> filesArray = new ArrayList<>((List<?>) (clipboard.getContent(DataFormat.FILES)));
@@ -145,9 +147,7 @@ public class CopyFileHandlerTest extends ApplicationTest {
                             files.add((File) fileObject);
                         }
                     });
-                    paths.forEach(path -> {
-                        Assert.assertEquals(path, files.stream().filter(fPath -> fPath.equals(path)).findFirst().get().toPath());
-                    });
+                    paths.forEach(path -> Assert.assertTrue(files.stream().anyMatch(file -> file.toPath().equals(path))));
                 }
             }
         });
