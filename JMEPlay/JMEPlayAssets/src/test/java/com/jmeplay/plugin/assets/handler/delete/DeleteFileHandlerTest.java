@@ -8,7 +8,7 @@ import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +48,10 @@ public class DeleteFileHandlerTest extends ApplicationTest {
     /**
      * Create text file
      */
-    @Before
-    public void createFile() {
+    @BeforeClass
+    public static void createFile() {
         paths = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
         }
         try {

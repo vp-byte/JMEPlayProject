@@ -4,16 +4,8 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Test create folders from menu (DONE)">
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
+    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -65,34 +57,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CreateFolderHandlerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java">
+      <file leaf-file-name="DeleteFileHandlerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="39" column="25" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="25" />
+            <state relative-caret-position="374">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1637#1638#0" expanded="true" />
-                <element signature="e#1700#1701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateFolderHandlerDialog.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
+      <file leaf-file-name="DeleteFileHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CopyFileHandlerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="73" selection-start-line="73" selection-end-line="85" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="150" selection-start-line="150" selection-end-line="150" />
             </state>
           </provider>
         </entry>
@@ -1177,9 +1158,9 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerDialog.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandler.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" />
       </list>
     </option>
   </component>
@@ -1203,8 +1184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1256,62 +1235,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="delete" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="rename" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
@@ -1381,6 +1304,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -1444,23 +1369,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateFolderHandlerTest">
+  <component name="RunManager" selected="JUnit.DeleteFileHandlerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.Main" />
-      <module name="JMEPlayAssets_main" />
+    <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="CopyFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JMEPlayAssets_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jmeplay.plugin.assets.*" />
+          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.copy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.copy" />
+      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.copy.CopyFileHandlerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="CreateFolderHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JMEPlayAssets_test" />
@@ -1474,6 +1411,52 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.create.folder" />
       <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.create.folder.CreateFolderHandlerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="CutFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JMEPlayAssets_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.cut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.cut" />
+      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.cut.CutFileHandlerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DeleteFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JMEPlayAssets_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.delete.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.delete" />
+      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.delete.DeleteFileHandlerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1552,15 +1535,19 @@
     <list>
       <item itemvalue="Application.JMEPlay" />
       <item itemvalue="Spring Boot.JMEPlay" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.JUnitJMEPlayAssets" />
       <item itemvalue="JUnit.CreateFolderHandlerTest" />
+      <item itemvalue="JUnit.CopyFileHandlerTest" />
+      <item itemvalue="JUnit.CutFileHandlerTest" />
+      <item itemvalue="JUnit.DeleteFileHandlerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DeleteFileHandlerTest" />
+        <item itemvalue="JUnit.CutFileHandlerTest" />
         <item itemvalue="JUnit.CreateFolderHandlerTest" />
+        <item itemvalue="JUnit.CopyFileHandlerTest" />
         <item itemvalue="JUnit.JUnitJMEPlayAssets" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -1682,7 +1669,8 @@
       <workItem from="1530008388263" duration="689000" />
       <workItem from="1530015718939" duration="4048000" />
       <workItem from="1530021987067" duration="3052000" />
-      <workItem from="1530042280896" duration="1694000" />
+      <workItem from="1530042280896" duration="1764000" />
+      <workItem from="1530044961870" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="Copy Files done">
       <created>1517753134020</created>
@@ -1908,43 +1896,50 @@
       <option name="project" value="LOCAL" />
       <updated>1530019765073</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Test create folders from menu (DONE)">
+      <created>1530044025617</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1530044025618</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CopyFileHandlerTest - 2018.06.26 at 13h 32m 41s.xml">
+    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 22h 33m 44s.xml">
+      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CopyFileHandlerTest - 2018.06.26 at 22h 34m 59s.xml">
       <configuration name="CopyFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CutFileHandlerTest - 2018.06.26 at 14h 48m 42s.xml">
+    <history-entry file="CreateFolderHandlerTest - 2018.06.26 at 22h 35m 32s.xml">
+      <configuration name="CreateFolderHandlerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CutFileHandlerTest - 2018.06.26 at 22h 35m 45s.xml">
       <configuration name="CutFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_JMEPlayAssets_test - 2018.06.26 at 14h 52m 16s.xml">
-      <configuration name="All in JMEPlayAssets_test" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 35m 56s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 14h 53m 18s.xml">
-      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 40m 58s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 15h 18m 17s.xml">
-      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 42m 48s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 15h 19m 14s.xml">
-      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 43m 11s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 15h 26m 15s.xml">
-      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 43m 50s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JUnitJMEPlayAssets - 2018.06.26 at 16h 08m 07s.xml">
-      <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFolderHandlerTest - 2018.06.26 at 22h 08m 00s.xml">
-      <configuration name="CreateFolderHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFolderHandlerTest - 2018.06.26 at 22h 09m 12s.xml">
-      <configuration name="CreateFolderHandlerTest" configurationId="JUnit" />
+    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 44m 15s.xml">
+      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262014000" />
+    <option name="totallyTimeSpent" value="263046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="2048" height="1127" extended-state="6" />
@@ -1952,30 +1947,30 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.48400852" visible="true" weight="0.34305835" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48400852" weight="0.34305835" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31343284" side_tool="true" weight="0.3186603" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6865672" weight="0.30482897" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.6865672" visible="true" weight="0.30482897" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946696" weight="0.24497607" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27672327" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27972028" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.15184815" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39904305" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39839035" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49573562" weight="0.3279678" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49573562" visible="true" weight="0.3279678" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="9" sideWeight="0.4968017" weight="0.31790745" />
       <window_info anchor="bottom" id="Message" order="1" />
@@ -2056,7 +2051,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2138,13 +2133,6 @@
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/PathResolverTest.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileVisitor.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandler.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/dialogs/JMEPlayAssetsNameDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
@@ -2180,20 +2168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="97" selection-start-line="97" selection-end-line="101" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -2211,36 +2185,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java">
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="73" selection-start-line="73" selection-end-line="85" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="446">
+          <caret line="35" column="18" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="629">
           <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-639">
+          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
