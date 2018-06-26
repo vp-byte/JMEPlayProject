@@ -1,12 +1,12 @@
 /*
  * MIT-LICENSE copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.delete;
+package com.jmeplay.plugin.assets.handler.create.folder;
 
 import com.jmeplay.core.JMEPlayGlobalSettings;
-import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.testfx.framework.junit.ApplicationTest;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,7 +24,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Test to delete files from menu
+ * Test to create folder from menu
  *
  * @author vp-byte (Vladimir Petrenko)
  */
@@ -35,28 +34,34 @@ import java.util.UUID;
                 JMEPlayGlobalSettings.class,
                 JMEPlayAssetsSettings.class,
                 JMEPlayAssetsLocalization.class,
-                DeleteFileHandler.class,
-                DeleteFileHandlerDialog.class,
-                DeleteFileVisitor.class
+                CreateFolderHandler.class,
+                CreateFolderHandlerDialog.class
         })
-public class DeleteFileHandlerTest extends ApplicationTest {
+public class CreateFolderHandlerTest {
 
     @Autowired
-    private DeleteFileHandler deleteFileHandler;
+    private CreateFolderHandler createFolderHandler;
     private static List<Path> paths;
 
     /**
-     * Create text file
+     * Create list of folders
      */
     @Before
-    public void createFile() {
+    public void createFoldersList() {
         paths = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
         }
+    }
+
+    /**
+     * Delete test folders
+     */
+    @After
+    public void deleteCreatedFolders() {
         try {
             for (Path path : paths) {
-                Files.createFile(path);
+                Files.deleteIfExists(path);
             }
         } catch (IOException e) {
             Assert.fail(e.getMessage());
@@ -64,20 +69,11 @@ public class DeleteFileHandlerTest extends ApplicationTest {
     }
 
     /**
-     * Supported file type is any
-     */
-    @Test
-    public void filetypes() {
-        Assert.assertEquals(1, deleteFileHandler.filetypes().size());
-        Assert.assertEquals(JMEPlayFileHandler.any, deleteFileHandler.filetypes().get(0));
-    }
-
-    /**
      * Menu creation
      */
     @Test
     public void menu() {
-        Assert.assertNotNull(deleteFileHandler.menu(null));
+        Assert.assertNotNull(createFolderHandler.menu(null));
     }
 
     /**
@@ -85,8 +81,8 @@ public class DeleteFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void label() {
-        Assert.assertNotNull(deleteFileHandler.label());
-        Assert.assertFalse(deleteFileHandler.label().isEmpty());
+        Assert.assertNotNull(createFolderHandler.label());
+        Assert.assertFalse(createFolderHandler.label().isEmpty());
     }
 
     /**
@@ -94,23 +90,22 @@ public class DeleteFileHandlerTest extends ApplicationTest {
      */
     @Test
     public void image() {
-        Assert.assertNotNull(deleteFileHandler.image());
+        Assert.assertNotNull(createFolderHandler.image());
     }
 
     /**
-     * Test delete files from filesystem
+     * Test to create folder on filesystem
      */
     @Test
-    public void deletePath() {
+    public void createPath() {
         paths.forEach(path -> {
-            Assert.assertTrue(Files.exists(path));
-            try {
-                deleteFileHandler.deletePath(path);
-            } catch (IOException e) {
-                Assert.fail("Delete " + path + " fail: " + e.getMessage());
-            }
             Assert.assertFalse(Files.exists(path));
+            try {
+                createFolderHandler.createPath(path);
+            } catch (IOException e) {
+                Assert.fail("Create " + path + " fail: " + e.getMessage());
+            }
+            Assert.assertTrue(Files.exists(path));
         });
-
     }
 }

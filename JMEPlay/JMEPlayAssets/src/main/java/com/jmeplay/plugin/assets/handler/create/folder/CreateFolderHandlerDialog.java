@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.rename;
+package com.jmeplay.plugin.assets.handler.create.folder;
 
 import com.jmeplay.core.utils.PathResolver;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
@@ -19,12 +19,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Dialog implementation to rename files
+ * Dialog implementation to create folder
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class RenameFileHandlerDialog {
+public class CreateFolderHandlerDialog {
 
     private DialogPane dialogPane;
 
@@ -35,12 +35,12 @@ public class RenameFileHandlerDialog {
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
 
     /**
-     * Constructor to rename dialog
+     * Constructor to create folder naming dialog
      *
      * @param jmePlayAssetsLocalization localisation for dialog
      */
     @Autowired
-    public RenameFileHandlerDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
+    public CreateFolderHandlerDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
     }
 
@@ -50,11 +50,9 @@ public class RenameFileHandlerDialog {
      * @param path for file
      * @return dialog
      */
-    public Dialog<Path> construct(final Path path) {
+    Dialog<Path> construct(final Path path) {
         Dialog<Path> dialog = new Dialog<>();
-        String title = jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TITLE);
-        title += " " + path;
-        dialog.setTitle(title);
+        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
 
         dialogPane = dialog.getDialogPane();
         dialogPane.getStyleClass().add("text-input-dialog");
@@ -64,7 +62,7 @@ public class RenameFileHandlerDialog {
         dialog.setResultConverter(buttonType -> {
             ButtonBar.ButtonData buttonData = buttonType.getButtonData();
             if (buttonData == ButtonBar.ButtonData.OK_DONE) {
-                return constructPath(path, textField.getText());
+                return constructPath(path);
             }
             return null;
         });
@@ -73,9 +71,9 @@ public class RenameFileHandlerDialog {
         label = createLabel();
 
         // -- textfield
-        textField = createTextField(path);
+        textField = createTextField();
         textField.textProperty().addListener((ob, o, n) -> {
-            Path pathToCreate = constructPath(path, n);
+            Path pathToCreate = constructPath(path);
             if (Files.exists(pathToCreate) || n.isEmpty() || PathResolver.isNameInvalid(n)) {
                 dialogPane.lookupButton(ButtonType.OK).setDisable(true);
             } else {
@@ -96,7 +94,7 @@ public class RenameFileHandlerDialog {
      * @return label
      */
     private Label createLabel() {
-        final Label label = new Label(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TEXT));
+        final Label label = new Label(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TEXT));
         label.setMaxWidth(Double.MAX_VALUE);
         label.setMaxHeight(Double.MAX_VALUE);
         label.getStyleClass().add("content");
@@ -109,13 +107,10 @@ public class RenameFileHandlerDialog {
     /**
      * Create text field of dialog
      *
-     * @param path to file
      * @return text field
      */
-    private TextField createTextField(final Path path) {
-        final String name = PathResolver.name(path);
+    private TextField createTextField() {
         final TextField textField = new TextField();
-        textField.setText(name);
         textField.setMaxWidth(Double.MAX_VALUE);
         GridPane.setHgrow(textField, Priority.ALWAYS);
         GridPane.setFillWidth(textField, true);
@@ -147,17 +142,13 @@ public class RenameFileHandlerDialog {
     }
 
     /**
-     * Create path for nane or rename dialog
+     * Create path for nane dialog
      *
-     * @param path    of file
-     * @param newName of rename or to create file
+     * @param path of file
      * @return fully qualified path
      */
-    private Path constructPath(final Path path, final String newName) {
-        final Path parentPath = path.getParent();
-        final String extension = PathResolver.extension(path);
-        final String point = Files.isRegularFile(path) ? "." : "";
-        return Paths.get(parentPath + "/" + newName + point + extension);
+    private Path constructPath(final Path path) {
+        return Paths.get("" + path, textField.getText());
     }
 
 }

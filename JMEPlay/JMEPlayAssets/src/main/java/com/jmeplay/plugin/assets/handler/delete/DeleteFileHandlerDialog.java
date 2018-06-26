@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Dialog implementation to rename files
+ * Dialog implementation to confirm file delete
  *
  * @author vp-byte (Vladimir Petrenko)
  */
@@ -29,7 +29,7 @@ public class DeleteFileHandlerDialog {
     }
 
     /**
-     * Implementation to create dialog
+     * Implementation to create delete confirm dialog
      *
      * @return crated dialog
      */

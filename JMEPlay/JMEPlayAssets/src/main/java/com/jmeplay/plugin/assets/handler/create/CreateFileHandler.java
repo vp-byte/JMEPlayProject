@@ -44,16 +44,32 @@ public class CreateFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         size = jmePlayAssetsSettings.iconSize();
     }
 
+    /**
+     * All handlers to create files
+     *
+     * @param fileCreatorHandlers injected file creator handlers
+     */
     @Autowired
     public void setFileCreatorHandlers(List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers) {
         this.fileCreatorHandlers = fileCreatorHandlers;
     }
 
+    /**
+     * Support any file type
+     *
+     * @return list of supported files
+     */
     @Override
     public List<String> filetypes() {
         return singletonList(JMEPlayFileHandler.any);
     }
 
+    /**
+     * Menu item to support different create actions
+     *
+     * @param source for MenuItem
+     * @return menu item
+     */
     @Override
     public MenuItem menu(TreeView<Path> source) {
         Menu menu = new Menu(label(), image());
@@ -61,10 +77,20 @@ public class CreateFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return menu;
     }
 
+    /**
+     * Localized label for files creation action
+     *
+     * @return label rename
+     */
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW);
     }
 
+    /**
+     * Image view for files creation action
+     *
+     * @return image view copy
+     */
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_NEWFILE, size, size);
     }
