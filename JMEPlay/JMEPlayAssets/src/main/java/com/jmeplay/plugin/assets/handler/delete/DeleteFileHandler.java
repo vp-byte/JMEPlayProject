@@ -5,12 +5,16 @@ package com.jmeplay.plugin.assets.handler.delete;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import javafx.scene.control.*;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -33,21 +37,20 @@ import static java.util.Collections.singletonList;
 @Order(value = 7)
 public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
+    private static final Logger logger = LoggerFactory.getLogger(DeleteFileHandler.class.getName());
+
     private final int size;
     private TreeView<Path> source = null;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
     private final DeleteFileHandlerDialog deleteFileHandlerDialog;
-    private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public DeleteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                              JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                             DeleteFileHandlerDialog deleteFileHandlerDialog,
-                             JMEPlayConsole jmePlayConsole) {
+                             DeleteFileHandlerDialog deleteFileHandlerDialog) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.deleteFileHandlerDialog = deleteFileHandlerDialog;
-        this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
 
@@ -68,7 +71,7 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      * @return menu item
      */
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
         menuItem.setOnAction((event) -> handle(source));
         return menuItem;
@@ -97,17 +100,15 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      *
      * @param source of action
      */
-    public void handle(TreeView<Path> source) {
+    public void handle(final TreeView<Path> source) {
         this.source = source;
 
         Optional<ButtonType> result = deleteFileHandlerDialog.create().showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             try {
                 executeDelete();
-                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Delete done");
             } catch (IllegalArgumentException e) {
-                jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Delete fail");
-                jmePlayConsole.exception(e);
+                logger.trace("Delete files canceled by user");
             }
         }
     }
@@ -116,26 +117,36 @@ public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      * Execute delete action
      */
     private void executeDelete() {
-        new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach(this::delete);
+        new ArrayList<>(source.getSelectionModel().getSelectedItems()).forEach(this::deleteItem);
         source.getSelectionModel().clearSelection();
+    }
+
+    /**
+     * Delete item with path
+     *
+     * @param item with path to delete
+     */
+    private void deleteItem(final TreeItem<Path> item) {
+        try {
+            deletePath(item.getValue());
+            item.getParent().getChildren().remove(item);
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 
     /**
      * Delete path from file system
      *
-     * @param item to delete
+     * @param path to delete
+     * @throws IOException if delete fail
      */
-    private void delete(TreeItem<Path> item) {
-        final Path path = item.getValue();
-        try {
-            if (!Files.isDirectory(path)) {
-                Files.delete(path);
-            } else {
-                Files.walkFileTree(path, new DeleteFileVisitor());
-            }
-            item.getParent().getChildren().remove(item);
-        } catch (IOException e) {
-            throw new IllegalArgumentException(e);
+    void deletePath(final Path path) throws IOException {
+        if (!Files.isDirectory(path)) {
+            Files.delete(path);
+            logger.trace("File " + path + " deleted");
+        } else {
+            Files.walkFileTree(path, new DeleteFileVisitor());
         }
     }
 

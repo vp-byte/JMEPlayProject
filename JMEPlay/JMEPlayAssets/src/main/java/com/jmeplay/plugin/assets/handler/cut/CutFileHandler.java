@@ -70,7 +70,7 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      * @return menu item
      */
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
         menuItem.setOnAction((event) -> handle(source));
         return menuItem;
@@ -99,7 +99,7 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      *
      * @param source of action
      */
-    public void handle(TreeView<Path> source) {
+    public void handle(final TreeView<Path> source) {
         List<Path> paths = source.getSelectionModel().getSelectedItems().stream().map(TreeItem::getValue).collect(Collectors.toList());
         cutPathsToClipboard(paths);
         ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
@@ -111,8 +111,8 @@ public class CutFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
      *
      * @param paths to copy
      */
-    void cutPathsToClipboard(List<Path> paths) {
-        paths.forEach(path -> logger.trace("Cut " + path + " to clipboard"));
+    void cutPathsToClipboard(final List<Path> paths) {
+        paths.forEach(path -> logger.trace("File " + path + " cutted to clipboard"));
         ClipboardContent content = new ClipboardContent();
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.CUT);

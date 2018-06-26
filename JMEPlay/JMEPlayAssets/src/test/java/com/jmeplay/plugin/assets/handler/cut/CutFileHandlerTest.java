@@ -1,5 +1,5 @@
 /*
- * MIT-LICENSE cutright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
+ * MIT-LICENSE copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets.handler.cut;
 
