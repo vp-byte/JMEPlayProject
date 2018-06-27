@@ -31,7 +31,6 @@ public class ResourceBundleLoader {
         if (classLoader.getResource(resource + "_" + language + ".properties") != null) {
             path = resource + "_" + language + ".properties";
         }
-        System.out.println(path);
         try {
             InputStream stream = classLoader.getResourceAsStream(path);
             Reader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);

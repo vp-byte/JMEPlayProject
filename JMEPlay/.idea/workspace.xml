@@ -4,18 +4,13 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java" afterDir="false" />
+    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Add UTF-8 support for ResourceBundle">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/ResourceBundleLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/out/production/resources/JMEPlayAssets_ru.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/resources/JMEPlayAssets_ru.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayCore/out/test/resources/icons/testicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -66,47 +61,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JMEPlayConsoleLocalization.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleLocalization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMEPlayAssetsLocalization.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsLocalization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#3593#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceBundleLoader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResourceBundleLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="-170">
+              <caret lean-forward="true" selection-end-line="2" selection-end-column="3" />
               <folding>
-                <element signature="e#0#890#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ImageLoader.java">
+      <file leaf-file-name="ResourceBundleLoaderTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/ResourceBundleLoaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="204">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JMEPLayCoreTest_de.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="28" selection-start-column="28" selection-end-column="28" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file leaf-file-name="JMEPLayCoreTest.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
         </entry>
       </file>
     </leaf>
@@ -115,9 +108,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit4 Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -1142,13 +1135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/SettingsLoader.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/JMEPlayMain/build.gradle" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeView.java" />
-        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalSettings.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java" />
-        <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/os/OSType.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CopyFileHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/CutFileHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/PasteFileHandler.java" />
@@ -1193,6 +1179,13 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsLocalization.java" />
         <option value="$PROJECT_DIR$/JMEPlayConsole/src/main/java/com/jmeplay/plugin/console/JMEPlayConsoleLocalization.java" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPlayCoreTest_de.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPlayCoreTest.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPlayAssets.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPlayAssets_de.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties" />
+        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/ResourceBundleLoaderTest.java" />
       </list>
     </option>
   </component>
@@ -1264,6 +1257,16 @@
               <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1321,15 +1324,6 @@
             <path>
               <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayConsole" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource Bundle 'JMEPlayConsole'" type="a6c14932:ResourceBundleNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1380,7 +1374,59 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jmeplay" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jmeplay" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'JMEPLayCoreTest'" type="a6c14932:ResourceBundleNode" />
             </path>
           </expand>
           <select />
@@ -1409,20 +1455,21 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jmeplay.core.utils" />
       <recent name="com.jmeplay.plugin.assets.handler.rename" />
       <recent name="com.jmeplay.plugin.assets.handler.create.folder" />
       <recent name="com.jmeplay.plugin.assets.handler.delete" />
       <recent name="com.jmeplay.plugin.assets.handler.cut" />
-      <recent name="com.jmeplay.plugin.assets" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\resources" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\main" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\java\com\jmeplay\core\utils" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\resource\icons" />
@@ -1451,7 +1498,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JMEPlay">
+  <component name="RunManager" selected="JUnit.ResourceBundleLoaderTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -1469,6 +1516,29 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ResourceBundleLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JMEPlayCore_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jmeplay.core.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jmeplay.core.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.jmeplay.core.utils.ResourceBundleLoaderTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
@@ -1526,9 +1596,11 @@
       <item itemvalue="Application.JMEPlay" />
       <item itemvalue="Spring Boot.JMEPlay" />
       <item itemvalue="JUnit.JUnitJMEPlayAssets" />
+      <item itemvalue="JUnit.ResourceBundleLoaderTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResourceBundleLoaderTest" />
         <item itemvalue="JUnit.JUnitJMEPlayAssets" />
       </list>
     </recent_temporary>
@@ -1900,31 +1972,17 @@
       <option name="project" value="LOCAL" />
       <updated>1530050592738</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add UTF-8 support for ResourceBundle">
+      <created>1530089948818</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1530089948818</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateFolderHandlerTest - 2018.06.26 at 22h 35m 32s.xml">
-      <configuration name="CreateFolderHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CutFileHandlerTest - 2018.06.26 at 22h 35m 45s.xml">
-      <configuration name="CutFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 35m 56s.xml">
-      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 40m 58s.xml">
-      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 42m 48s.xml">
-      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 43m 11s.xml">
-      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 43m 50s.xml">
-      <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DeleteFileHandlerTest - 2018.06.26 at 22h 44m 15s.xml">
       <configuration name="DeleteFileHandlerTest" configurationId="JUnit" />
     </history-entry>
@@ -1934,9 +1992,30 @@
     <history-entry file="JUnitJMEPlayAssets - 2018.06.27 at 00h 02m 43s.xml">
       <configuration name="JUnitJMEPlayAssets" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 07m 43s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 08m 08s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 10m 31s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 14m 14s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 14m 37s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 23m 24s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResourceBundleLoaderTest - 2018.06.27 at 11h 24m 03s.xml">
+      <configuration name="ResourceBundleLoaderTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274523000" />
+    <option name="totallyTimeSpent" value="276873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1216" extended-state="6" />
@@ -1959,10 +2038,10 @@
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946696" weight="0.24497607" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6865672" visible="true" weight="0.562212" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.6865672" visible="true" weight="0.3889401" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27345416" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27345416" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49573562" weight="0.32718894" />
       <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.15191898" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -2041,7 +2120,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Copy Files opti" />
     <MESSAGE value="Cut first try" />
     <MESSAGE value="Cut implementation done" />
     <MESSAGE value="Delete implementation done" />
@@ -2066,7 +2144,8 @@
     <MESSAGE value="Test delete files to clipboard (DONE)" />
     <MESSAGE value="Test create folders from menu (DONE)" />
     <MESSAGE value="Test rename files from menu (DONE)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test rename files from menu (DONE)" />
+    <MESSAGE value="Add UTF-8 support for ResourceBundle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add UTF-8 support for ResourceBundle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2074,19 +2153,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/DesktopPaneTest.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandler.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/input/Clipboard.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/handler/file/JMEPlayClipboardFormat.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/stream/Stream.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/PathResolverTest.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -2227,13 +2293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/ResourceBundle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2767">
@@ -2334,7 +2393,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsLocalization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="-476">
           <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="e#0#3593#0" expanded="true" />
@@ -2349,14 +2408,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/JMEPlayGlobalResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/SettingsLoaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479">
+          <caret line="11" selection-start-line="11" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/main/java/com/jmeplay/core/utils/ResourceBundleLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="-170">
+          <caret lean-forward="true" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <element signature="e#0#890#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayConsole/src/main/resources/JMEPlayConsole.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/ResourceBundleLoaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
         </state>
       </provider>
     </entry>
