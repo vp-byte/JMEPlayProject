@@ -3,6 +3,7 @@
  */
 package com.jmeplay.plugin.assets;
 
+import com.jmeplay.core.utils.ResourceBundleLoader;
 import org.springframework.stereotype.Component;
 
 import java.util.ResourceBundle;
@@ -31,7 +32,6 @@ public class JMEPlayAssetsLocalization {
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REPLACE = "pastereplace";
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REINDEX = "pastereindex";
 
-    public final static String LOCALISATION_ASSETS_HANDLER_NAME = "name";
     public final static String LOCALISATION_ASSETS_HANDLER_NAME_TITLE = "nametitle";
     public final static String LOCALISATION_ASSETS_HANDLER_NAME_TEXT = "nametext";
 
@@ -60,7 +60,7 @@ public class JMEPlayAssetsLocalization {
      */
     public final String value(String key) {
         if (bundle == null) {
-            bundle = ResourceBundle.getBundle(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_RESOURCEBUNDLE);
+            bundle = ResourceBundleLoader.load(this.getClass().getClassLoader(), LOCALISATION_ASSETS_RESOURCEBUNDLE);
         }
         return bundle.getString(key);
     }

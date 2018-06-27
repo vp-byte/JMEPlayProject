@@ -3,9 +3,10 @@
  */
 package com.jmeplay.plugin.console;
 
-import java.util.ResourceBundle;
-
+import com.jmeplay.core.utils.ResourceBundleLoader;
 import org.springframework.stereotype.Component;
+
+import java.util.ResourceBundle;
 
 /**
  * Localization for JMEPlayConsole
@@ -36,9 +37,9 @@ public class JMEPlayConsoleLocalization {
      * @param key for value
      * @return localized string
      */
-    public final String getString(String key) {
+    final String getString(String key) {
         if (bundle == null) {
-            bundle = ResourceBundle.getBundle(JMEPlayConsoleLocalization.LOCALIZATION_CONSOLE_RESOURCEBUNDLE);
+            bundle = ResourceBundleLoader.load(this.getClass().getClassLoader(), LOCALIZATION_CONSOLE_RESOURCEBUNDLE);
         }
         return bundle.getString(key);
     }
