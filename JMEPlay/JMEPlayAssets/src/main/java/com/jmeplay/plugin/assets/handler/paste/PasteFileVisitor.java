@@ -1,7 +1,9 @@
-package com.jmeplay.plugin.assets.handler.util;
+/*
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
+ */
+package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
-import com.jmeplay.plugin.assets.handler.dialogs.JMEPlayAssetsPasteOptionDialog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +19,11 @@ import static java.nio.file.FileVisitResult.TERMINATE;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
+/**
+ * File visitor to paste files
+ *
+ * @author vp-byte (Vladimir Petrenko)
+ */
 @Component
 public class PasteFileVisitor implements FileVisitor<Path> {
     private Path source;
@@ -67,7 +74,6 @@ public class PasteFileVisitor implements FileVisitor<Path> {
                     return TERMINATE;
                 }
             }
-
 
             Files.copy(source, target, copyOptions);
             switch (pasteOption) {

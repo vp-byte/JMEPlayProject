@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.dialogs;
+package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayAssetsPasteOptionDialog {
+public class PasteFileHandlerOptionDialog {
 
     private ToggleGroup group;
     private RadioButton replaceRadioButton;
@@ -29,8 +29,8 @@ public class JMEPlayAssetsPasteOptionDialog {
     private final JMEPlayAssetsSettings jmePlayAssetsSettings;
 
     @Autowired
-    public JMEPlayAssetsPasteOptionDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                                          JMEPlayAssetsSettings jmePlayAssetsSettings) {
+    public PasteFileHandlerOptionDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization,
+                                        JMEPlayAssetsSettings jmePlayAssetsSettings) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
         this.jmePlayAssetsSettings = jmePlayAssetsSettings;
     }

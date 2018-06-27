@@ -1,4 +1,4 @@
-package com.jmeplay.plugin.assets.handler.util;
+package com.jmeplay.plugin.assets.handler.paste;
 /*
  * Copyright (c) 2008, 2010, Oracle and/or its affiliates. All rights reserved.
  *
@@ -41,7 +41,7 @@ import java.util.*;
  * Sample code that copies files in a similar manner to the cp(1) program.
  */
 
-public class Copy {
+public class CopyExample {
 
     /**
      * Returns {@code true} if okay to overwrite a  file ("cp -i")
@@ -52,7 +52,7 @@ public class Copy {
     }
 
     /**
-     * Copy source file to target location. If {@code prompt} is true then
+     * CopyExample source file to target location. If {@code prompt} is true then
      * prompt user to overwrite target if it exists. The {@code preserve}
      * parameter determines if file attributes should be copied/preserved.
      */
@@ -138,8 +138,8 @@ public class Copy {
     }
 
     static void usage() {
-        System.err.println("java Copy [-ip] source... target");
-        System.err.println("java Copy -r [-ip] source-dir... target");
+        System.err.println("java CopyExample [-ip] source... target");
+        System.err.println("java CopyExample -r [-ip] source-dir... target");
         System.exit(-1);
     }
 

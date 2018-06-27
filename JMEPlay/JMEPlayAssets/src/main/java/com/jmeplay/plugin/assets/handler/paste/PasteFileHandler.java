@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets.handler.paste;
 
@@ -8,19 +8,18 @@ import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.core.utils.os.OSInfo;
 import com.jmeplay.core.utils.os.OSType;
-import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsTreeView;
-import com.jmeplay.plugin.assets.handler.rename.RenameFileHandlerDialog;
 import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
-import com.jmeplay.plugin.assets.handler.util.PasteFileVisitor;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -28,7 +27,10 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.file.*;
+import java.nio.file.FileVisitOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static java.util.Collections.singletonList;
@@ -42,31 +44,41 @@ import static java.util.Collections.singletonList;
 @Order(value = 5)
 public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
+    private static final Logger logger = LoggerFactory.getLogger(PasteFileHandler.class.getName());
+
     private final int size;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final RenameFileHandlerDialog renameFileHandlerDialog;
+    private final PasteFileHandlerRenameDialog pasteFileHandlerRenameDialog;
     private final PasteFileVisitor pasteFileVisitor;
-    private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public PasteFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
                             JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                            RenameFileHandlerDialog renameFileHandlerDialog,
-                            PasteFileVisitor pasteFileVisitor,
-                            JMEPlayConsole jmePlayConsole) {
+                            PasteFileHandlerRenameDialog pasteFileHandlerRenameDialog,
+                            PasteFileVisitor pasteFileVisitor) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.renameFileHandlerDialog = renameFileHandlerDialog;
+        this.pasteFileHandlerRenameDialog = pasteFileHandlerRenameDialog;
         this.pasteFileVisitor = pasteFileVisitor;
-        this.jmePlayConsole = jmePlayConsole;
         size = jmePlayAssetsSettings.iconSize();
     }
 
+    /**
+     * Support any file type
+     *
+     * @return list of supported files
+     */
     @Override
     public List<String> filetypes() {
         return singletonList(JMEPlayFileHandler.any);
     }
 
+    /**
+     * Menu item to support paste action
+     *
+     * @param source for MenuItem
+     * @return menu item
+     */
     @Override
     public MenuItem menu(TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
@@ -74,10 +86,20 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         return menuItem;
     }
 
+    /**
+     * Localized label for paste action
+     *
+     * @return label rename
+     */
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE);
     }
 
+    /**
+     * Image view for paste action
+     *
+     * @return image view cut
+     */
     public ImageView image() {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_PASTE, size, size);
     }
@@ -103,7 +125,6 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
     }
 
-    @SuppressWarnings("unchecked")
     private String defineClipboardActionSetupFiles(final Clipboard clipboard, List<File> files) {
         String clipboardAction = null;
         if (OSInfo.OS() == OSType.LINUX) {
@@ -124,7 +145,12 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             }
         } else {
             clipboardAction = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
-            files.addAll((List<File>) (clipboard.getContent(DataFormat.FILES)));
+            final ArrayList<?> filesArray = new ArrayList<>((List<?>) (clipboard.getContent(DataFormat.FILES)));
+            filesArray.forEach(fileObject -> {
+                if (fileObject instanceof File) {
+                    files.add((File) fileObject);
+                }
+            });
         }
         return clipboardAction;
     }
@@ -135,7 +161,7 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             if (Files.isRegularFile(file.toPath())) {
                 Path newFile = targetPath.resolve(file.getName());
                 if (Files.exists(newFile)) {
-                    Optional<Path> result = renameFileHandlerDialog.construct(newFile).showAndWait();
+                    Optional<Path> result = pasteFileHandlerRenameDialog.construct(newFile).showAndWait();
                     result.ifPresent((newPath) -> moveOrCopy(clipboardAction, file.toPath(), newPath));
                 } else {
                     moveOrCopy(clipboardAction, file.toPath(), newFile);
@@ -146,15 +172,14 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
 
         files.forEach(file -> {
             Path newFile = targetPath.resolve(file.getName());
-
             try {
                 EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
                 pasteFileVisitor.action(file.toPath(), newFile, clipboardAction);
                 Files.walkFileTree(file.toPath(), opts, Integer.MAX_VALUE, pasteFileVisitor);
-                jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste file: " + newFile + " success");
+                // "Paste file: " + newFile + " success"
             } catch (final IOException e) {
                 e.printStackTrace();
-                jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file: " + newFile + " fail");
+                // "Paste file: " + newFile + " fail"
             }
         });
     }
@@ -167,10 +192,10 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
                 Files.copy(file, newFile);
             }
-            jmePlayConsole.message(JMEPlayConsole.Type.SUCCESS, "Paste file: " + newFile + " success");
+            // Paste file: " + newFile + " success"
         } catch (final IOException e) {
             e.printStackTrace();
-            jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "Paste file: " + newFile + " fail");
+            // Paste file: " + newFile + " fail"
         }
     }
 }

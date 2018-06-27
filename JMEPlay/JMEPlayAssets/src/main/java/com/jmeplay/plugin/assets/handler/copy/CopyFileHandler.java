@@ -106,7 +106,7 @@ public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
     }
 
     /**
-     * Copy all paths to clipboard
+     * CopyExample all paths to clipboard
      *
      * @param paths to copy
      */
