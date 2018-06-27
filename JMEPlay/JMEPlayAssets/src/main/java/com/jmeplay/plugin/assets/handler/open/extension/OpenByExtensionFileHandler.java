@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.plugin.assets.handler.open;
+package com.jmeplay.plugin.assets.handler.open.extension;
 
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.handler.file.JMEPlayFileOpenerHandler;
@@ -28,6 +28,7 @@ import java.util.List;
  */
 @Component
 @Order(value = 0)
+// TODO implement
 public class OpenByExtensionFileHandler extends JMEPlayFileOpenerHandler<TreeView<Path>> {
 
     private final int iconSize;

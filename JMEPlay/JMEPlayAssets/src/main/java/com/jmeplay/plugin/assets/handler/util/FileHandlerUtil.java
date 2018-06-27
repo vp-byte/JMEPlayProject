@@ -43,7 +43,7 @@ public class FileHandlerUtil {
         try {
             url = path.toUri().toURL().toString();
         } catch (MalformedURLException ex) {
-            throw new IllegalArgumentException("File " + path + " do not exist");
+            throw new IllegalArgumentException("File " + path + " do not exist", ex);
         }
 
         commands.add(url);
@@ -55,7 +55,7 @@ public class FileHandlerUtil {
         try {
             processBuilder.start();
         } catch (Exception ex) {
-            throw new IllegalArgumentException("Can't open external file " + path);
+            throw new IllegalArgumentException("Can't open external file " + path, ex);
         }
     }
 

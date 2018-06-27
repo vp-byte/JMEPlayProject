@@ -6,7 +6,7 @@ package com.jmeplay.plugin.assets;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.editor.ui.JMEPlayGlobal;
 import com.jmeplay.editor.ui.JMEPlayTreeView;
-import com.jmeplay.plugin.assets.handler.open.OpenByExtensionFileHandler;
+import com.jmeplay.plugin.assets.handler.open.extension.OpenByExtensionFileHandler;
 import javafx.scene.Node;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
