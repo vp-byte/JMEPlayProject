@@ -42,7 +42,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 5)
-public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(PasteFileHandler.class.getName());
 

@@ -33,7 +33,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 6)
-public class RenameFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class RenameFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(RenameFileHandler.class.getName());
 

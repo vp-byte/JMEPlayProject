@@ -3,28 +3,25 @@
  */
 package com.jmeplay.plugin.assets.handler.open;
 
-import static java.util.Collections.singletonList;
-
-import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import com.jmeplay.core.handler.file.JMEPlayFileCreatorHandler;
+import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.handler.file.JMEPlayFileOpenerHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.ImageView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 
-import javafx.scene.control.TreeView;
-import javafx.scene.image.ImageView;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.Collections.singletonList;
 
 /**
  * Handler to open files
@@ -33,7 +30,7 @@ import javafx.scene.image.ImageView;
  */
 @Component
 @Order(value = 1)
-public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class OpenFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
 
@@ -63,6 +60,7 @@ public class OpenFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
         menu.getItems().addAll(fileOpenerHandlers.stream().map((item) -> item.menu(source)).collect(Collectors.toList()));
         return menu;
     }
+
     public String label() {
         return jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_OPEN);
     }

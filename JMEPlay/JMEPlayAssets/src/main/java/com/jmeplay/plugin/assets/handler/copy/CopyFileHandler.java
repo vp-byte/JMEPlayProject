@@ -38,7 +38,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 4)
-public class CopyFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class CopyFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(CopyFileHandler.class.getName());
 

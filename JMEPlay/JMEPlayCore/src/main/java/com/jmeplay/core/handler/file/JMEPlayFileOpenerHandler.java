@@ -12,16 +12,16 @@ import java.util.List;
  *
  * @author Vladimir Petrenko (vp-byte)
  */
-public abstract class JMEPlayFileOpenerHandler<T> {
+public interface JMEPlayFileOpenerHandler<T> {
 
-    public static final String filenoextension = "filenoextension";
+    String filenoextension = "filenoextension";
 
     /**
      * Use file extension - for specific file(txt for text file, jpg for image...)
      *
      * @return type of file types extension
      */
-    public abstract List<String> extension();
+    List<String> extension();
 
     /**
      * MenuItem to handle extension and folders
@@ -29,5 +29,5 @@ public abstract class JMEPlayFileOpenerHandler<T> {
      * @param source for MenuItem
      * @return created menu item
      */
-    public abstract MenuItem menu(T source);
+    MenuItem menu(T source);
 }

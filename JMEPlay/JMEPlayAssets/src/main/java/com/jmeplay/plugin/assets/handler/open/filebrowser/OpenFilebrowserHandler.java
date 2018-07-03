@@ -33,7 +33,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 8)
-public class OpenFilebrowserHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class OpenFilebrowserHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(OpenFilebrowserHandler.class.getName());
 

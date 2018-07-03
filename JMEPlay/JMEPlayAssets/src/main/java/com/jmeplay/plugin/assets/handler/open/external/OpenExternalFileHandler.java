@@ -31,7 +31,7 @@ import java.util.List;
  */
 @Component
 @Order(value = 1)
-public class OpenExternalFileHandler extends JMEPlayFileOpenerHandler<TreeView<Path>> {
+public class OpenExternalFileHandler implements JMEPlayFileOpenerHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(OpenExternalFileHandler.class.getName());
 

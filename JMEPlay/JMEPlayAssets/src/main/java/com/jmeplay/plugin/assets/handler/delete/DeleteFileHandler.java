@@ -35,7 +35,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 7)
-public class DeleteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class DeleteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private static final Logger logger = LoggerFactory.getLogger(DeleteFileHandler.class.getName());
 

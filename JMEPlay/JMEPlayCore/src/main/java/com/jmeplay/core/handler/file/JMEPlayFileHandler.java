@@ -12,11 +12,11 @@ import java.util.List;
  *
  * @author Vladimir Petrenko (vp-byte)
  */
-public abstract class JMEPlayFileHandler<T> {
+public interface JMEPlayFileHandler<T> {
 
-    public static final String any = "any";
-    public static final String file = "file";
-    public static final String folder = "folder";
+    String any = "any";
+    String file = "file";
+    String folder = "folder";
 
     /**
      * Use any - for any type and folders
@@ -26,7 +26,7 @@ public abstract class JMEPlayFileHandler<T> {
      *
      * @return type of file types extension
      */
-    public abstract List<String> filetypes();
+    List<String> filetypes();
 
     /**
      * Menu or MenuItem to handle extension and folders
@@ -34,6 +34,6 @@ public abstract class JMEPlayFileHandler<T> {
      * @param source for MenuItem
      * @return created menu item
      */
-    public abstract MenuItem menu(T source);
+    MenuItem menu(T source);
 
 }

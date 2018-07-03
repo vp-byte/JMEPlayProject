@@ -30,7 +30,7 @@ import static java.util.Collections.singletonList;
  */
 @Component
 @Order(value = 0)
-public class CreateFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
+public class CreateFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
 
     private final int size;
 

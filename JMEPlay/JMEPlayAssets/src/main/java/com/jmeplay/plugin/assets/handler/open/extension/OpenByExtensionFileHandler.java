@@ -6,7 +6,6 @@ package com.jmeplay.plugin.assets.handler.open.extension;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.core.handler.file.JMEPlayFileOpenerHandler;
 import com.jmeplay.core.utils.ImageLoader;
-import com.jmeplay.editor.ui.JMEPlayConsole;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
@@ -29,19 +28,16 @@ import java.util.List;
 @Component
 @Order(value = 0)
 // TODO implement
-public class OpenByExtensionFileHandler extends JMEPlayFileOpenerHandler<TreeView<Path>> {
+public class OpenByExtensionFileHandler implements JMEPlayFileOpenerHandler<TreeView<Path>> {
 
     private final int iconSize;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayConsole jmePlayConsole;
 
     @Autowired
     public OpenByExtensionFileHandler(JMEPlayAssetsSettings jmePlayAssetsSettings,
-                                      JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                                      JMEPlayConsole jmePlayConsole) {
+                                      JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayConsole = jmePlayConsole;
         iconSize = jmePlayAssetsSettings.iconSize();
     }
 
@@ -69,7 +65,6 @@ public class OpenByExtensionFileHandler extends JMEPlayFileOpenerHandler<TreeVie
     }
 
     public void handle(TreeView<Path> source) {
-        jmePlayConsole.message(JMEPlayConsole.Type.ERROR, "OPEN");
     }
 
     /*
