@@ -192,10 +192,10 @@ public class PasteFileHandler extends JMEPlayFileHandler<TreeView<Path>> {
             if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
                 Files.copy(file, newFile);
             }
-            // Paste file: " + newFile + " success"
+            logger.trace("Paste file: " + newFile + " success");
         } catch (final IOException e) {
             e.printStackTrace();
-            // Paste file: " + newFile + " fail"
+            logger.trace("Paste file: " + newFile + " fail");
         }
     }
 }

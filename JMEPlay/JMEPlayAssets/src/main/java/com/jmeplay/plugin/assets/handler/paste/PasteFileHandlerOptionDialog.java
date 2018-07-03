@@ -4,12 +4,10 @@
 package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
-import com.jmeplay.plugin.assets.JMEPlayAssetsResources;
-import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,81 +19,62 @@ import org.springframework.stereotype.Component;
 @Component
 public class PasteFileHandlerOptionDialog {
 
-    private ToggleGroup group;
-    private RadioButton replaceRadioButton;
-    private RadioButton reindexRadioButton;
+    @Getter
+    private Dialog<PasteFileOptionSelection> dialog;
+
+    private CheckBox checkBoxApplyToAll;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
-    private final JMEPlayAssetsSettings jmePlayAssetsSettings;
 
     @Autowired
-    public PasteFileHandlerOptionDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization,
-                                        JMEPlayAssetsSettings jmePlayAssetsSettings) {
+    public PasteFileHandlerOptionDialog(JMEPlayAssetsLocalization jmePlayAssetsLocalization) {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
-        this.jmePlayAssetsSettings = jmePlayAssetsSettings;
     }
 
-    public Dialog<Option> construct() {
-        group = new ToggleGroup();
-        replaceRadioButton = createReplaceRadioButton();
-        reindexRadioButton = createReindexRadioButton();
+    public Dialog<PasteFileOptionSelection> construct() {
+        checkBoxApplyToAll = createCheckBox();
 
-        final String option = jmePlayAssetsSettings.value(JMEPlayAssetsResources.PASTE_OPTIONS_DIALOG_SELECTION, JMEPlayAssetsResources.PASTE_OPTIONS_DIALOG_SELECTION_DEFAULT);
-        if (option.equals(Option.REINDEX.name())) {
-            reindexRadioButton.setSelected(true);
-        } else {
-            replaceRadioButton.setSelected(true);
-        }
         GridPane grid = createGrid();
 
-        final Dialog<Option> dialog = new Dialog<>();
+        dialog = new Dialog<>();
         dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE));
         dialog.getDialogPane().setContent(grid);
-        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
-        dialog.getDialogPane().setMinWidth(300);
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        ((Button) dialog.getDialogPane().lookupButton(ButtonType.YES)).setText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE_REINDEX));
+        ((Button) dialog.getDialogPane().lookupButton(ButtonType.NO)).setText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE_REPLACE));
+        dialog.getDialogPane().setMinWidth(400);
         dialog.setResultConverter(buttonType -> {
             ButtonBar.ButtonData buttonData = buttonType.getButtonData();
-            if (buttonData == ButtonBar.ButtonData.OK_DONE) {
-                if (replaceRadioButton.isSelected()) {
-                    return Option.REPLACE;
+            if (buttonData == ButtonBar.ButtonData.YES) {
+                if (checkBoxApplyToAll.isSelected()) {
+                    return PasteFileOptionSelection.REPLACE_ALL;
                 } else {
-                    return Option.REINDEX;
+                    return PasteFileOptionSelection.REPLACE;
+                }
+            } else if (buttonData == ButtonBar.ButtonData.NO) {
+                if (checkBoxApplyToAll.isSelected()) {
+                    return PasteFileOptionSelection.REINDEX_ALL;
+                } else {
+                    return PasteFileOptionSelection.REINDEX;
                 }
             }
-            return null;
+            return PasteFileOptionSelection.CANCEL;
         });
         return dialog;
     }
 
-    private RadioButton createReplaceRadioButton() {
-        final RadioButton replaceRB = new RadioButton(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE_REPLACE));
-        replaceRB.setToggleGroup(group);
-        replaceRB.selectedProperty().addListener((ob, o, n) -> jmePlayAssetsSettings.setValue(JMEPlayAssetsResources.PASTE_OPTIONS_DIALOG_SELECTION, Option.REPLACE.name()));
-        return replaceRB;
+    private CheckBox createCheckBox() {
+        return new CheckBox(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE_APPLY_TO_ALL));
     }
-
-    private RadioButton createReindexRadioButton() {
-        final RadioButton reindexRB = new RadioButton(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_PASTE_REINDEX));
-        reindexRB.setPadding(new Insets(10, 0, 0, 0));
-        reindexRB.setToggleGroup(group);
-        reindexRB.selectedProperty().addListener((ob, o, n) -> jmePlayAssetsSettings.setValue(JMEPlayAssetsResources.PASTE_OPTIONS_DIALOG_SELECTION, Option.REINDEX.name()));
-        return reindexRB;
-    }
-
 
     private GridPane createGrid() {
         final GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setMaxWidth(Double.MAX_VALUE);
         grid.setAlignment(Pos.CENTER_LEFT);
-        grid.add(replaceRadioButton, 0, 0);
-        grid.add(reindexRadioButton, 0, 1);
+        grid.add(new Label("TEST"), 0, 0);
+        grid.add(checkBoxApplyToAll, 0, 1);
         return grid;
     }
 
-
-    public enum Option {
-        REPLACE,
-        REINDEX
-    }
 }

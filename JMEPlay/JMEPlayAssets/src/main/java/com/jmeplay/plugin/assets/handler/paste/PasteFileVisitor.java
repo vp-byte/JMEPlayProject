@@ -13,9 +13,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.util.Optional;
 
-import static java.nio.file.FileVisitResult.CONTINUE;
-import static java.nio.file.FileVisitResult.SKIP_SUBTREE;
-import static java.nio.file.FileVisitResult.TERMINATE;
+import static java.nio.file.FileVisitResult.*;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
@@ -30,13 +28,13 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     private Path target;
     private String clipboardAction;
     private final CopyOption[] copyOptions = new CopyOption[]{COPY_ATTRIBUTES, REPLACE_EXISTING};
-    private JMEPlayAssetsPasteOptionDialog.Option pasteOption;
+    private PasteFileOptionSelection pasteOption;
 
-    private final JMEPlayAssetsPasteOptionDialog jmePlayAssetsPasteOptionDialog;
+    private final PasteFileHandlerOptionDialog pasteFileHandlerOptionDialog;
 
     @Autowired
-    public PasteFileVisitor(JMEPlayAssetsPasteOptionDialog jmePlayAssetsPasteOptionDialog) {
-        this.jmePlayAssetsPasteOptionDialog = jmePlayAssetsPasteOptionDialog;
+    public PasteFileVisitor(PasteFileHandlerOptionDialog pasteFileHandlerOptionDialog) {
+        this.pasteFileHandlerOptionDialog = pasteFileHandlerOptionDialog;
     }
 
     public void action(Path source, Path target, String clipboardAction) {
@@ -49,7 +47,7 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
         Path newdir = target.resolve(source.relativize(dir));
         try {
-            System.out.println(dir + " -> "+ newdir);
+            System.out.println(dir + " -> " + newdir);
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                 Files.move(dir, newdir, copyOptions);
             } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
@@ -68,7 +66,7 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
         try {
             if (pasteOption == null && Files.exists(target)) {
-                Optional<JMEPlayAssetsPasteOptionDialog.Option> result = jmePlayAssetsPasteOptionDialog.construct().showAndWait();
+                Optional<PasteFileOptionSelection> result = pasteFileHandlerOptionDialog.construct().showAndWait();
                 result.ifPresent((option) -> pasteOption = option);
                 if (!result.isPresent()) {
                     return TERMINATE;
@@ -81,7 +79,7 @@ public class PasteFileVisitor implements FileVisitor<Path> {
                     if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                         Files.move(source, target, copyOptions);
                     } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                        System.out.println(source + " -> "+ target);
+                        System.out.println(source + " -> " + target);
                     }
                     break;
                 case REINDEX:

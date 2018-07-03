@@ -49,8 +49,4 @@ public class JMEPlayAssetsResources {
     final static String OGG = "ogg";
     final static String WAV = "wav";
 
-    // SETTINGS
-    public final static String PASTE_OPTIONS_DIALOG_SELECTION = "paste_options_dialog_selection";
-    public final static String PASTE_OPTIONS_DIALOG_SELECTION_DEFAULT = "replace";
-
 }

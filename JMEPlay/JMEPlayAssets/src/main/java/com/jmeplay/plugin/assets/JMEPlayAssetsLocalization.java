@@ -29,6 +29,7 @@ public class JMEPlayAssetsLocalization {
     public final static String LOCALISATION_ASSETS_HANDLER_COPY = "copy";
 
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE = "paste";
+    public final static String LOCALISATION_ASSETS_HANDLER_PASTE_APPLY_TO_ALL = "pasteapplytoall";
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REPLACE = "pastereplace";
     public final static String LOCALISATION_ASSETS_HANDLER_PASTE_REINDEX = "pastereindex";
 
