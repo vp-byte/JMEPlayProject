@@ -5,6 +5,7 @@ package com.jmeplay.plugin.assets.handler.delete;
 
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import javafx.scene.control.Alert;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DeleteFileHandlerDialog {
+
+    @Getter
+    private Alert dialog;
 
     private final JMEPlayAssetsLocalization jmePlayAssetsLocalization;
 
@@ -34,11 +38,11 @@ public class DeleteFileHandlerDialog {
      * @return crated dialog
      */
     public Alert create() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE));
-        alert.setHeaderText(null);
-        alert.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION));
-        return alert;
+        dialog = new Alert(Alert.AlertType.CONFIRMATION);
+        dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_TITLE));
+        dialog.setHeaderText(null);
+        dialog.setContentText(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_DELETE_CONFIRM_QUESTION));
+        return dialog;
     }
 
 }

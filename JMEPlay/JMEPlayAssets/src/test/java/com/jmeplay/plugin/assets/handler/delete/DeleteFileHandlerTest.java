@@ -111,6 +111,6 @@ public class DeleteFileHandlerTest extends ApplicationTest {
             }
             Assert.assertFalse(Files.exists(path));
         });
-
     }
+
 }

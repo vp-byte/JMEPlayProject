@@ -4,15 +4,11 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Test resource bundle loader">
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/TestFxApplicationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialogTest.java" afterDir="false" />
+    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Tests with TestFX for copy and create folder actions">
+      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialogTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerOptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerOptionDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerOptionDialogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerOptionDialogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -63,11 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreateFolderHandlerDialogTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialogTest.java">
+      <file leaf-file-name="DeleteFileHandlerDialogTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialogTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" column="46" lean-forward="true" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+            <state relative-caret-position="280">
+              <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,17 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dialog.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/Dialog.java">
+      <file leaf-file-name="DeleteFileHandlerDialog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="673" column="19" selection-start-line="673" selection-start-column="19" selection-end-line="673" selection-end-column="19" />
-              <folding>
-                <element signature="e#26482#26483#0" expanded="true" />
-                <element signature="e#26527#26528#0" expanded="true" />
-                <element signature="e#27809#27810#0" expanded="true" />
-                <element signature="e#27866#27867#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="558">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -93,8 +83,8 @@
       <file leaf-file-name="CreateFolderHandlerDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="133">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="32" />
               <folding>
                 <element signature="e#4520#4521#0" expanded="true" />
                 <element signature="e#4584#4585#0" expanded="true" />
@@ -103,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextInputDialog.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/TextInputDialog.java">
+      <file leaf-file-name="Alert.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/Alert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="106" column="23" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="23" />
+            <state relative-caret-position="-3022">
+              <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -1151,13 +1141,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandler.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerDialog.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandler.java" />
@@ -1202,6 +1188,10 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/TestFxApplicationTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialogTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialogTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java" />
       </list>
     </option>
   </component>
@@ -1253,134 +1243,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="create" type="462c0819:PsiDirectoryNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="paste" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayConsole" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayCore" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -1410,11 +1272,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jmeplay.plugin.assets.handler.delete" />
       <recent name="com.jmeplay.plugin.assets.handler.create" />
       <recent name="com.jmeplay.plugin.assets" />
       <recent name="com.jmeplay.plugin.assets.handler.create.folder" />
       <recent name="com.jmeplay.plugin.assets.handler.paste" />
-      <recent name="com.jmeplay.core.utils" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -1593,81 +1455,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateFolderHandlerDialogTest">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="CreateFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JMEPlayAssets_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.create.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.create" />
-      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.create.CreateFileHandlerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="CreateFolderHandlerDialogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JMEPlayAssets_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.create.folder.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.create.folder" />
-      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.create.folder.CreateFolderHandlerDialogTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PasteFileHandlerOptionDialogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JMEPlayAssets_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jmeplay.plugin.assets.handler.paste.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jmeplay.plugin.assets.handler.paste" />
-      <option name="MAIN_CLASS_NAME" value="com.jmeplay.plugin.assets.handler.paste.PasteFileHandlerOptionDialogTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1719,17 +1512,7 @@
     <list>
       <item itemvalue="Application.JMEPlay" />
       <item itemvalue="Spring Boot.JMEPlay" />
-      <item itemvalue="JUnit.CreateFolderHandlerDialogTest" />
-      <item itemvalue="JUnit.PasteFileHandlerOptionDialogTest" />
-      <item itemvalue="JUnit.CreateFileHandlerTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.CreateFolderHandlerDialogTest" />
-        <item itemvalue="JUnit.CreateFileHandlerTest" />
-        <item itemvalue="JUnit.PasteFileHandlerOptionDialogTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -2121,31 +1904,17 @@
       <option name="project" value="LOCAL" />
       <updated>1530092399173</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Tests with TestFX for copy and create folder actions">
+      <created>1530614038878</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1530614038878</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateFolderHandlerDialogTest - 2018.07.03 at 11h 35m 58s.xml">
-      <configuration name="CreateFolderHandlerDialogTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFolderHandlerDialogTest - 2018.07.03 at 11h 36m 30s.xml">
-      <configuration name="CreateFolderHandlerDialogTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFileHandlerTest - 2018.07.03 at 11h 41m 08s.xml">
-      <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFileHandlerTest - 2018.07.03 at 11h 41m 32s.xml">
-      <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFileHandlerTest - 2018.07.03 at 11h 43m 02s.xml">
-      <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFileHandlerTest - 2018.07.03 at 11h 44m 14s.xml">
-      <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateFileHandlerTest - 2018.07.03 at 11h 44m 39s.xml">
-      <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CreateFileHandlerTest - 2018.07.03 at 12h 31m 04s.xml">
       <configuration name="CreateFileHandlerTest" configurationId="JUnit" />
     </history-entry>
@@ -2155,9 +1924,30 @@
     <history-entry file="CreateFolderHandlerDialogTest - 2018.07.03 at 12h 32m 39s.xml">
       <configuration name="CreateFolderHandlerDialogTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 51m 00s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 51m 59s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 52m 44s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 53m 52s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 54m 21s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeleteFileHandlerDialogTest - 2018.07.03 at 12h 55m 35s.xml">
+      <configuration name="DeleteFileHandlerDialogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_JMEPlayAssets_test - 2018.07.03 at 12h 59m 34s.xml">
+      <configuration name="All in JMEPlayAssets_test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321819000" />
+    <option name="totallyTimeSpent" value="323425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1216" extended-state="6" />
@@ -2264,7 +2054,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cut implementation done" />
     <MESSAGE value="Delete implementation done" />
     <MESSAGE value="Open files by extension created" />
     <MESSAGE value="Rename files done" />
@@ -2289,7 +2078,8 @@
     <MESSAGE value="Test rename files from menu (DONE)" />
     <MESSAGE value="Add UTF-8 support for ResourceBundle" />
     <MESSAGE value="Test resource bundle loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test resource bundle loader" />
+    <MESSAGE value="Tests with TestFX for copy and create folder actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests with TestFX for copy and create folder actions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2297,36 +2087,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/nio/file/StandardCopyOption.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="42" column="65" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/JMEPlayAssetsPasteOptionDialog2.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" selection-start-line="15" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsTreeCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/JMEPlayAssetsResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
@@ -2340,13 +2100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
@@ -2365,13 +2118,6 @@
         </state>
       </provider>
       <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="87" column="7" lean-forward="true" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerRenameDialog.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2527,13 +2273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="36" selection-start-line="36" selection-end-line="40" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-808">
@@ -2593,17 +2332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#4520#4521#0" expanded="true" />
-            <element signature="e#4584#4585#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Optional.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1564">
@@ -2611,10 +2339,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/input/Clipboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="251" column="24" selection-start-line="251" selection-start-column="24" selection-end-line="251" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="140" column="85" lean-forward="true" selection-start-line="140" selection-start-column="85" selection-end-line="140" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
-          <caret line="673" column="19" selection-start-line="673" selection-start-column="19" selection-end-line="673" selection-end-column="19" />
+          <caret line="323" column="29" selection-start-line="323" selection-start-column="29" selection-end-line="323" selection-end-column="29" />
           <folding>
             <element signature="e#26482#26483#0" expanded="true" />
             <element signature="e#26527#26528#0" expanded="true" />
@@ -2624,13 +2387,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/Alert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3022">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="87" column="7" lean-forward="true" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="e#4520#4521#0" expanded="true" />
+            <element signature="e#4584#4585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialogTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="46" lean-forward="true" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state relative-caret-position="388">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialogTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
         </state>
       </provider>
     </entry>
