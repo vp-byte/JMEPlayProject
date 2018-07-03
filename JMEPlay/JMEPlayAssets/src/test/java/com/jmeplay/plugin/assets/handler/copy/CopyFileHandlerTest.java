@@ -38,6 +38,7 @@ import java.util.UUID;
  * Test to copy files from menu
  *
  * @author vp-byte (Vladimir Petrenko)
+ * @see CopyFileHandler
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(

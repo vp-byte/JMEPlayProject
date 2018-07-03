@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,9 @@ import java.nio.file.Paths;
  */
 @Component
 public class CreateFolderHandlerDialog {
+
+    @Getter
+    private Dialog<Path> dialog;
 
     private DialogPane dialogPane;
 
@@ -51,7 +55,7 @@ public class CreateFolderHandlerDialog {
      * @return dialog
      */
     Dialog<Path> construct(final Path path) {
-        Dialog<Path> dialog = new Dialog<>();
+        dialog = new Dialog<>();
         dialog.setTitle(jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_NEW_FOLDER_TITLE));
 
         dialogPane = dialog.getDialogPane();

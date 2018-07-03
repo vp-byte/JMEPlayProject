@@ -31,7 +31,7 @@ public class PasteFileHandlerOptionDialog {
         this.jmePlayAssetsLocalization = jmePlayAssetsLocalization;
     }
 
-    public Dialog<PasteFileOptionSelection> construct() {
+    Dialog<PasteFileOptionSelection> construct() {
         checkBoxApplyToAll = createCheckBox();
 
         GridPane grid = createGrid();
