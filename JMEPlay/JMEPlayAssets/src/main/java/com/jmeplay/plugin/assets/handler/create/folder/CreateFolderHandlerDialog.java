@@ -31,7 +31,6 @@ public class CreateFolderHandlerDialog {
     private Dialog<Path> dialog;
 
     private DialogPane dialogPane;
-
     private Label label;
     private TextField textField;
     private GridPane grid;

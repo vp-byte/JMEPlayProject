@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,8 +27,10 @@ import java.nio.file.Paths;
 @Component
 public class PasteFileHandlerRenameDialog {
 
-    private DialogPane dialogPane;
+    @Getter
+    private Dialog<Path> dialog;
 
+    private DialogPane dialogPane;
     private Label label;
     private TextField textField;
     private GridPane grid;
@@ -51,7 +54,7 @@ public class PasteFileHandlerRenameDialog {
      * @return dialog
      */
     public Dialog<Path> construct(final Path path) {
-        Dialog<Path> dialog = new Dialog<>();
+        dialog = new Dialog<>();
         String title = jmePlayAssetsLocalization.value(JMEPlayAssetsLocalization.LOCALISATION_ASSETS_HANDLER_RENAME_TITLE);
         title += " " + path;
         dialog.setTitle(title);
@@ -154,9 +157,10 @@ public class PasteFileHandlerRenameDialog {
      * @return fully qualified path
      */
     private Path constructPath(final Path path, final String newName) {
-        final Path parentPath = path.getParent();
+        final boolean regularFile = Files.isRegularFile(path);
+        final Path parentPath = regularFile ? path.getParent() : path;
         final String extension = PathResolver.extension(path);
-        final String point = Files.isRegularFile(path) ? "." : "";
+        final String point = regularFile ? "." : "";
         return Paths.get(parentPath + "/" + newName + point + extension);
     }
 
