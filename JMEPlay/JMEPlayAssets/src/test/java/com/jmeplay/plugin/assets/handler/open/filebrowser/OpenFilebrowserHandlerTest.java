@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.plugin.assets.handler.open.external;
+package com.jmeplay.plugin.assets.handler.open.filebrowser;
 
 import com.jmeplay.core.JMEPlayGlobalSettings;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
@@ -16,10 +16,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Test to open files or folders from menu
+ * Test to open files or folders in file explorer from menu
  *
  * @author vp-byte (Vladimir Petrenko)
- * @see OpenExternalFileHandler
+ * @see OpenFilebrowserHandler
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(
@@ -28,21 +28,20 @@ import org.springframework.test.context.junit4.SpringRunner;
                 JMEPlayAssetsSettings.class,
                 JMEPlayAssetsLocalization.class,
                 JMEPlayFileOpenerHandler.class,
-                OpenExternalFileHandler.class,
+                OpenFilebrowserHandler.class,
         })
-public class OpenExternalFileHandlerTest {
+public class OpenFilebrowserHandlerTest {
 
     @Autowired
-    private OpenExternalFileHandler openExternalFileHandler;
+    private OpenFilebrowserHandler openFilebrowserHandler;
 
     /**
-     * Supported extension types is file and file without extension only
+     * Supported file type is any
      */
     @Test
-    public void extension() {
-        Assert.assertEquals(2, openExternalFileHandler.extension().size());
-        Assert.assertEquals(JMEPlayFileHandler.file, openExternalFileHandler.extension().get(0));
-        Assert.assertEquals(JMEPlayFileOpenerHandler.filenoextension, openExternalFileHandler.extension().get(1));
+    public void filetypes() {
+        Assert.assertEquals(1, openFilebrowserHandler.filetypes().size());
+        Assert.assertEquals(JMEPlayFileHandler.any, openFilebrowserHandler.filetypes().get(0));
     }
 
     /**
@@ -50,7 +49,7 @@ public class OpenExternalFileHandlerTest {
      */
     @Test
     public void menu() {
-        Assert.assertNotNull(openExternalFileHandler.menu(null));
+        Assert.assertNotNull(openFilebrowserHandler.menu(null));
     }
 
     /**
@@ -58,8 +57,8 @@ public class OpenExternalFileHandlerTest {
      */
     @Test
     public void label() {
-        Assert.assertNotNull(openExternalFileHandler.label());
-        Assert.assertFalse(openExternalFileHandler.label().isEmpty());
+        Assert.assertNotNull(openFilebrowserHandler.label());
+        Assert.assertFalse(openFilebrowserHandler.label().isEmpty());
     }
 
     /**
@@ -67,7 +66,6 @@ public class OpenExternalFileHandlerTest {
      */
     @Test
     public void image() {
-        Assert.assertNotNull(openExternalFileHandler.image());
+        Assert.assertNotNull(openFilebrowserHandler.image());
     }
-
 }

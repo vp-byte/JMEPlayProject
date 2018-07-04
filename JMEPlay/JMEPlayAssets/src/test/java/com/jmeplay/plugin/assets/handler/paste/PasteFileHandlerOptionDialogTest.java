@@ -34,16 +34,12 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
     @Autowired
     private PasteFileHandlerOptionDialog pasteFileHandlerOptionDialog;
 
-    private Optional<PasteFileOptionSelection> result;
-
     @Override
     public void start(Stage stage) {
         super.start(stage);
         Button button = new Button("Open dialog");
         button.setId("buttonOpenDialog");
-        button.setOnAction((event) -> {
-            result = pasteFileHandlerOptionDialog.construct().showAndWait();
-        });
+        button.setOnAction((event) -> pasteFileHandlerOptionDialog.construct().showAndWait());
         Scene scene = new Scene(new StackPane(button), 800, 600);
         stage.setScene(scene);
         stage.show();
@@ -57,7 +53,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.CANCEL);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.CANCEL, result.get());
+        Assert.assertEquals(PasteFileOptionSelection.CANCEL, dialog.getResult());
     }
 
     @Test
@@ -68,7 +64,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.YES);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.REPLACE, result.get());
+        Assert.assertEquals(PasteFileOptionSelection.REPLACE, dialog.getResult());
     }
 
     @Test
@@ -80,7 +76,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.NO);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.REINDEX, result.get());
+        Assert.assertEquals(PasteFileOptionSelection.REINDEX, dialog.getResult());
     }
 
     @Test
@@ -94,7 +90,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.YES);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.REPLACE_ALL, result.get());
+        Assert.assertEquals(PasteFileOptionSelection.REPLACE_ALL, dialog.getResult());
     }
 
     @Test
@@ -108,7 +104,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.NO);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.REINDEX_ALL, result.get());
+        Assert.assertEquals(PasteFileOptionSelection.REINDEX_ALL, dialog.getResult());
     }
 
 }

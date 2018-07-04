@@ -21,10 +21,13 @@ public class FileHandlerUtilTest {
     private final String testString = "My simple test string";
 
     @Test
-    public void openInSystem() {
+    public void openInSystem() throws InterruptedException {
         Process process = FileHandlerUtil.openInSystem(Paths.get(System.getProperty("user.home")));
         Assert.assertNotNull(process);
-        process.destroy();
+        while (process.isAlive()) {
+            process.destroy();
+            Thread.sleep(100);
+        }
         Assert.assertFalse(process.isAlive());
     }
 
