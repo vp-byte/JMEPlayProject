@@ -117,7 +117,7 @@ public class CutFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
         content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.CUT);
         if (OSInfo.OS() == OSType.LINUX) {
-            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toByteBufferCut(paths));
+            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toBuffer(JMEPlayClipboardFormat.CUT, paths));
         }
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);

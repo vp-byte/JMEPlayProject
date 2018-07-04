@@ -145,8 +145,8 @@ public class JMEPlayEditorBorderBarLeft {
      */
     private void handleBorderItem(Object source) {
         borderItemsLeft.forEach((control) -> {
-            ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-source-selected");
-            ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-source");
+            ((Group) control).getChildren().get(0).getStyleClass().remove("borderbar-label-selected");
+            ((Group) control).getChildren().get(0).getStyleClass().add("borderbar-label");
         });
         handleBorderItemLeft(source);
     }
@@ -165,8 +165,8 @@ public class JMEPlayEditorBorderBarLeft {
             if (comp.size() > 0) {
                 jmePlayEditor.setLeftPlayComponent(comp.get(0));
             }
-            ((Node) source).getStyleClass().remove("borderbar-source");
-            ((Node) source).getStyleClass().add("borderbar-source-selected");
+            ((Node) source).getStyleClass().remove("borderbar-label");
+            ((Node) source).getStyleClass().add("borderbar-label-selected");
             selectedLeft = source;
         }
     }

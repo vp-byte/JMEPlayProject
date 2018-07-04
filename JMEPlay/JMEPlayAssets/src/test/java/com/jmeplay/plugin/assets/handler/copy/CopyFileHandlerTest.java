@@ -130,12 +130,8 @@ public class CopyFileHandlerTest extends ApplicationTest {
             Clipboard clipboard = Clipboard.getSystemClipboard();
             if (OSInfo.OS() == OSType.LINUX) {
                 final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
-                if (clipboardContent != null) {
-                    Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
-                    paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
-                } else {
-                    Assert.fail("Clipboard content is null");
-                }
+                Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));
+                paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
             } else {
                 final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
                 Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.COPY));

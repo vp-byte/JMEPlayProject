@@ -111,7 +111,7 @@ public class OpenFilebrowserHandler implements JMEPlayFileHandler<TreeView<Path>
                 if (Files.isRegularFile(path)) {
                     path = path.getParent();
                 }
-                FileHandlerUtil.openExtern(path);
+                FileHandlerUtil.openInSystem(path);
                 logger.trace(path + " opened in system file browser");
             } catch (IllegalArgumentException e) {
                 logger.trace("Open " + path + " in system file browser fail", e);

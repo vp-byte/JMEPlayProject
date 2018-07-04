@@ -3,10 +3,12 @@
  */
 package com.jmeplay.plugin.assets.handler.util;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 
 /**
  * Test to user file handler utils
@@ -16,23 +18,26 @@ import java.util.ArrayList;
  */
 public class FileHandlerUtilTest {
 
+    private final String testString = "My simple test string";
+
     @Test
-    public void openExtern() {
+    public void openInSystem() {
+        Process process = FileHandlerUtil.openInSystem(Paths.get(System.getProperty("user.home")));
+        Assert.assertNotNull(process);
+        process.destroy();
+        Assert.assertFalse(process.isAlive());
     }
 
     @Test
-    public void toByteBufferCopy() {
-    }
-
-    @Test
-    public void toByteBufferCut() {
+    public void toByteBuffer() {
+        final ByteBuffer buffer = ByteBuffer.wrap(testString.getBytes(StandardCharsets.US_ASCII));
+        Assert.assertEquals(buffer, FileHandlerUtil.toByteBuffer(testString));
     }
 
     @Test
     public void fromByteBuffer() {
-        final String simpleString = "My simple String";
-        final char[] charArray = simpleString.toCharArray();
-        charArray
-        buffer.put()
+        final ByteBuffer buffer = ByteBuffer.wrap(testString.getBytes(StandardCharsets.US_ASCII));
+        Assert.assertEquals(testString, FileHandlerUtil.fromByteBuffer(buffer));
     }
+
 }

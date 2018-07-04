@@ -3,10 +3,10 @@
  */
 package com.jmeplay.plugin.assets.handler.util;
 
-import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.utils.os.OSInfo;
 
 import java.net.MalformedURLException;
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -20,7 +20,12 @@ import java.util.List;
  */
 public class FileHandlerUtil {
 
-    public static void openExtern(Path path) {
+    /**
+     * Open path with system program, folder open with file explorer
+     *
+     * @param path to file or folder
+     */
+    public static Process openInSystem(Path path) {
         final List<String> commands = new ArrayList<>();
         switch (OSInfo.OS()) {
             case MAC:
@@ -35,7 +40,7 @@ public class FileHandlerUtil {
                 commands.add("xdg-open");
                 break;
             default:
-                return;
+                return null;
         }
 
         String url;
@@ -51,39 +56,45 @@ public class FileHandlerUtil {
         processBuilder.command(commands);
 
         try {
-            processBuilder.start();
+            return processBuilder.start();
         } catch (Exception ex) {
             throw new IllegalArgumentException("Can't open external file " + path, ex);
         }
     }
 
-    public static ByteBuffer toByteBufferCopy(final List<Path> paths) {
-        return toByteBuffer(new StringBuilder(JMEPlayClipboardFormat.COPY + "\n"), paths);
-    }
-
-    public static ByteBuffer toByteBufferCut(final List<Path> paths) {
-        return toByteBuffer(new StringBuilder(JMEPlayClipboardFormat.CUT + "\n"), paths);
-    }
-
-    private static ByteBuffer toByteBuffer(final StringBuilder builder, final List<Path> paths) {
+    /**
+     * Create buffer from params clipboard format as string and paths as list
+     *
+     * @param clipboardFormat as string
+     * @param paths           list of paths
+     * @return initialized buffer
+     */
+    public static Buffer toBuffer(final String clipboardFormat, final List<Path> paths) {
+        final StringBuilder builder = new StringBuilder(clipboardFormat + "\n");
         paths.forEach(path -> builder.append(path.toUri().toASCIIString()).append('\n'));
         builder.delete(builder.length() - 1, builder.length());
-        final ByteBuffer buffer = ByteBuffer.allocate(builder.length());
-        for (int i = 0; i < builder.length(); i++) {
-            buffer.put((byte) builder.charAt(i));
-        }
-        buffer.flip();
-        return buffer;
+        final ByteBuffer buffer = toByteBuffer(builder.toString());
+        return buffer.flip();
     }
 
     /**
-     * Converts byte buffer to string (utf-8)
+     * Converts string to byte buffer (US_ASCII)
+     *
+     * @param data as String
+     * @return buffer as ByteBuffer
+     */
+    static ByteBuffer toByteBuffer(String data) {
+        return ByteBuffer.wrap(data.getBytes(StandardCharsets.US_ASCII));
+    }
+
+    /**
+     * Converts byte buffer to string (US_ASCII)
      *
      * @param buffer as ByteBuffer
-     * @return value as string
+     * @return value as String
      */
     public static String fromByteBuffer(final ByteBuffer buffer) {
-        return new String(buffer.array(), StandardCharsets.UTF_8);
+        return new String(buffer.array(), StandardCharsets.US_ASCII);
     }
 
 }

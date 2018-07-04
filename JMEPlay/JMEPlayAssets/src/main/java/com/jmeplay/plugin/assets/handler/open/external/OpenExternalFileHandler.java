@@ -110,7 +110,7 @@ public class OpenExternalFileHandler implements JMEPlayFileOpenerHandler<TreeVie
         @Override
         public void run() {
             try {
-                FileHandlerUtil.openExtern(path);
+                FileHandlerUtil.openInSystem(path);
                 logger.trace("Open file " + path + " external success");
             } catch (IllegalArgumentException e) {
                 logger.trace("Open file " + path + " external fail", e);
