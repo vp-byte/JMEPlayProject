@@ -1,20 +1,20 @@
 /*
- * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
 package com.jmeplay.plugin.assets.handler.util;
 
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
 import com.jmeplay.core.utils.os.OSInfo;
 
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Util to help file handlers
+ * Utils for file handlers
  *
  * @author vp-byte (Vladimir Petrenko)
  */
@@ -22,7 +22,6 @@ public class FileHandlerUtil {
 
     public static void openExtern(Path path) {
         final List<String> commands = new ArrayList<>();
-
         switch (OSInfo.OS()) {
             case MAC:
                 commands.add("open");
@@ -51,7 +50,6 @@ public class FileHandlerUtil {
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command(commands);
 
-
         try {
             processBuilder.start();
         } catch (Exception ex) {
@@ -71,20 +69,21 @@ public class FileHandlerUtil {
         paths.forEach(path -> builder.append(path.toUri().toASCIIString()).append('\n'));
         builder.delete(builder.length() - 1, builder.length());
         final ByteBuffer buffer = ByteBuffer.allocate(builder.length());
-        for (int i = 0, length = builder.length(); i < length; i++) {
+        for (int i = 0; i < builder.length(); i++) {
             buffer.put((byte) builder.charAt(i));
         }
         buffer.flip();
         return buffer;
     }
 
-    public static String fromByteBuffer(ByteBuffer buffer) {
-        try {
-            return new String(buffer.array(), "ASCII");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
+    /**
+     * Converts byte buffer to string (utf-8)
+     *
+     * @param buffer as ByteBuffer
+     * @return value as string
+     */
+    public static String fromByteBuffer(final ByteBuffer buffer) {
+        return new String(buffer.array(), StandardCharsets.UTF_8);
     }
 
 }
