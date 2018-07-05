@@ -125,7 +125,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
     }
 
-    private String defineClipboardActionSetupFiles(final Clipboard clipboard, final List<File> files) {
+    String defineClipboardActionSetupFiles(final Clipboard clipboard, final List<File> files) {
         String clipboardAction = null;
         if (OSInfo.OS() == OSType.LINUX) {
             String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
@@ -173,15 +173,15 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
                 EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
                 pasteFileVisitor.action(file.toPath(), newFile, clipboardAction);
                 Files.walkFileTree(file.toPath(), opts, Integer.MAX_VALUE, pasteFileVisitor);
-                // "Paste file: " + newFile + " success"
+                logger.trace("Paste file: " + newFile + " success");
             } catch (final IOException e) {
                 e.printStackTrace();
-                // "Paste file: " + newFile + " fail"
+                logger.trace("Paste file: " + newFile + " fail");
             }
         });
     }
 
-    private void moveOrCopy(final String clipboardAction, final Path file, final Path newFile) {
+    void moveOrCopy(final String clipboardAction, final Path file, final Path newFile) {
         try {
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                 Files.move(file, newFile);

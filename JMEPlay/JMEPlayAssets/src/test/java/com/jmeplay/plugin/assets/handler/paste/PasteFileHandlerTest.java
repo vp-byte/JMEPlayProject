@@ -14,13 +14,17 @@ import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.application.Platform;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.testfx.framework.junit.ApplicationTest;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -50,64 +54,66 @@ public class PasteFileHandlerTest extends ApplicationTest {
 
     @Autowired
     private PasteFileHandler pasteFileHandler;
-    private static List<Path> paths;
-    private static String directory = "paste";
+
+    private static List<Path> pathsToCopy = new ArrayList<>();
+    private static List<Path> pathsToCut = new ArrayList<>();
+    private static String dirToCopy = "copy";
+    private static String dirToCut = "cut";
 
     /**
      * Create text files
      */
     @BeforeClass
-    public static void createFiles() {
-        paths = new ArrayList<>();
+    public static void createFiles() throws IOException {
         for (int i = 0; i < 3; i++) {
-            paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
+            pathsToCopy.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
+            pathsToCut.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
         }
+        pathsToCopy.forEach(PasteFileHandlerTest::createFile);
+        pathsToCut.forEach(PasteFileHandlerTest::createFile);
+        Files.createDirectory(Paths.get(System.getProperty("user.home"), dirToCopy));
+        Files.createDirectory(Paths.get(System.getProperty("user.home"), dirToCut));
+    }
+
+    private static void createFile(final Path path) {
         try {
-            for (Path path : paths) {
-                Files.createFile(path);
-            }
-            Files.createDirectory(Paths.get(System.getProperty("user.home"), directory));
-
-
-
-
+            Files.createFile(path);
         } catch (IOException e) {
             Assert.fail(e.getMessage());
         }
     }
 
-    /**
-     * Copy files to clipboard
-     */
-    @Before
-    public void copyFilesToClipboard(){
-        Platform.runLater(() -> {
-            ClipboardContent content = new ClipboardContent();
-            content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
-            content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.COPY);
-            if (OSInfo.OS() == OSType.LINUX) {
-                content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toBuffer(JMEPlayClipboardFormat.COPY, paths));
-            }
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            clipboard.setContent(content);
-        });
+    private void putFilesToClipboard(final String clipboardFormat, final List<Path> paths) {
+        ClipboardContent content = new ClipboardContent();
+        content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
+        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, clipboardFormat);
+        if (OSInfo.OS() == OSType.LINUX) {
+            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toBuffer(clipboardFormat, paths));
+        }
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        clipboard.setContent(content);
     }
 
     /**
-     * Delete test file
+     * Delete test files
      */
-    @After
-    public void deleteFiles() {
+    @AfterClass
+    public static void deleteFiles() throws IOException {
+        pathsToCopy.forEach(path -> deleteFile(path, dirToCopy));
+        pathsToCut.forEach(path -> deleteFile(path, dirToCut));
+        Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCopy));
+        Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCut));
+    }
+
+    private static void deleteFile(final Path path, final String dir) {
         try {
-            for (Path path : paths) {
-                Files.deleteIfExists(path);
-                Files.deleteIfExists(Paths.get(path.getParent().toString(), directory, path.getFileName().toString()));
-            }
-            Files.deleteIfExists(Paths.get(System.getProperty("user.home"), directory));
+            Files.deleteIfExists(path);
+            Files.deleteIfExists(Paths.get(path.getParent().toString(), dir, path.getFileName().toString()));
         } catch (IOException e) {
             Assert.fail(e.getMessage());
         }
     }
+
 
     /**
      * Supported file type is any
@@ -146,8 +152,45 @@ public class PasteFileHandlerTest extends ApplicationTest {
     @Test
     public void defineClipboardActionSetupFiles() {
         Platform.runLater(() -> {
+            putFilesToClipboard(JMEPlayClipboardFormat.COPY, pathsToCopy);
             final Clipboard clipboard = Clipboard.getSystemClipboard();
             Assert.assertNotNull(clipboard);
+            List<File> files = new ArrayList<>();
+            pasteFileHandler.defineClipboardActionSetupFiles(clipboard, files);
+            Assert.assertTrue(files.size() > 0);
+            pathsToCopy.forEach(path -> Assert.assertTrue(files.stream().anyMatch(file -> path.toString().equals(file.toString()))));
+        });
+    }
+
+    @Test
+    public void moveOrCopyTestCOPY() {
+        Platform.runLater(() -> {
+            putFilesToClipboard(JMEPlayClipboardFormat.COPY, pathsToCopy);
+            final Clipboard clipboard = Clipboard.getSystemClipboard();
+            Assert.assertNotNull(clipboard);
+            List<File> files = new ArrayList<>();
+            pasteFileHandler.defineClipboardActionSetupFiles(clipboard, files);
+            Assert.assertTrue(files.size() > 0);
+            pathsToCopy.forEach(path -> Assert.assertTrue(files.stream().anyMatch(file -> path.toString().equals(file.toString()))));
+            files.forEach(file -> pasteFileHandler.moveOrCopy(JMEPlayClipboardFormat.COPY, file.toPath(), Paths.get(System.getProperty("user.home"), dirToCopy, file.getName())));
+            files.forEach(file -> Assert.assertTrue(file.exists()));
+            files.forEach(file -> Assert.assertTrue(Paths.get(System.getProperty("user.home"), dirToCopy, file.getName()).toFile().exists()));
+        });
+    }
+
+    @Test
+    public void moveOrCopyTestCUT() {
+        Platform.runLater(() -> {
+            putFilesToClipboard(JMEPlayClipboardFormat.CUT, pathsToCut);
+            final Clipboard clipboard = Clipboard.getSystemClipboard();
+            Assert.assertNotNull(clipboard);
+            List<File> files = new ArrayList<>();
+            pasteFileHandler.defineClipboardActionSetupFiles(clipboard, files);
+            Assert.assertTrue(files.size() > 0);
+            pathsToCut.forEach(path -> Assert.assertTrue(files.stream().anyMatch(file -> path.toString().equals(file.toString()))));
+            files.forEach(file -> pasteFileHandler.moveOrCopy(JMEPlayClipboardFormat.CUT, file.toPath(), Paths.get(System.getProperty("user.home"), dirToCut, file.getName())));
+            files.forEach(file -> Assert.assertFalse(file.exists()));
+            files.forEach(file -> Assert.assertTrue(Paths.get(System.getProperty("user.home"), dirToCut, file.getName()).toFile().exists()));
         });
     }
 
