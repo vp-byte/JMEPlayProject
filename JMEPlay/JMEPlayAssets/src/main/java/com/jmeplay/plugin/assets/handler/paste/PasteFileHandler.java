@@ -129,9 +129,6 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         String clipboardAction = null;
         if (OSInfo.OS() == OSType.LINUX) {
             String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
-            if (clipboardContent == null) {
-                return null;
-            }
             clipboardContent = clipboardContent.replace("file:", "");
             clipboardContent = clipboardContent.replace("%20", " ");
             StringTokenizer tokenizer = new StringTokenizer(clipboardContent, "\n");

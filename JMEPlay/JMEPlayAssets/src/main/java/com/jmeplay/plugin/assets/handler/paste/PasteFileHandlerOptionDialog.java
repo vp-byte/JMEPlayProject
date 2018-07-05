@@ -72,8 +72,7 @@ public class PasteFileHandlerOptionDialog {
         grid.setHgap(10);
         grid.setMaxWidth(Double.MAX_VALUE);
         grid.setAlignment(Pos.CENTER_LEFT);
-        grid.add(new Label("TEST"), 0, 0);
-        grid.add(checkBoxApplyToAll, 0, 1);
+        grid.add(checkBoxApplyToAll, 0, 0);
         return grid;
     }
 
