@@ -80,7 +80,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
      * @return menu item
      */
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
         menuItem.setOnAction((event) -> handle(source));
         return menuItem;
@@ -104,7 +104,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_PASTE, size, size);
     }
 
-    public void handle(TreeView<Path> source) {
+    public void handle(final TreeView<Path> source) {
 
         final Clipboard clipboard = Clipboard.getSystemClipboard();
         if (clipboard == null) return;
@@ -125,7 +125,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         ((JMEPlayAssetsTreeView) source).unmarkCutedFilesInTreeView();
     }
 
-    private String defineClipboardActionSetupFiles(final Clipboard clipboard, List<File> files) {
+    private String defineClipboardActionSetupFiles(final Clipboard clipboard, final List<File> files) {
         String clipboardAction = null;
         if (OSInfo.OS() == OSType.LINUX) {
             String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
@@ -152,7 +152,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         return clipboardAction;
     }
 
-    private void paste(String clipboardAction, final Path targetPath, final List<File> files) {
+    private void paste(final String clipboardAction, final Path targetPath, final List<File> files) {
         if (files.size() == 1) {
             File file = files.get(0);
             if (Files.isRegularFile(file.toPath())) {
@@ -181,7 +181,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
         });
     }
 
-    private void moveOrCopy(String clipboardAction, final Path file, final Path newFile) {
+    private void moveOrCopy(final String clipboardAction, final Path file, final Path newFile) {
         try {
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                 Files.move(file, newFile);

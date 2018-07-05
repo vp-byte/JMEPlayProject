@@ -50,7 +50,7 @@ public class CreateFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
      * @param fileCreatorHandlers injected file creator handlers
      */
     @Autowired
-    public void setFileCreatorHandlers(List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers) {
+    public void setFileCreatorHandlers(final List<JMEPlayFileCreatorHandler<TreeView<Path>>> fileCreatorHandlers) {
         this.fileCreatorHandlers = fileCreatorHandlers;
     }
 
@@ -71,7 +71,7 @@ public class CreateFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
      * @return menu item
      */
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         Menu menu = new Menu(label(), image());
         menu.getItems().addAll(fileCreatorHandlers.stream().map((item) -> item.menu(source)).collect(Collectors.toList()));
         return menu;

@@ -45,7 +45,7 @@ public class OpenFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
     }
 
     @Autowired
-    public void setFileOpenerHandlers(List<JMEPlayFileOpenerHandler<TreeView<Path>>> fileOpenerHandlers) {
+    public void setFileOpenerHandlers(final List<JMEPlayFileOpenerHandler<TreeView<Path>>> fileOpenerHandlers) {
         this.fileOpenerHandlers = fileOpenerHandlers;
     }
 
@@ -55,7 +55,7 @@ public class OpenFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
     }
 
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         Menu menu = new Menu(label(), image());
         menu.getItems().addAll(fileOpenerHandlers.stream().map((item) -> item.menu(source)).collect(Collectors.toList()));
         return menu;

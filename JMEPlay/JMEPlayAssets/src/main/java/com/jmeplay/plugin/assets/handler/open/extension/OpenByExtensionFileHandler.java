@@ -50,7 +50,7 @@ public class OpenByExtensionFileHandler implements JMEPlayFileOpenerHandler<Tree
     }
 
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
         menuItem.setOnAction((event) -> handle(source));
         return menuItem;
@@ -64,7 +64,7 @@ public class OpenByExtensionFileHandler implements JMEPlayFileOpenerHandler<Tree
         return ImageLoader.imageView(this.getClass(), JMEPlayAssetsResources.ICONS_ASSETS_OPEN, iconSize, iconSize);
     }
 
-    public void handle(TreeView<Path> source) {
+    public void handle(final TreeView<Path> source) {
     }
 
     /*

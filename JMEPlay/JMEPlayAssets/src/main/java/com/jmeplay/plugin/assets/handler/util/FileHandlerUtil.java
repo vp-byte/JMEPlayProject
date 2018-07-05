@@ -25,7 +25,7 @@ public class FileHandlerUtil {
      *
      * @param path to file or folder
      */
-    public static Process openInSystem(Path path) {
+    public static Process openInSystem(final Path path) {
         final List<String> commands = new ArrayList<>();
         switch (OSInfo.OS()) {
             case MAC:
@@ -83,7 +83,7 @@ public class FileHandlerUtil {
      * @param data as String
      * @return buffer as ByteBuffer
      */
-    static ByteBuffer toByteBuffer(String data) {
+    static ByteBuffer toByteBuffer(final String data) {
         return ByteBuffer.wrap(data.getBytes(StandardCharsets.US_ASCII));
     }
 

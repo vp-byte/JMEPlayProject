@@ -64,7 +64,7 @@ public class OpenFilebrowserHandler implements JMEPlayFileHandler<TreeView<Path>
      * @return menu item
      */
     @Override
-    public MenuItem menu(TreeView<Path> source) {
+    public MenuItem menu(final TreeView<Path> source) {
         MenuItem menuItem = new MenuItem(label(), image());
         menuItem.setOnAction((event) -> handle(source));
         return menuItem;
@@ -93,7 +93,7 @@ public class OpenFilebrowserHandler implements JMEPlayFileHandler<TreeView<Path>
      *
      * @param source of action
      */
-    public void handle(TreeView<Path> source) {
+    public void handle(final TreeView<Path> source) {
         Platform.runLater(new ProcessRunner(source.getSelectionModel().getSelectedItem().getValue()));
     }
 
