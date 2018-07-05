@@ -7,10 +7,7 @@ import com.jmeplay.core.JMEPlayGlobalSettings;
 import com.jmeplay.core.handler.file.JMEPlayFileHandler;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -65,8 +62,8 @@ public class RenameFileHandlerTest {
     /**
      * Delete test files
      */
-    @After
-    public void deleteFile() {
+    @AfterClass
+    public static void deleteFiles() {
         try {
             for (Map.Entry<Path, Path> entry : paths.entrySet()) {
                 Files.deleteIfExists(entry.getValue());
@@ -124,4 +121,5 @@ public class RenameFileHandlerTest {
             Assert.assertTrue(Files.exists(entry.getValue()));
         }
     }
+
 }

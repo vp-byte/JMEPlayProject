@@ -46,7 +46,7 @@ public class DeleteFileHandlerTest extends ApplicationTest {
     private static List<Path> paths;
 
     /**
-     * Create text file
+     * Create text files
      */
     @BeforeClass
     public static void createFile() {

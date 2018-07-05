@@ -14,7 +14,7 @@ import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.application.Platform;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -54,10 +54,10 @@ public class CutFileHandlerTest extends ApplicationTest {
     private static List<Path> paths;
 
     /**
-     * Create text file
+     * Create text files
      */
     @BeforeClass
-    public static void createFile() {
+    public static void createFiles() {
         paths = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
@@ -72,10 +72,10 @@ public class CutFileHandlerTest extends ApplicationTest {
     }
 
     /**
-     * Delete test file
+     * Delete test files
      */
-    @After
-    public void deleteFile() {
+    @AfterClass
+    public static void deleteFiles() {
         try {
             for (Path path : paths) {
                 Files.deleteIfExists(path);
@@ -129,12 +129,8 @@ public class CutFileHandlerTest extends ApplicationTest {
             Clipboard clipboard = Clipboard.getSystemClipboard();
             if (OSInfo.OS() == OSType.LINUX) {
                 final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
-                if (clipboardContent != null) {
-                    Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
-                    paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
-                } else {
-                    Assert.fail("Clipboard content is null");
-                }
+                Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
+                paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
             } else {
                 final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
                 Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));

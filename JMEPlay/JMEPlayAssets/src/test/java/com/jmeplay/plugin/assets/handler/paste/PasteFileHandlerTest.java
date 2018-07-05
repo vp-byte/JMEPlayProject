@@ -114,7 +114,6 @@ public class PasteFileHandlerTest extends ApplicationTest {
         }
     }
 
-
     /**
      * Supported file type is any
      */

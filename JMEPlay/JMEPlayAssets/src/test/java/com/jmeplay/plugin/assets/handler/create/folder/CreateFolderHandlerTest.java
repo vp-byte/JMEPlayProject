@@ -6,10 +6,7 @@ package com.jmeplay.plugin.assets.handler.create.folder;
 import com.jmeplay.core.JMEPlayGlobalSettings;
 import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -57,8 +54,8 @@ public class CreateFolderHandlerTest {
     /**
      * Delete test folders
      */
-    @After
-    public void deleteCreatedFolders() {
+    @AfterClass
+    public static void deleteCreatedFolders() {
         try {
             for (Path path : paths) {
                 Files.deleteIfExists(path);

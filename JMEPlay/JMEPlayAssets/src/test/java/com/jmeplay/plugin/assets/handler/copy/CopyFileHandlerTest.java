@@ -14,10 +14,7 @@ import com.jmeplay.plugin.assets.handler.util.FileHandlerUtil;
 import javafx.application.Platform;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -55,10 +52,10 @@ public class CopyFileHandlerTest extends ApplicationTest {
     private static List<Path> paths;
 
     /**
-     * Create text file
+     * Create text files
      */
     @BeforeClass
-    public static void createFile() {
+    public static void createFiles() {
         paths = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             paths.add(Paths.get(System.getProperty("user.home"), UUID.randomUUID().toString()));
@@ -73,10 +70,10 @@ public class CopyFileHandlerTest extends ApplicationTest {
     }
 
     /**
-     * Delete test file
+     * Delete test files
      */
-    @After
-    public void deleteFile() {
+    @AfterClass
+    public static void deleteFiles() {
         try {
             for (Path path : paths) {
                 Files.deleteIfExists(path);
