@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Cleanup JMEPlayAssets all tests">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/_JMEPlayAssetsTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -62,20 +58,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RenameFileHandlerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java">
+      <file leaf-file-name="PasteFileVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="221">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CutFileHandlerTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
+      <file leaf-file-name="PasteFileVisitorTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -1121,7 +1117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JMEPlayCore/src/test/resources/JMEPLayCoreTest_de.properties" />
         <option value="$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/ResourceBundleLoaderTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/Copy.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/CopyExample.java" />
@@ -1166,12 +1161,13 @@
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/open/OpenFileHandler.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtil.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandler.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorTest.java" />
       </list>
     </option>
   </component>
@@ -1255,6 +1251,17 @@
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+              <item name="paste" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1293,18 +1300,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="rename" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayAssets" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="paste" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1342,6 +1338,16 @@
       <recent name="com.jmeplay.plugin.assets.handler.open.external" />
       <recent name="com.jmeplay.plugin.assets.handler.open" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jmeplay.plugin.assets.handler.paste" />
+      <recent name="com.jmeplay.plugin.assets.handler.create.folder" />
+      <recent name="com.jmeplay.plugin.assets.handler.dialogs" />
+      <recent name="com.jmeplay.plugin.assets.handler.util" />
+      <recent name="com.jmeplay.plugin.assets.handler" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -1351,16 +1357,6 @@
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\java\com\jmeplay\core\utils" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\resource\icons" />
       <recent name="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/util" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.jmeplay.plugin.assets.handler.paste" />
-      <recent name="com.jmeplay.plugin.assets.handler.create.folder" />
-      <recent name="com.jmeplay.plugin.assets.handler.dialogs" />
-      <recent name="com.jmeplay.plugin.assets.handler.util" />
-      <recent name="com.jmeplay.plugin.assets.handler" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1579,7 +1575,7 @@
       <workItem from="1530733180934" duration="55000" />
       <workItem from="1530766837839" duration="2719000" />
       <workItem from="1530771136428" duration="646000" />
-      <workItem from="1530791881989" duration="3144000" />
+      <workItem from="1530791881989" duration="4052000" />
     </task>
     <task id="LOCAL-00001" summary="Copy Files done">
       <created>1517753134020</created>
@@ -1889,7 +1885,21 @@
       <option name="project" value="LOCAL" />
       <updated>1530793635537</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Cleanup JMEPlayAssets all tests">
+      <created>1530795067075</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1530795067075</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Cleanup JMEPlayAssets all tests">
+      <created>1530795074964</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1530795074964</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1925,7 +1935,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355678000" />
+    <option name="totallyTimeSpent" value="356586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1933,7 +1943,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.48400852" visible="true" weight="0.34258375" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48400852" weight="0.34258375" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -1946,7 +1956,7 @@
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49731904" visible="true" weight="0.30170575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731904" visible="true" weight="0.30170575" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Gradle" order="7" weight="0.15085287" />
       <window_info id="Structure" order="6" sideWeight="0.50268096" side_tool="true" weight="0.25426438" />
@@ -2041,13 +2051,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/JMEPlayEditorLocalization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayCore/src/test/java/com/jmeplay/core/utils/SettingsLoaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -2113,21 +2116,7 @@
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/Dialog.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/nio/file/Files.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerRenameDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerRenameDialogTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/delete/DeleteFileVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -2233,13 +2222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileOptionSelection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/nio/file/Path.java" />
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/copy/CopyFileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2290,13 +2272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/create/CreateFileHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-222">
@@ -2339,13 +2314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-732">
-          <caret line="114" column="5" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/util/FileHandlerUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2360,6 +2328,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/rename/RenameFileHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
@@ -2367,10 +2342,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/cut/CutFileHandlerTest.java">
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileOptionSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerRenameDialogTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerRenameDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2482">
+          <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="33" />
         </state>
       </provider>
     </entry>

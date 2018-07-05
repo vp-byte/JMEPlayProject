@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
  * Test to paste files from menu
  *
  * @author vp-byte (Vladimir Petrenko)
+ * @see PasteFileHandler
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(
