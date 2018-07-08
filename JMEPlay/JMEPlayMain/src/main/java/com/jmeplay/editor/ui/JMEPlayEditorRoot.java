@@ -41,7 +41,9 @@ public class JMEPlayEditorRoot {
     @PostConstruct
     public void init() {
         il = (in) -> {
-            jmePlayEditor.setRoot(new Group());
+            Group root = new Group();
+            root.setId("root");
+            jmePlayEditor.setRoot(root);
             jmePlayEditor.stageChange().removeListener(il);
         };
         jmePlayEditor.stageChange().addListener(il);

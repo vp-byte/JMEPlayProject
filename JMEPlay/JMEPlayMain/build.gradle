@@ -2,7 +2,6 @@
  * JMEPlayMain
  */
 apply plugin: 'application'
-apply plugin: 'java'
 
 mainClassName = 'com.jmeplay.editor.ui.JMEPlay'
 

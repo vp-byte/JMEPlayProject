@@ -43,6 +43,7 @@ public class JMEPlayEditorContainer {
     private void init() {
         il = (in) -> {
             BorderPane container = new BorderPane();
+            container.setId("container");
             container.prefHeightProperty().bind(jmePlayEditor.stage().getScene().heightProperty());
             container.prefWidthProperty().bind(jmePlayEditor.stage().getScene().widthProperty());
             ((Group) jmePlayEditor.root()).getChildren().add(container);
