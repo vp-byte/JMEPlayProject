@@ -4,6 +4,7 @@
 package com.jmeplay.editor.ui;
 
 import com.jmeplay.editor.TestFxApplicationTest;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import org.junit.Assert;
@@ -41,10 +42,12 @@ public class JMEPlayEditorRootTest extends TestFxApplicationTest {
             Assert.assertTrue(jmePlayEditor.root() instanceof Group);
             Assert.assertEquals("root", jmePlayEditor.root().getId());
         });
-        Assert.assertNull(root);
-        jmePlayEditor.setStage(super.getStage());
-        Assert.assertNotNull(root);
-        Assert.assertTrue(root instanceof Group);
+        Platform.runLater(() -> {
+            Assert.assertNull(root);
+            jmePlayEditor.setStage(super.getStage());
+            Assert.assertNotNull(root);
+            Assert.assertTrue(root instanceof Group);
+        });
     }
 
 }

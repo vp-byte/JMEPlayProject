@@ -1,11 +1,13 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui;
+package com.jmeplay.editor.ui.container.bottom;
 
 import com.jmeplay.editor.JMEPlayEditorResources;
 import com.jmeplay.editor.JMEPlayEditorSettings;
+import com.jmeplay.editor.ui.JMEPlayComponent;
 import com.jmeplay.editor.ui.JMEPlayComponent.Align;
+import com.jmeplay.editor.ui.JMEPlayEditor;
 import javafx.beans.InvalidationListener;
 import javafx.geometry.Insets;
 import javafx.scene.Group;

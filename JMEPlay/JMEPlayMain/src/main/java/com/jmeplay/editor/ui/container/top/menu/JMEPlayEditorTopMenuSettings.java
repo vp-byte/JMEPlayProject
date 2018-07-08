@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui.menu;
+package com.jmeplay.editor.ui.container.top.menu;
 
 import com.jmeplay.editor.JMEPlayEditorLocalization;
 import javafx.scene.control.Menu;
@@ -11,42 +11,42 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 /**
- * Help menu of JMEPlayEditor
+ * Settings menu of JMEPlayEditor
  *
  * @author vp-byte (Vladimir Petrenko)
  */
 @Component
-public class JMEPlayEditorTopMenuHelp {
+public class JMEPlayEditorTopMenuSettings {
 
-    private Menu menuHelp;
+    private Menu menuSettings;
 
     private final JMEPlayEditorLocalization jmePlayEditorLocalization;
 
     /**
-     * Constructor to create help item in top menu
+     * Constructor to create settings item in top menu
      *
      * @param jmePlayEditorLocalization localization of menu
      */
     @Autowired
-    public JMEPlayEditorTopMenuHelp(JMEPlayEditorLocalization jmePlayEditorLocalization) {
+    public JMEPlayEditorTopMenuSettings(JMEPlayEditorLocalization jmePlayEditorLocalization) {
         this.jmePlayEditorLocalization = jmePlayEditorLocalization;
     }
 
     /**
-     * Initialize help menu
+     * Initialize settings menu
      */
     @PostConstruct
     private void init() {
-        menuHelp = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_HELP));
+        menuSettings = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_SETTINGS));
     }
 
     /**
-     * Top help menu
+     * Top settings menu
      *
-     * @return help menu
+     * @return settings menu
      */
     public Menu menu() {
-        return menuHelp;
+        return menuSettings;
     }
 
 }

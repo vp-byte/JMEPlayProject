@@ -1,8 +1,9 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui;
+package com.jmeplay.editor.ui.container.center;
 
+import com.jmeplay.editor.ui.JMEPlayEditor;
 import javafx.beans.InvalidationListener;
 import javafx.scene.layout.BorderPane;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui.menu;
+package com.jmeplay.editor.ui.container.top.menu;
 
 import com.jmeplay.core.JMEPlayGlobalResources;
 import com.jmeplay.core.JMEPlayGlobalSettings;

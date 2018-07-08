@@ -4,6 +4,7 @@
 package com.jmeplay.editor.ui;
 
 import com.jmeplay.editor.TestFxApplicationTest;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import org.junit.Assert;
 import org.junit.Test;
@@ -37,9 +38,11 @@ public class JMEPlayEditorTest extends TestFxApplicationTest {
             Assert.assertNotNull(jmePlayEditor.stage());
             stage = jmePlayEditor.stage();
         });
-        Assert.assertNull(stage);
-        jmePlayEditor.setStage(super.getStage());
-        Assert.assertNotNull(stage);
+        Platform.runLater(() -> {
+            Assert.assertNull(stage);
+            jmePlayEditor.setStage(super.getStage());
+            Assert.assertNotNull(stage);
+        });
     }
 
 }

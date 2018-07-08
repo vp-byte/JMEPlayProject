@@ -1,11 +1,13 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.editor.ui;
+package com.jmeplay.editor.ui.container;
 
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.JMEPlayEditorResources;
 import com.jmeplay.editor.JMEPlayEditorSettings;
+import com.jmeplay.editor.ui.JMEPlayEditor;
+import com.jmeplay.editor.ui.JMEPlayInfoMessage;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;

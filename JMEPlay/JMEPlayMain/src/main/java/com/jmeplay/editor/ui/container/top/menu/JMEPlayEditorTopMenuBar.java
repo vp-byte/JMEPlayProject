@@ -1,11 +1,9 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui;
+package com.jmeplay.editor.ui.container.top.menu;
 
-import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuFile;
-import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuHelp;
-import com.jmeplay.editor.ui.menu.JMEPlayEditorTopMenuSettings;
+import com.jmeplay.editor.ui.JMEPlayEditor;
 import javafx.beans.InvalidationListener;
 import javafx.scene.control.MenuBar;
 import org.springframework.beans.factory.annotation.Autowired;
