@@ -4,24 +4,11 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="Some TestFx tests for JMEPlayEditor">
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/TestFxApplicationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorContainerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorRootTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorSceneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/SvgImageLoaderFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/resources/icons/testicon.svg" afterDir="false" />
+    <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JMEPlayMain/JMEPlayMain_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorRoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/JMEPlayEditorRoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -84,27 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JMEPlayEditorStageTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JMEPlayEditorStageTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+            <state relative-caret-position="680">
+              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestFxApplicationTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/TestFxApplicationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1539,8 +1512,8 @@
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorRootTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorSceneTest.java" />
-        <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/TestFxApplicationTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java" />
       </list>
     </option>
   </component>
@@ -2062,7 +2035,7 @@
       <workItem from="1530804481080" duration="1756000" />
       <workItem from="1530872919377" duration="2952000" />
       <workItem from="1530903040929" duration="9255000" />
-      <workItem from="1531046372875" duration="30935000" />
+      <workItem from="1531046372875" duration="31214000" />
     </task>
     <task id="LOCAL-00001" summary="Copy Files done">
       <created>1517753134020</created>
@@ -2393,7 +2366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531056273770</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Some TestFx tests for JMEPlayEditor">
+      <created>1531080329183</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1531080329183</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2429,7 +2409,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402431000" />
+    <option name="totallyTimeSpent" value="402710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="2048" height="1127" extended-state="6" />
@@ -2947,16 +2927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/TestFxApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2965,6 +2935,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#423#424#0" expanded="true" />
             <element signature="e#451#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/JMEPlayEditorStageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

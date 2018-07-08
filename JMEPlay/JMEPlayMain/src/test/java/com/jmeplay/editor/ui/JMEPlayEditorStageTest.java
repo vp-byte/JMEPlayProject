@@ -8,15 +8,12 @@ import com.jmeplay.editor.JMEPlayEditorSettings;
 import com.jmeplay.editor.TestFxApplicationTest;
 import javafx.application.Platform;
 import javafx.stage.Stage;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.testfx.api.FxToolkit;
-import org.testfx.util.WaitForAsyncUtils;
 
 /**
  * Test start of application and add root
