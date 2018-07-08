@@ -4,6 +4,9 @@
 package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.core.handler.file.JMEPlayClipboardFormat;
+import com.jmeplay.core.utils.PathResolver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,11 +27,14 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
  */
 @Component
 public class PasteFileVisitor implements FileVisitor<Path> {
+
+    private static final Logger logger = LoggerFactory.getLogger(PasteFileVisitor.class.getName());
+
     private Path source;
     private Path target;
     private String clipboardAction;
     private final CopyOption[] copyOptions = new CopyOption[]{COPY_ATTRIBUTES, REPLACE_EXISTING};
-    private PasteFileOptionSelection pasteOption;
+    private PasteFileOptionSelection pasteFileOptionSelection;
 
     private final PasteFileHandlerOptionDialog pasteFileHandlerOptionDialog;
 
@@ -38,6 +44,7 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     }
 
     public void action(Path source, Path target, String clipboardAction) {
+        pasteFileOptionSelection = PasteFileOptionSelection.DEFAULT;
         this.source = source;
         this.target = target;
         this.clipboardAction = clipboardAction;
@@ -47,16 +54,15 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
         Path newdir = target.resolve(source.relativize(dir));
         try {
-            System.out.println(dir + " -> " + newdir);
             if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
-                Files.move(dir, newdir, copyOptions);
+                Files.move(dir, newdir);
             } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                Files.copy(dir, newdir, copyOptions);
+                Files.copy(dir, newdir);
             }
         } catch (FileAlreadyExistsException x) {
             // ignore
         } catch (IOException x) {
-            System.err.format("Unable to create: %s: %s%n", newdir, x);
+            logger.error("Unable to create: %s: %s%n", newdir, x);
             return SKIP_SUBTREE;
         }
         return CONTINUE;
@@ -65,25 +71,33 @@ public class PasteFileVisitor implements FileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
         try {
-            if (pasteOption == null && Files.exists(target)) {
+            if ((pasteFileOptionSelection == PasteFileOptionSelection.DEFAULT
+                    || pasteFileOptionSelection == PasteFileOptionSelection.REPLACE
+                    || pasteFileOptionSelection == PasteFileOptionSelection.REINDEX)
+                    && Files.exists(target)) {
                 Optional<PasteFileOptionSelection> result = pasteFileHandlerOptionDialog.construct().showAndWait();
-                result.ifPresent((option) -> pasteOption = option);
+                result.ifPresent((option) -> pasteFileOptionSelection = option);
                 if (!result.isPresent()) {
+                    pasteFileOptionSelection = PasteFileOptionSelection.DEFAULT;
                     return TERMINATE;
                 }
             }
-
-            Files.copy(source, target, copyOptions);
-            switch (pasteOption) {
+            switch (pasteFileOptionSelection) {
                 case REPLACE:
+                case REPLACE_ALL:
                     if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
                         Files.move(source, target, copyOptions);
                     } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
-                        System.out.println(source + " -> " + target);
+                        Files.copy(source, target, copyOptions);
                     }
                     break;
                 case REINDEX:
-                    // TODO copy / cut with REINDEX
+                case REINDEX_ALL:
+                    if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {
+                        Files.move(source, PathResolver.reindexName(target));
+                    } else if (clipboardAction.equals(JMEPlayClipboardFormat.COPY)) {
+                        Files.copy(source, PathResolver.reindexName(target));
+                    }
                     break;
                 default:
                     if (clipboardAction.equals(JMEPlayClipboardFormat.CUT)) {

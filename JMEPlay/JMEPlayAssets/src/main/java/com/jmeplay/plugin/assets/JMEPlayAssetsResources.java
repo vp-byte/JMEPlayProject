@@ -12,7 +12,7 @@ import com.jmeplay.core.JMEPlayGlobalResources;
  */
 public class JMEPlayAssetsResources {
 
-    // BASE PATHS
+    // DEFAULT PATHS
 	public final static String SETTINGSFILE = JMEPlayGlobalResources.SETTINGSFOLDER + "AssetsSettings.xml";
 
 	// CSS

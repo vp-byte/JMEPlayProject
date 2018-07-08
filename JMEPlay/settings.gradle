@@ -2,6 +2,5 @@ rootProject.name = 'JMEPlay'
 
 include 'JMEPlayCore'
 include 'JMEPlayMain'
-include 'JMEPlayConsole'
 include 'JMEPlayAssets'
 

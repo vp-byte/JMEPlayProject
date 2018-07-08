@@ -8,6 +8,6 @@ mainClassName = 'com.jmeplay.editor.ui.JMEPlay'
 
 dependencies {
     compile project(':JMEPlayCore')
-    compile project(':JMEPlayConsole')
+    // compile project(':JMEPlayConsole')
     compile project(':JMEPlayAssets')
 }

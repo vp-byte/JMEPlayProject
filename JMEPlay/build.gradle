@@ -1,45 +1,69 @@
 /*
  * JMEPLay
  */
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+jar {
+    baseName = 'JMEPlay'
+    version = '1.0.0-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
 
 allprojects {
 
-    repositories {
-        mavenCentral()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-
     apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
-    def junit = [v: '4.12']
-    def spring_boot = [v: '1.5.2.RELEASE']
-    def lombok = [v: '1.16.20']
-    def javaxinject = [v: '1']
-    def javafxsvg = [v: '1.2.1']
+    repositories {
+        mavenCentral()
+    }
 
     dependencies {
-        // Use JUnit test framework
-        testCompile("junit:junit:${junit.v}")
-
-        // Use Spring-Framework
-        compile "org.springframework.boot:spring-boot-starter:${spring_boot.v}"
-        testCompile "org.springframework.boot:spring-boot-starter-test:${spring_boot.v}"
-
+        ext {
+            lombokVersion = '1.16.20'
+            javafxsvg = '1.2.1'
+            testfx = '4.0.13-alpha'
+        }
+        // Spring Boot
+        compile("org.springframework.boot:spring-boot-starter")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
         // Lombok
-        compileOnly "org.projectlombok:lombok:${lombok.v}"
-        compileOnly "javax.inject:javax.inject:${javaxinject.v}"
-
-        // JavaFxSVG
-        compile "de.codecentric.centerdevice:javafxsvg:${javafxsvg.v}"
-
-        compile project(':JMEPlayCore')
+        compileOnly("org.projectlombok:lombok:${lombokVersion}")
+        // JavaFX
+        compile("de.codecentric.centerdevice:javafxsvg:${javafxsvg}")
+        testCompile("org.testfx:testfx-core:${testfx}")
+        testCompile("org.testfx:testfx-junit:${testfx}")
     }
-}
 
-subprojects {
-    version = '1.0'
 }

@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/JMEPlayAssets" />
-            <option value="$PROJECT_DIR$/JMEPlayConsole" />
             <option value="$PROJECT_DIR$/JMEPlayCore" />
             <option value="$PROJECT_DIR$/JMEPlayMain" />
           </set>

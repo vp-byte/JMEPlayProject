@@ -58,7 +58,7 @@ public class PasteFileHandlerOptionDialog {
                     return PasteFileOptionSelection.REINDEX;
                 }
             }
-            return PasteFileOptionSelection.CANCEL;
+            return null;
         });
         return dialog;
     }

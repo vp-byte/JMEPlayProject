@@ -13,5 +13,5 @@ public enum PasteFileOptionSelection {
     REPLACE_ALL,
     REINDEX,
     REINDEX_ALL,
-    CANCEL
+    DEFAULT
 }

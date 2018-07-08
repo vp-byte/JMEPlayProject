@@ -1,3 +1,6 @@
+/*
+ * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
+ */
 package com.jmeplay.plugin.assets.handler.paste;
 
 import com.jmeplay.core.JMEPlayGlobalSettings;
@@ -18,9 +21,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Optional;
-
-// Run Options: -Djava.awt.headless=false
+/**
+ * Test paste dialog implementation to select paste option
+ *
+ * @author vp-byte (Vladimir Petrenko)
+ * @see PasteFileHandlerOptionDialog
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(
         classes = {
@@ -53,7 +59,7 @@ public class PasteFileHandlerOptionDialogTest extends TestFxApplicationTest {
         Button buttonCancel = (Button) dialog.getDialogPane().lookupButton(ButtonType.CANCEL);
         Assert.assertNotNull(buttonCancel);
         clickOn(buttonCancel);
-        Assert.assertEquals(PasteFileOptionSelection.CANCEL, dialog.getResult());
+        Assert.assertNull(dialog.getResult());
     }
 
     @Test
