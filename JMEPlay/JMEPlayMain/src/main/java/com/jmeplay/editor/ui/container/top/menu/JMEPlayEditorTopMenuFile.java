@@ -51,7 +51,7 @@ public class JMEPlayEditorTopMenuFile {
     @PostConstruct
     private void init() {
         menuFile = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_FILE));
-
+        menuFile.setId("menufile");
         MenuItem menuFileOpen = new MenuItem(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_OPEN_ASSETS));
         menuFile.getItems().add(menuFileOpen);
         menuFileOpen.setOnAction((event) -> openDirectoryChooser());
@@ -78,7 +78,7 @@ public class JMEPlayEditorTopMenuFile {
      *
      * @return file menu
      */
-    public Menu menu() {
+    Menu menu() {
         return menuFile;
     }
 

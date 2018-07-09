@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017, 2018, VP-BYTE (http://www.vp-byte.de/) and/or its affiliates. All rights reserved.
  */
-package com.jmeplay.editor.ui.container;
+package com.jmeplay.editor.ui.container.bottom;
 
 import com.jmeplay.core.utils.ImageLoader;
 import com.jmeplay.editor.JMEPlayEditorResources;
@@ -61,6 +61,7 @@ public class JMEPlayEditorInfoBar implements JMEPlayInfoMessage {
 
     private void initModeSwitcher() {
         modeSwitcher = new Label();
+        modeSwitcher.setId("modeswitcher");
         modeSwitcher.setGraphic(modeSwitcherImage(true));
         modeSwitcher.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> jmePlayEditor.setBorderBarsVisibility(!jmePlayEditor.borderBarsVisibility()));
     }
@@ -75,12 +76,14 @@ public class JMEPlayEditorInfoBar implements JMEPlayInfoMessage {
 
     private void initInfoLabel() {
         infoLabel = new Label();
+        infoLabel.setId("infolabel");
         infoLabel.getStyleClass().add("infobar-infolabel");
         message("Info message");
     }
 
     private void initBottomInfoBar() {
         bottomInfoBar = new HBox();
+        bottomInfoBar.setId("infobar");
         bottomInfoBar.getStyleClass().add("infobar-bottom-box");
         bottomInfoBar.setMinHeight(size);
         bottomInfoBar.setMaxHeight(size);

@@ -1,7 +1,7 @@
 /*
  * MIT-LICENSE Copyright (c) 2017 / 2018 VP-BYTE (http://www.vp-byte.de/) Vladimir Petrenko
  */
-package com.jmeplay.editor.ui.container.bottom;
+package com.jmeplay.editor.ui.container.center;
 
 import com.jmeplay.editor.JMEPlayEditorResources;
 import com.jmeplay.editor.JMEPlayEditorSettings;

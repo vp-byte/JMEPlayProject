@@ -56,6 +56,7 @@ public class JMEPlayEditorTopMenuBar {
     public void init() {
         il = (in) -> {
             menuBar = new MenuBar();
+            menuBar.setId("menubar");
             menuBar.getMenus().add(jmePlayEditorTopMenuFile.menu());
             menuBar.getMenus().add(jmePlayEditorTopMenuSettings.menu());
             menuBar.getMenus().add(jmePlayEditorTopMenuHelp.menu());

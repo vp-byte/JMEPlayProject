@@ -38,6 +38,7 @@ public class JMEPlayEditorTopMenuHelp {
     @PostConstruct
     private void init() {
         menuHelp = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_HELP));
+        menuHelp.setId("menuhelp");
     }
 
     /**
@@ -45,7 +46,7 @@ public class JMEPlayEditorTopMenuHelp {
      *
      * @return help menu
      */
-    public Menu menu() {
+    Menu menu() {
         return menuHelp;
     }
 

@@ -43,6 +43,7 @@ public class JMEPlayEditorTop {
     private void init() {
         il = (in) -> {
             VBox top = new VBox();
+            top.setId("top");
             jmePlayEditor.container().setTop(top);
             jmePlayEditor.setTop(top);
             jmePlayEditor.containerChange().removeListener(il);

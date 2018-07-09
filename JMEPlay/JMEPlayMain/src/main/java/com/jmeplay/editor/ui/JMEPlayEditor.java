@@ -370,6 +370,8 @@ public class JMEPlayEditor implements JMEPlayGlobal {
         return centerChange.getReadOnlyProperty();
     }
 
+    // INFO BAR
+    private HBox infoBar;
     private final ReadOnlyObjectWrapper<HBox> infoBarChange = new ReadOnlyObjectWrapper<>();
 
     /**
@@ -388,7 +390,8 @@ public class JMEPlayEditor implements JMEPlayGlobal {
      * @param infoBar container
      */
     public void setInfoBar(HBox infoBar) {
-        infoBarChange.set(infoBar);
+        this.infoBar = infoBar;
+        infoBarChange.set(this.infoBar);
     }
 
     /**
@@ -397,7 +400,7 @@ public class JMEPlayEditor implements JMEPlayGlobal {
      * @return info bar of application
      */
     public HBox infoBar() {
-        return borderBarBottom;
+        return this.infoBar;
     }
 
     /**

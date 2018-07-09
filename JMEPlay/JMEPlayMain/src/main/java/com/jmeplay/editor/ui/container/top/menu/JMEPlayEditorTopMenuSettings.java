@@ -38,6 +38,7 @@ public class JMEPlayEditorTopMenuSettings {
     @PostConstruct
     private void init() {
         menuSettings = new Menu(jmePlayEditorLocalization.value(JMEPlayEditorLocalization.LOCALIZATION_EDITOR_MENU_SETTINGS));
+        menuSettings.setId("menusettings");
     }
 
     /**
@@ -45,7 +46,7 @@ public class JMEPlayEditorTopMenuSettings {
      *
      * @return settings menu
      */
-    public Menu menu() {
+    Menu menu() {
         return menuSettings;
     }
 
