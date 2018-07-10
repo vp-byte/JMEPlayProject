@@ -108,6 +108,7 @@ public class JMEPlayEditorBorderBarBottom {
      */
     private void initBorderBarBottom() {
         borderBarBottom = new HBox();
+        borderBarBottom.setId("borderbarbottom");
         borderBarBottom.setPadding(new Insets(0, 0, 0, jmePlayEditorSettings.iconSizeBar()));
         borderBarBottom.setPrefHeight(jmePlayEditorSettings.iconSizeBar());
         borderBarBottom.getStyleClass().add("borderbar-h");

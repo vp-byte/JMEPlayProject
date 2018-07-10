@@ -108,6 +108,7 @@ public class JMEPlayEditorBorderBarLeft {
      */
     private void initBorderBarLeft() {
         borderBarLeft = new VBox();
+        borderBarLeft.setId("borderbarleft");
         borderBarLeft.setPrefWidth(jmePlayEditorSettings.iconSizeBar());
         borderBarLeft.getStyleClass().add("borderbar-v");
         borderBarLeft.getChildren().addAll(borderItemsLeft);
