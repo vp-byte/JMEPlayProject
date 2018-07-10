@@ -21,7 +21,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Test start of application and add center BorderPane
+ * Test start of application and add bottom HBox
  *
  * @author vp-byte (Vladimir Petrenko)
  */
