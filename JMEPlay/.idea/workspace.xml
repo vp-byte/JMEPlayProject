@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f6522d6-6fd3-484d-b96a-6efd12a37ae8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottomTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeftTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorCenterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplitsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottom.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java" beforeDir="false" afterPath="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -65,41 +61,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JMEPlayEditorBorderBarLeft.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeft.java">
+      <file leaf-file-name="JMEPlayEditorSplits.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+            <state relative-caret-position="-571">
+              <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JMEPlayEditorBorderBarLeftTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeftTest.java">
+      <file leaf-file-name="JMEPlayEditorSplitsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplitsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMEPlayEditorBorderBarBottomTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottomTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JMEPlayEditorInfoBar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/bottom/JMEPlayEditorInfoBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="68">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -1336,8 +1311,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileHandlerOptionDialogTest.java" />
-        <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/test/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitorSimpleTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileOptionSelection.java" />
         <option value="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/paste/PasteFileVisitor.java" />
@@ -1387,6 +1360,8 @@
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeftTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottomTest.java" />
         <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottom.java" />
+        <option value="$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplitsTest.java" />
+        <option value="$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java" />
       </list>
     </option>
   </component>
@@ -1411,6 +1386,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1439,63 +1416,6 @@
               <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-              <item name="center" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1524,48 +1444,11 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="editor" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-              <item name="center" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JMEPlay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JMEPlay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="JMEPlayMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1599,6 +1482,16 @@
       <recent name="com.jmeplay.editor.ui.container.top" />
       <recent name="com.jmeplay.editor.ui.container" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jmeplay.editor.ui.container.center" />
+      <recent name="com.jmeplay.editor.ui.container.top.menu" />
+      <recent name="com.jmeplay.editor" />
+      <recent name="com.jmeplay.editor.ui" />
+      <recent name="com.jmeplay.plugin.assets.handler.paste" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -1608,16 +1501,6 @@
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\main" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\java\com\jmeplay\core\utils" />
       <recent name="F:\jme\JMEPlay\JMEPlayCore\src\test\resource\icons" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.jmeplay.editor.ui.container.center" />
-      <recent name="com.jmeplay.editor.ui.container.top.menu" />
-      <recent name="com.jmeplay.editor" />
-      <recent name="com.jmeplay.editor.ui" />
-      <recent name="com.jmeplay.plugin.assets.handler.paste" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1964,14 +1847,9 @@
       <workItem from="1531087014709" duration="5383000" />
       <workItem from="1531151236755" duration="18464000" />
       <workItem from="1531232251034" duration="860000" />
-      <workItem from="1531235219732" duration="2484000" />
-    </task>
-    <task id="LOCAL-00003" summary="Cut first try">
-      <created>1517865949739</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1517865949739</updated>
+      <workItem from="1531235219732" duration="2526000" />
+      <workItem from="1531238610189" duration="30000" />
+      <workItem from="1531239223624" duration="865000" />
     </task>
     <task id="LOCAL-00004" summary="Cut implementation done">
       <created>1517932973449</created>
@@ -2309,13 +2187,17 @@
       <option name="project" value="LOCAL" />
       <updated>1531170013991</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="New TestFX tests">
+      <created>1531238577854</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1531238577854</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JMEPlayEditorCenterTest - 2018.07.10 at 16h 23m 08s.xml">
-      <configuration name="JMEPlayEditorCenterTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="JMEPlayEditorBorderBarLeftTest - 2018.07.10 at 16h 31m 47s.xml">
       <configuration name="JMEPlayEditorBorderBarLeftTest" configurationId="JUnit" />
     </history-entry>
@@ -2343,44 +2225,46 @@
     <history-entry file="JMEPlayEditorBorderBarBottomTest - 2018.07.10 at 17h 47m 18s.xml">
       <configuration name="JMEPlayEditorBorderBarBottomTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JMEPlayEditorBorderBarBottomTest - 2018.07.10 at 18h 02m 34s.xml">
+      <configuration name="JMEPlayEditorBorderBarBottomTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429939000" />
+    <option name="totallyTimeSpent" value="430876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="2048" height="1127" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31343284" side_tool="true" weight="0.3186603" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info id="Structure" order="6" sideWeight="0.2709581" side_tool="true" visible="true" weight="0.24875125" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39738432" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48400852" weight="0.3420523" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6865672" visible="true" weight="0.3279678" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.31343284" side_tool="true" weight="0.3186603" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6865672" weight="0.3279678" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49946696" weight="0.2444668" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info anchor="bottom" id="Terminal" order="13" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.72904193" visible="true" weight="0.24875125" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49573562" weight="0.33802816" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.72837025" visible="true" weight="0.25374624" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.15084915" />
+      <window_info id="Structure" order="6" sideWeight="0.27162978" side_tool="true" visible="true" weight="0.25374624" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39738432" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49573562" weight="0.33802816" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" sideWeight="0.4968017" weight="0.31790745" />
-      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48400852" weight="0.3420523" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
@@ -2482,13 +2366,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JMEPlayAssets/src/main/java/com/jmeplay/plugin/assets/handler/create/folder/CreateFolderHandlerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -2613,13 +2490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2759,9 +2629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="45" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2783,9 +2650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2798,7 +2662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="1700">
           <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
         </state>
       </provider>
@@ -2812,7 +2676,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarLeftTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
+        <state relative-caret-position="323">
           <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2846,8 +2710,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorBorderBarBottomTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
+        <state relative-caret-position="612">
           <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/test/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplitsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JMEPlayMain/src/main/java/com/jmeplay/editor/ui/container/center/JMEPlayEditorSplits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
         </state>
       </provider>
     </entry>

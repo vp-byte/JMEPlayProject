@@ -89,6 +89,7 @@ public class JMEPlayEditorSplits {
      */
     private void initSplitVertical() {
         splitVertical = new SplitPane();
+        splitVertical.setId("splitvertical");
         splitVertical.setOrientation(Orientation.HORIZONTAL);
         TabPane tabPane = new TabPane();
         splitVertical.getItems().add(new StackPane(tabPane));
@@ -100,6 +101,7 @@ public class JMEPlayEditorSplits {
      */
     private void initSplitHorizontal() {
         splitHorizontal = new SplitPane();
+        splitHorizontal.setId("splithorizontal");
         splitHorizontal.setOrientation(Orientation.VERTICAL);
         splitHorizontal.getItems().add(splitVertical);
     }
