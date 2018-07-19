@@ -18,6 +18,12 @@ public class JMEPlayClipboardFormat {
         return df != null ? df : new DataFormat(jmeplayId);
     }
 
+    public static DataFormat JAVA_FILES(){
+        final String javafilesId = "application/x-java-file-list";
+        DataFormat df = DataFormat.lookupMimeType(javafilesId);
+        return df != null ? df : new DataFormat(javafilesId);
+    }
+
     public static DataFormat GNOME_FILES() {
         final String gnomeId = "x-special/gnome-copied-files";
         DataFormat df = DataFormat.lookupMimeType(gnomeId);
