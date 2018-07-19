@@ -9,6 +9,7 @@ import com.jmeplay.plugin.assets.JMEPlayAssetsLocalization;
 import com.jmeplay.plugin.assets.JMEPlayAssetsSettings;
 import com.jmeplay.plugin.assets.TestFxApplicationTest;
 import javafx.stage.Stage;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -51,16 +52,6 @@ public class PasteFileVisitorSimpleTest extends TestFxApplicationTest {
     private static Path copyToPath;
     private static List<Path> paths = new ArrayList<>();
 
-    @Override
-    public void start(Stage stage) {
-        /*
-        super.start(stage);
-        Scene scene = new Scene(new StackPane(new Button("TEST")), 800, 600);
-        stage.setScene(scene);
-        stage.show();
-        */
-    }
-
     /**
      * Create text files
      */
@@ -100,21 +91,21 @@ public class PasteFileVisitorSimpleTest extends TestFxApplicationTest {
 
 /**
  * Delete test files
- *
- * @AfterClass public static void deleteFiles() throws IOException {
- * pathsToCopy.forEach(copyFromPath -> deleteFile(copyFromPath, dirToCopy));
- * pathsToCut.forEach(copyFromPath -> deleteFile(copyFromPath, dirToCut));
- * Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCopy));
- * Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCut));
- * }
- * <p>
- * private static void deleteFile(final Path copyFromPath, final String dir) {
- * try {
- * Files.deleteIfExists(copyFromPath);
- * Files.deleteIfExists(Paths.get(copyFromPath.getParent().toString(), dir, copyFromPath.getFileName().toString()));
- * } catch (IOException e) {
- * Assert.fail(e.getMessage());
- * }
- * }
- */
+ *//*
+ @AfterClass
+ public static void deleteFiles() throws IOException {
+ pathsToCopy.forEach(copyFromPath -> deleteFile(copyFromPath, dirToCopy));
+ pathsToCut.forEach(copyFromPath -> deleteFile(copyFromPath, dirToCut));
+ Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCopy));
+ Files.deleteIfExists(Paths.get(System.getProperty("user.home"), dirToCut));
+ }
+ private static void deleteFile(final Path copyFromPath, final String dir) {
+ try {
+ Files.deleteIfExists(copyFromPath);
+ Files.deleteIfExists(Paths.get(copyFromPath.getParent().toString(), dir, copyFromPath.getFileName().toString()));
+ } catch (IOException e) {
+ Assert.fail(e.getMessage());
+ }
+ }*/
+
 }

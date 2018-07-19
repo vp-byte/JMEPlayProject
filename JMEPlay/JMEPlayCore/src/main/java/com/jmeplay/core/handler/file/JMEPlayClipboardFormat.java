@@ -12,9 +12,17 @@ import javafx.scene.input.DataFormat;
  */
 public class JMEPlayClipboardFormat {
 
-    public static final DataFormat JMEPLAY_FILES = new DataFormat("JMEPlay.files");
+    public static DataFormat JMEPLAY_FILES() {
+        final String jmeplayId = "JMEPlay.files";
+        DataFormat df = DataFormat.lookupMimeType(jmeplayId);
+        return df != null ? df : new DataFormat(jmeplayId);
+    }
 
-    public static final DataFormat GNOME_FILES = new DataFormat("x-special/gnome-copied-files");
+    public static DataFormat GNOME_FILES() {
+        final String gnomeId = "x-special/gnome-copied-files";
+        DataFormat df = DataFormat.lookupMimeType(gnomeId);
+        return df != null ? df : new DataFormat(gnomeId);
+    }
 
     public static final String COPY = "copy";
 

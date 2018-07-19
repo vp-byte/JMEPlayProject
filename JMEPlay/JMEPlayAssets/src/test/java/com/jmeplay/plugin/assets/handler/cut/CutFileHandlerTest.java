@@ -128,11 +128,11 @@ public class CutFileHandlerTest extends ApplicationTest {
             cutFileHandler.cutPathsToClipboard(paths);
             Clipboard clipboard = Clipboard.getSystemClipboard();
             if (OSInfo.OS() == OSType.LINUX) {
-                final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
+                final String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES()));
                 Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
                 paths.forEach((path -> Assert.assertTrue(clipboardContent.contains(path.getFileName().toString()))));
             } else {
-                final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
+                final String clipboardContent = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES());
                 Assert.assertTrue(clipboardContent.contains(JMEPlayClipboardFormat.CUT));
                 final Object clipboardFiles = clipboard.getContent(DataFormat.FILES);
                 if (clipboardFiles instanceof List<?>) {

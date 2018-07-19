@@ -113,9 +113,9 @@ public class CopyFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
     void copyPathsToClipboard(final List<Path> paths) {
         ClipboardContent content = new ClipboardContent();
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
-        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, JMEPlayClipboardFormat.COPY);
+        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES(), JMEPlayClipboardFormat.COPY);
         if (OSInfo.OS() == OSType.LINUX) {
-            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toBuffer(JMEPlayClipboardFormat.COPY, paths));
+            content.put(JMEPlayClipboardFormat.GNOME_FILES(), FileHandlerUtil.toBuffer(JMEPlayClipboardFormat.COPY, paths));
         }
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);

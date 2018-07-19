@@ -87,9 +87,9 @@ public class PasteFileHandlerTest extends ApplicationTest {
     private void putFilesToClipboard(final String clipboardFormat, final List<Path> paths) {
         ClipboardContent content = new ClipboardContent();
         content.putFiles(paths.stream().map(Path::toFile).collect(Collectors.toList()));
-        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES, clipboardFormat);
+        content.put(JMEPlayClipboardFormat.JMEPLAY_FILES(), clipboardFormat);
         if (OSInfo.OS() == OSType.LINUX) {
-            content.put(JMEPlayClipboardFormat.GNOME_FILES, FileHandlerUtil.toBuffer(clipboardFormat, paths));
+            content.put(JMEPlayClipboardFormat.GNOME_FILES(), FileHandlerUtil.toBuffer(clipboardFormat, paths));
         }
         Clipboard clipboard = Clipboard.getSystemClipboard();
         clipboard.setContent(content);

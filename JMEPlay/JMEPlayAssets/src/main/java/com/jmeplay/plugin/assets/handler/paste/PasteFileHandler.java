@@ -128,7 +128,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
     String defineClipboardActionSetupFiles(final Clipboard clipboard, final List<File> files) {
         String clipboardAction = null;
         if (OSInfo.OS() == OSType.LINUX) {
-            String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES));
+            String clipboardContent = FileHandlerUtil.fromByteBuffer((ByteBuffer) clipboard.getContent(JMEPlayClipboardFormat.GNOME_FILES()));
             clipboardContent = clipboardContent.replace("file:", "");
             clipboardContent = clipboardContent.replace("%20", " ");
             StringTokenizer tokenizer = new StringTokenizer(clipboardContent, "\n");
@@ -141,7 +141,7 @@ public class PasteFileHandler implements JMEPlayFileHandler<TreeView<Path>> {
                 counter++;
             }
         } else {
-            clipboardAction = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES);
+            clipboardAction = (String) clipboard.getContent(JMEPlayClipboardFormat.JMEPLAY_FILES());
             final ArrayList<?> filesArray = new ArrayList<>((List<?>) (clipboard.getContent(DataFormat.FILES)));
             filesArray.forEach(fileObject -> {
                 if (fileObject instanceof File) {
