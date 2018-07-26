@@ -115,6 +115,7 @@ public class PathResolver {
      * @return validity
      */
     public static boolean isNameInvalid(String name) {
+        //noinspection RegExpRedundantEscape
         return !name.matches("[-_.A-Za-z0-9][^<>?\":|\\/*]*");
     }
 

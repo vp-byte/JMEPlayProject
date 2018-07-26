@@ -31,7 +31,7 @@ public class SettingsLoader {
      *
      * @param filename to load settings
      */
-    public void loadSettings(String filename) {
+    protected void loadSettings(String filename) {
         this.filename = filename;
         InputStream inputStream;
         try {
@@ -47,7 +47,7 @@ public class SettingsLoader {
     /**
      * Write settings to in {@link #loadSettings(String)} defined file
      */
-    public void writeSettings() {
+    protected void writeSettings() {
         File path = new File(filename).getParentFile();
         if (!path.exists()) {
             if (path.mkdir()) {
@@ -68,7 +68,7 @@ public class SettingsLoader {
     /**
      * Delete settings file from system
      */
-    public void deleteSettings() {
+    void deleteSettings() {
         File file = new File(filename);
         if (!file.delete()) {
             logger.error("{} fail to delete {} setting", SettingsLoader.class, filename);
@@ -196,7 +196,7 @@ public class SettingsLoader {
      * @param key   for value
      * @param value to set
      */
-    public void setValue(String key, Boolean value) {
+    private void setValue(String key, Boolean value) {
         settings.setProperty(key, "" + value);
     }
 
@@ -206,48 +206,8 @@ public class SettingsLoader {
      * @param key   for value
      * @param value to set
      */
-    public void setValue(String key, String value) {
+    private void setValue(String key, String value) {
         settings.setProperty(key, value);
-    }
-
-    /**
-     * Set integer value
-     *
-     * @param key   for value
-     * @param value to set
-     */
-    public void setValue(String key, Integer value) {
-        settings.setProperty(key, "" + value);
-    }
-
-    /**
-     * Set long value
-     *
-     * @param key   for value
-     * @param value to set
-     */
-    public void setValue(String key, Long value) {
-        settings.setProperty(key, "" + value);
-    }
-
-    /**
-     * Set float value
-     *
-     * @param key   for value
-     * @param value to set
-     */
-    public void setValue(String key, Float value) {
-        settings.setProperty(key, "" + value);
-    }
-
-    /**
-     * Set double value
-     *
-     * @param key   for value
-     * @param value to set
-     */
-    public void setValue(String key, Double value) {
-        settings.setProperty(key, "" + value);
     }
 
     /**
@@ -255,7 +215,7 @@ public class SettingsLoader {
      *
      * @param key for value
      */
-    public void removeValue(String key) {
+    void removeValue(String key) {
         settings.remove(key);
     }
 

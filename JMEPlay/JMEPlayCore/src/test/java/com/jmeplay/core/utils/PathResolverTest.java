@@ -21,7 +21,7 @@ import java.util.UUID;
  */
 public class PathResolverTest {
 
-    private static String home = System.getProperty("user.home");
+    private static final String home = System.getProperty("user.home");
     private static String filename;
     private static String extension;
     private static Path path;
@@ -70,7 +70,7 @@ public class PathResolverTest {
      */
     @Test
     public void extensionPathNull() {
-        Assert.assertEquals(null, PathResolver.extension(null));
+        Assert.assertNull(PathResolver.extension(null));
     }
 
     /**

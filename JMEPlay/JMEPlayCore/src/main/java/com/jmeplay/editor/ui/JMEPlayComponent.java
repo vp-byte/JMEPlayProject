@@ -25,7 +25,7 @@ public abstract class JMEPlayComponent {
      *
      * @param priority of component
      */
-    public void setPriority(int priority) {
+    protected void setPriority(int priority) {
         this.priority = priority;
     }
 
@@ -41,7 +41,7 @@ public abstract class JMEPlayComponent {
      *
      * @param align in view
      */
-    public void setAlignment(Align align) {
+    protected void setAlignment(Align align) {
         this.align = align;
     }
 

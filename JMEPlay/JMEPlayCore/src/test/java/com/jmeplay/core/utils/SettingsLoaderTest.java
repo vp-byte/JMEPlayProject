@@ -16,7 +16,7 @@ import org.junit.Test;
  */
 public class SettingsLoaderTest {
 
-    private String settingsfile = "testsettings.xml";
+    private final String settingsfile = "testsettings.xml";
     private SettingsLoader settingsLoader;
 
     @Before
@@ -43,7 +43,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueString() {
         Assert.assertEquals(settingsLoader.value("test", "DEFAULT"), "DEFAULT");
-        settingsLoader.setValue("test", "VALUE");
+        settingsLoader.value("test", "VALUE");
         Assert.assertEquals(settingsLoader.value("test", "DEFAULT"), "VALUE");
         settingsLoader.writeSettings();
 
@@ -57,7 +57,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueBoolean() {
         Assert.assertEquals(settingsLoader.value("test", true), true);
-        settingsLoader.setValue("test", true);
+        settingsLoader.value("test", true);
         Assert.assertEquals(settingsLoader.value("test", false), true);
         settingsLoader.writeSettings();
 
@@ -71,7 +71,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueInteger() {
         Assert.assertEquals(settingsLoader.value("test", 1000).longValue(), 1000);
-        settingsLoader.setValue("test", 2000);
+        settingsLoader.value("test", 2000);
         Assert.assertEquals(settingsLoader.value("test", 1000).longValue(), 2000);
         settingsLoader.writeSettings();
 
@@ -85,7 +85,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueLong() {
         Assert.assertEquals(settingsLoader.value("test", 1000L).longValue(), 1000L);
-        settingsLoader.setValue("test", 2000L);
+        settingsLoader.value("test", 2000L);
         Assert.assertEquals(settingsLoader.value("test", 1000L).longValue(), 2000L);
         settingsLoader.writeSettings();
 
@@ -99,7 +99,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueFloat() {
         Assert.assertEquals(settingsLoader.value("test", 1.1f), 1.1f, 0.1f);
-        settingsLoader.setValue("test", new Float(2.1));
+        settingsLoader.value("test", new Float(2.1));
         Assert.assertEquals(settingsLoader.value("test", 1.1f), 2.1f, 0.1f);
         settingsLoader.writeSettings();
 
@@ -113,7 +113,7 @@ public class SettingsLoaderTest {
     @Test
     public void testValueDouble() {
         Assert.assertEquals(settingsLoader.value("test", 1.1), 1.1, 0.1);
-        settingsLoader.setValue("test", 2.1);
+        settingsLoader.value("test", 2.1);
         Assert.assertEquals(settingsLoader.value("test", 1.1), 2.1, 0.1);
         settingsLoader.writeSettings();
 
@@ -126,7 +126,7 @@ public class SettingsLoaderTest {
 
     @Test
     public void testRemoveValue() {
-        settingsLoader.setValue("test", "VALUE");
+        settingsLoader.value("test", "VALUE");
         Assert.assertEquals(settingsLoader.value("test", "DEFAULT"), "VALUE");
         settingsLoader.removeValue("test");
         Assert.assertEquals(settingsLoader.value("test", "DEFAULT"), "DEFAULT");

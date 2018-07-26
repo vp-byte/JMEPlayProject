@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
  */
 public class ResourceBundleLoaderTest {
 
-    private static String bundleName = "JMEPLayCoreTest";
+    private static final String bundleName = "JMEPLayCoreTest";
 
     /**
      * Load resource bundle with default locale

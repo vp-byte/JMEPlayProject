@@ -98,7 +98,7 @@ public class JMEPlayEditorStage {
     private void height() {
         Double stageHeight = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_HEIGHT, JMEPlayEditorResources.STAGE_MIN_HEIGHT_DEFAULT);
         stage.setHeight(stageHeight);
-        stage.heightProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_HEIGHT, newValue.doubleValue()));
+        stage.heightProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_HEIGHT, newValue.doubleValue()));
     }
 
     /**
@@ -115,7 +115,7 @@ public class JMEPlayEditorStage {
     private void width() {
         Double stageWidth = jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_WIDTH, JMEPlayEditorResources.STAGE_MIN_WIDTH_DEFAULT);
         stage.setWidth(stageWidth);
-        stage.widthProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_WIDTH, newValue.doubleValue()));
+        stage.widthProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_WIDTH, newValue.doubleValue()));
     }
 
     /**
@@ -123,7 +123,7 @@ public class JMEPlayEditorStage {
      */
     private void maximized() {
         stage.setMaximized(jmePlayEditorSettings.value(JMEPlayEditorResources.MAXIMIZED, JMEPlayEditorResources.MAXIMIZED_DEFAULT));
-        stage.maximizedProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.setValue(JMEPlayEditorResources.MAXIMIZED, newValue));
+        stage.maximizedProperty().addListener((observable, oldValue, newValue) -> jmePlayEditorSettings.value(JMEPlayEditorResources.MAXIMIZED, newValue));
     }
 
     /**
@@ -136,7 +136,7 @@ public class JMEPlayEditorStage {
         }
         stage.yProperty().addListener((observable, oldValue, newValue) -> {
             if (!stage.isMaximized()) {
-                jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_Y, newValue.doubleValue());
+                jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_Y, newValue.doubleValue());
             }
         });
     }
@@ -155,7 +155,7 @@ public class JMEPlayEditorStage {
         }
         stage.xProperty().addListener((observable, oldValue, newValue) -> {
             if (!stage.isMaximized()) {
-                jmePlayEditorSettings.setValue(JMEPlayEditorResources.STAGE_X, newValue.doubleValue());
+                jmePlayEditorSettings.value(JMEPlayEditorResources.STAGE_X, newValue.doubleValue());
             }
         });
     }
